@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63101B0F2550C00C002CCEE0 /* Burlington.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 63101B0E2550C00C002CCEE0 /* Burlington.geojson */; };
 		6326BCE0254D015400D4C56F /* AreasWeHaveDataOn.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 6326BCDF254D015400D4C56F /* AreasWeHaveDataOn.geojson */; };
 		6326BCEC254D094700D4C56F /* PointsOfInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6326BCEB254D094700D4C56F /* PointsOfInterest.swift */; };
 		6326BCEF254D157200D4C56F /* LocationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6326BCEE254D157200D4C56F /* LocationViews.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63101B0E2550C00C002CCEE0 /* Burlington.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Burlington.geojson; sourceTree = "<group>"; };
 		6326BCDF254D015400D4C56F /* AreasWeHaveDataOn.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = AreasWeHaveDataOn.geojson; sourceTree = "<group>"; };
 		6326BCEB254D094700D4C56F /* PointsOfInterest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsOfInterest.swift; sourceTree = "<group>"; };
 		6326BCEE254D157200D4C56F /* LocationViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViews.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				6326BCDF254D015400D4C56F /* AreasWeHaveDataOn.geojson */,
 				6326BCEB254D094700D4C56F /* PointsOfInterest.swift */,
 				6326BCEE254D157200D4C56F /* LocationViews.swift */,
+				63101B0E2550C00C002CCEE0 /* Burlington.geojson */,
 			);
 			path = "Burlington Water Quality Dashboard";
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 				63B9797D2548B07E00336E24 /* Assets.xcassets in Resources */,
 				63B9797B2548B07B00336E24 /* Main.storyboard in Resources */,
 				6326BCE0254D015400D4C56F /* AreasWeHaveDataOn.geojson in Resources */,
+				63101B0F2550C00C002CCEE0 /* Burlington.geojson in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

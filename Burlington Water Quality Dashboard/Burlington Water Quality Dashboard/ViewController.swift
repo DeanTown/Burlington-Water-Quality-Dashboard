@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     private var poi: [PointsOfInterest] = []
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -41,7 +42,26 @@ class ViewController: UIViewController {
             MKMapViewDefaultAnnotationViewReuseIdentifier)
         loadPOIData()
         mapView.addAnnotations(poi)
+        
+        var points = [CLLocationCoordinate2D(latitude: 44.4470458, longitude: -73.2328338),
+                      CLLocationCoordinate2D(latitude: 44.4465292, longitude: -73.2098178),
+                      CLLocationCoordinate2D(latitude: 44.4838342, longitude: -73.1799423),
+                      CLLocationCoordinate2D(latitude: 44.5361353, longitude: -73.2714445),
+                      CLLocationCoordinate2D(latitude: 44.4470458, longitude: -73.2328338)]
+        
+        mapView.addOverlay(MKPolygon(
+          coordinates: points,
+          count: points.count))
+
     }
+
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let polygonView = MKPolygonRenderer(overlay: overlay)
+        polygonView.strokeColor = UIColor.cyan.withAlphaComponent(0.7)
+        polygonView.fillColor = UIColor.lightGray.withAlphaComponent(0.7)
+        return polygonView
+    }
+
     
     
     private func loadPOIData() {
