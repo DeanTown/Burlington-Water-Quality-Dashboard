@@ -44,16 +44,20 @@ class ViewController: UIViewController {
         mapView.addAnnotations(poi)
         
 
+//        mapView.addOverlay(MKPolygon(
+//          coordinates:  Constants.testArea,
+//          count:  Constants.testArea.count))
+        
         mapView.addOverlay(MKPolygon(
-          coordinates:  Constants.testArea,
-          count:  Constants.testArea.count))
+          coordinates:  Constants.burlingtonArea,
+          count:  Constants.burlingtonArea.count))
 
     }
 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let polygonView = MKPolygonRenderer(overlay: overlay)
-        polygonView.strokeColor = UIColor.cyan.withAlphaComponent(0.7)
-        polygonView.fillColor = UIColor.lightGray.withAlphaComponent(0.7)
+        polygonView.strokeColor = UIColor.orange.withAlphaComponent(0.7)
+        polygonView.fillColor = UIColor.orange.withAlphaComponent(0.2)
         return polygonView
     }
 
