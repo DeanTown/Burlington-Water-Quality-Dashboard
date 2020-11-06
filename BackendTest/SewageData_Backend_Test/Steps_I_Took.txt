@@ -1,0 +1,83 @@
+# Resources:
+# https://firebase.google.com/docs/ios/setup?authuser=1
+# https://www.youtube.com/watch?v=PdLzuwBrmSg
+# https://firebase.google.com/docs/firestore/quickstart#ios
+
+Created Xcode iOS app and I called it TestFireStoreQuery_1
+Selected top level root dir in file navigator
+Was directed to the “General” tab
+Copied the “Bundle Identifier”
+
+
+Open firebase
+Create iOS app
+Register app using Bundle Identifier you coped earlier
+cd into dir holding xcode.proj
+Download config file and put in Xcode project dir
+Download CocaPods with 
+	> sudo gem install cocoapods
+Quit any running instance of XCode
+	> pod init
+Open the file “Podfile” in text editor
+Add the following to your file:
+
+	#           vvv this is the name of your app
+
+	target 'TestFireStoreQuery_1' do
+  		# Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  		use_frameworks!
+
+ 		 # Pods for firestoreapp
+		pod 'Firebase/Core'
+		pod 'Firebase/Auth'
+		pod 'Firestore', :podspec => 'https://storage.googleapis.com/firebase-preview-drop/ios/firestore/0.7.0/Firestore.podspec.json'
+		end
+
+
+Then run this 
+	> pod install
+
+This creates an .xcworkspace file for your app. Use this file for all future development on your application.
+
+To connect Firebase when your app starts up, add the initialization code below to your main AppDelegate class:
+
+	import UIKit
+	import Firebase
+
+	@UIApplicationMain
+	class AppDelegate: UIResponder, UIApplicationDelegate {
+
+  		var window: UIWindow?
+
+  		func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:[UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    			FirebaseApp.configure()
+    			return true
+  		}
+	}
+
+
+
+From here, run your app to make sure it doesn’t crash or nothin (it might take a while)
+
+
+Add this to your view controller within the viewDidLoad function:
+
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+        let db = Firestore.firestore()
+        
+        db.collection("sewage").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                }
+            }
+        }
+
+
+Run your app and you should see the contents of the “Sewage” collection
+
+
