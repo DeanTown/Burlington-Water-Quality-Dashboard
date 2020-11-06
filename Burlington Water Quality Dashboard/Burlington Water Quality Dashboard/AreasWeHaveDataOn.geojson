@@ -1,0 +1,48 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+          "type":"Feature",
+          "properties":{
+            "title":"North Beach",
+            "latitude":"44.492238",
+            "descriptionOfPlace":"Public Beach",
+            "longitude":"-73.2431204",
+            "imagefile":"https://lh5.googleusercontent.com/p/AF1QipNdmhEV0KqXx_9wcksDIbzXPI91LYhVj1-CXfFF=w408-h306-k-no"
+          },
+          "geometry":{
+            "type":"Point",
+            "coordinates":[-73.2431204,44.492238]
+          }
+        },
+        {
+          "type":"Feature",
+          "properties":{
+            "title":"Leddy Beach",
+            "latitude":"44.4952474",
+            "descriptionOfPlace":"Public Beach",
+            "longitude":"-73.2635462",
+            "imagefile":"https://lh5.googleusercontent.com/p/AF1QipMzEwQoIPHlArOeilYYqhAVB-YZdtz8GIfwF9Os=w408-h306-k-no"
+          },
+          "geometry":{
+            "type":"Point",
+            "coordinates":[-73.2762777,44.4719193]
+          }
+        },
+        {
+          "type":"Feature",
+          "properties":{
+            "title":"Shelburne Town Beach",
+            "latitude":"44.3620593",
+            "descriptionOfPlace":"Public Beach",
+            "longitude":"-73.3497488",
+            "imagefile":"https://lh5.googleusercontent.com/p/AF1QipN5TmQUqNOlp9EAMCTwrjVgR6lZ-clNmB18ND1X=w408-h306-k-no"
+          },
+          "geometry":{
+            "type":"Point",
+            "coordinates":[-73.3497488,44.3620593]
+          }
+        }
+
+    ]
+}
