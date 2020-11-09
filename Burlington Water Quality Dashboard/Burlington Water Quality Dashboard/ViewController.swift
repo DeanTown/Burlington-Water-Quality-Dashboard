@@ -8,15 +8,23 @@
 
 import UIKit
 import MapKit
+import Firebase
+import Firestore
 
 class ViewController: UIViewController {
+    
     @IBOutlet private var mapView: MKMapView!
     
     private var poi: [PointsOfInterest] = []
+    
+    var sewageDataStore = SewageDataStore()
+    let sewageAPI = SewageDataAPI()
+    let dispatchGroup = DispatchGroup()
+
 
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
         let initialLocation = CLLocation(latitude: 44.4831208, longitude: -73.2968602)
         //lat and long for Burlington VT is @44.4926914,-73.2968602
@@ -51,7 +59,51 @@ class ViewController: UIViewController {
         mapView.addOverlay(MKPolygon(
           coordinates:  Constants.burlingtonArea,
           count:  Constants.burlingtonArea.count))
-
+        
+        
+// BACK END DATA HANDLING
+        
+        // Querying the Sewage data for the unique locations in the data set
+        var uniqueLocations: [String] = [] // intializing unique locations array
+        self.dispatchGroup.enter() // Starting thread
+        // Getting all the unique locations from our sewage data
+        self.sewageAPI.returnUniqueLocation(uniqueLocations:uniqueLocations) { result in
+            uniqueLocations = result
+            self.dispatchGroup.leave() // Leaving thread when result comes back
+        }
+        
+        // When thread is finished, the uniqueLocations array should be populated
+        self.dispatchGroup.notify(queue:.main) {
+            
+            print("\n\nBEFORE:: Unique locations: \(uniqueLocations)") // DEBUG -- REMOVE
+            print("\(uniqueLocations.count)\n\n") // DEBUG -- REMOVE
+            
+            // Building the sewageDataStore with a SewageDataItem element for each location
+            let date: Int = 2019 // DEBUG VALUE -- REMOVE
+            for location in uniqueLocations {
+                self.dispatchGroup.enter() // Starting thread
+                self.sewageAPI.getLatestDataFromLocations_and_loadSewageStore(sewageDataStore:self.sewageDataStore, location: location, date: date) { result in
+                    self.sewageDataStore = result
+                    self.dispatchGroup.leave() // Leaving thread
+                }
+            }
+            
+            // When all threads are finished, the sewageDataStore array should be fully populated
+            self.dispatchGroup.notify(queue:.main) {
+                self.sewageDataStore.toString() // DEBUG -- REMOVE
+                print(self.sewageDataStore.SewageDataItems.count) // DEBUG -- REMOVE
+                
+                // Do more stuff below...
+                
+            } // end when sewageDataStore is populated with most recent data for each location
+            
+        } // end when unique locations from sewage data came back
+        
+        print("\n\nAFTER:: \(uniqueLocations)\n\n")
+        print("\(uniqueLocations.count)\n\n") // DEBUG -- REMOVE
+                
+        // Calling viewDidLoad super function
+        super.viewDidLoad()
     }
 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
@@ -61,8 +113,6 @@ class ViewController: UIViewController {
         return polygonView
     }
 
-    
-    
     private func loadPOIData() {
         guard
             let fileName = Bundle.main.url(forResource: "AreasWeHaveDataOn", withExtension: "geojson"),
