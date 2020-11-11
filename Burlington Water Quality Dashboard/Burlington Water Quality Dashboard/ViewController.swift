@@ -92,7 +92,8 @@ class ViewController: UIViewController {
         polygonView.strokeColor = UIColor.orange.withAlphaComponent(0.7)
         polygonView.fillColor = UIColor.orange.withAlphaComponent(0.2)
         return polygonView
-    }
+        
+    } // end mapView function
 
     private func loadPOIData() {
         guard
@@ -111,7 +112,7 @@ class ViewController: UIViewController {
             print("This error came up: \(error)!")
         }
         
-    } // end map_hanlder function
+    } // end loadPOIData function
     
     func back_end_handler(){
         
@@ -151,7 +152,7 @@ class ViewController: UIViewController {
             
         } // end when unique locations from sewage data came back
         
-        print("\n\nAFTER:: \(uniqueLocations)\n\n")
+        print("\n\nAFTER:: \(uniqueLocations)\n\n") // DEBUG -- REMOVE
         print("\(uniqueLocations.count)\n\n") // DEBUG -- REMOVE
         
     } // end back_end_handler function
