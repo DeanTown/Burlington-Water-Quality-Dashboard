@@ -41,10 +41,11 @@ class ViewController: UIViewController {
         //      At some point, in my code down below I need to hook the debug date variable
         //      to retreive its value from some widget on the front end
         
+        
         // CALLING THE REAL viewDidLoad FUNCTION
         super.viewDidLoad()
 
-    }
+    } // end viewDidLoad function
     
     
     func map_handler(){
@@ -109,7 +110,8 @@ class ViewController: UIViewController {
         } catch {
             print("This error came up: \(error)!")
         }
-    }
+        
+    } // end map_hanlder function
     
     func back_end_handler(){
         
@@ -152,7 +154,7 @@ class ViewController: UIViewController {
         print("\n\nAFTER:: \(uniqueLocations)\n\n")
         print("\(uniqueLocations.count)\n\n") // DEBUG -- REMOVE
         
-    } // end back_end_handler
+    } // end back_end_handler function
 
 } // end ViewController class
 
@@ -167,7 +169,7 @@ private extension MKMapView {
             longitudinalMeters: regionRadius)
         setRegion(coordinateRegion, animated: true)
     }
-}
+} // end extension
 
 
 //adding an annotation view with more info
@@ -190,4 +192,5 @@ extension ViewController: MKMapViewDelegate {
 //        }
 //        return view
 //    }
-}
+    
+} // end extension
