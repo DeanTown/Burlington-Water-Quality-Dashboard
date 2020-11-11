@@ -20,10 +20,23 @@ class ViewController: UIViewController {
     var sewageDataStore = SewageDataStore()
     let sewageAPI = SewageDataAPI()
     let dispatchGroup = DispatchGroup()
-
-
+    
 
     override func viewDidLoad() {
+        
+        // FRONT END HANDLING
+        map_handler()
+            
+        // BACK END DATA HANDLING
+        back_end_handler()
+        
+        // CALLING THE REAL viewDidLoad FUNCTION
+        super.viewDidLoad()
+
+    }
+    
+    
+    func map_handler(){
         
         // Do any additional setup after loading the view.
         let initialLocation = CLLocation(latitude: 44.4831208, longitude: -73.2968602)
@@ -60,8 +73,34 @@ class ViewController: UIViewController {
           coordinates:  Constants.burlingtonArea,
           count:  Constants.burlingtonArea.count))
         
-        
-// BACK END DATA HANDLING
+    } // end map_handler
+
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let polygonView = MKPolygonRenderer(overlay: overlay)
+        polygonView.strokeColor = UIColor.orange.withAlphaComponent(0.7)
+        polygonView.fillColor = UIColor.orange.withAlphaComponent(0.2)
+        return polygonView
+    }
+
+    private func loadPOIData() {
+        guard
+            let fileName = Bundle.main.url(forResource: "AreasWeHaveDataOn", withExtension: "geojson"),
+            let areaData = try? Data(contentsOf: fileName)
+        else {
+            return
+        }
+        do {
+            let features = try MKGeoJSONDecoder().decode(areaData).compactMap {
+                $0 as? MKGeoJSONFeature
+            }
+            let validWorks = features.compactMap(PointsOfInterest.init)
+            poi.append(contentsOf: validWorks)
+        } catch {
+            print("This error came up: \(error)!")
+        }
+    }
+    
+    func back_end_handler(){
         
         // Querying the Sewage data for the unique locations in the data set
         var uniqueLocations: [String] = [] // intializing unique locations array
@@ -101,38 +140,10 @@ class ViewController: UIViewController {
         
         print("\n\nAFTER:: \(uniqueLocations)\n\n")
         print("\(uniqueLocations.count)\n\n") // DEBUG -- REMOVE
-                
-        // Calling viewDidLoad super function
-        super.viewDidLoad()
-    }
+        
+    } // end back_end_handler
 
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        let polygonView = MKPolygonRenderer(overlay: overlay)
-        polygonView.strokeColor = UIColor.orange.withAlphaComponent(0.7)
-        polygonView.fillColor = UIColor.orange.withAlphaComponent(0.2)
-        return polygonView
-    }
-
-    private func loadPOIData() {
-        guard
-            let fileName = Bundle.main.url(forResource: "AreasWeHaveDataOn", withExtension: "geojson"),
-            let areaData = try? Data(contentsOf: fileName)
-        else {
-            return
-        }
-        do {
-            let features = try MKGeoJSONDecoder().decode(areaData).compactMap {
-                $0 as? MKGeoJSONFeature
-            }
-            let validWorks = features.compactMap(PointsOfInterest.init)
-            poi.append(contentsOf: validWorks)
-        } catch {
-            print("This error came up: \(error)!")
-        }
-    }
-
-
-}
+} // end ViewController class
 
 // making sure that we get the correct level of zoom
 private extension MKMapView {
@@ -146,6 +157,7 @@ private extension MKMapView {
         setRegion(coordinateRegion, animated: true)
     }
 }
+
 
 //adding an annotation view with more info
 extension ViewController: MKMapViewDelegate {
