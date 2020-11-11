@@ -26,9 +26,21 @@ class ViewController: UIViewController {
         
         // FRONT END HANDLING
         map_handler()
+        // Notes:
+
             
         // BACK END DATA HANDLING
         back_end_handler()
+        // Notes:
+        // Sewage data on the 16 unique locations in the sewage db is stored in the
+        // sewageDataStore ViewController class-level variable.
+        // It represents a SewageDataStore object.
+        // The SewageDataStore object, "sewageDataStore", has an attribute variable,
+        // "SewageDataItems" , which is an array that holds SewageDataItems. It is these
+        // SewageDataItems objects which hold our sewage data.
+        //    @TODO: nhella
+        //      At some point, in my code down below I need to hook the debug date variable
+        //      to retreive its value from some widget on the front end
         
         // CALLING THE REAL viewDidLoad FUNCTION
         super.viewDidLoad()
