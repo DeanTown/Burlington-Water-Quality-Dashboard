@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-Line_Chart_Test-Line_Chart_TestUITests/Pods-Line_Chart_Test-Line_Chart_TestUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
+${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework
