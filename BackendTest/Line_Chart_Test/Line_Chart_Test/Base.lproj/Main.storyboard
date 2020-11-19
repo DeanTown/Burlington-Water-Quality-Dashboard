@@ -11,120 +11,191 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Line_Chart_Test" customModuleProvider="target" sceneMemberID="viewController">
-                    <stackView key="view" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" id="kxK-Vy-Zst">
+                    <stackView key="view" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" id="kxK-Vy-Zst">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CYc-Wy-beC" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="298.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S6j-lA-oYn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hc1-CE-MVy">
+                                        <rect key="frame" x="171.5" y="75" width="71" height="30"/>
+                                        <state key="normal" title="Monthly">
+                                            <color key="titleColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDh-0C-CdL">
+                                        <rect key="frame" x="292.5" y="75" width="71.5" height="30"/>
+                                        <state key="normal" title="Yearly">
+                                            <color key="titleColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NwG-Q7-t7A">
+                                        <rect key="frame" x="50" y="75" width="71.5" height="30"/>
+                                        <state key="normal" title="Weekly">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="hc1-CE-MVy" firstAttribute="width" secondItem="NwG-Q7-t7A" secondAttribute="width" id="2Tt-0p-Yyt"/>
+                                    <constraint firstItem="hc1-CE-MVy" firstAttribute="height" secondItem="NwG-Q7-t7A" secondAttribute="height" id="7T1-zK-zrt"/>
+                                    <constraint firstItem="UDh-0C-CdL" firstAttribute="centerY" secondItem="hc1-CE-MVy" secondAttribute="centerY" id="Nuf-nl-rS3"/>
+                                    <constraint firstItem="NwG-Q7-t7A" firstAttribute="centerY" secondItem="hc1-CE-MVy" secondAttribute="centerY" id="Pu7-Y3-a97"/>
+                                    <constraint firstItem="UDh-0C-CdL" firstAttribute="leading" secondItem="hc1-CE-MVy" secondAttribute="trailing" constant="50" id="Scd-pM-2xl"/>
+                                    <constraint firstItem="UDh-0C-CdL" firstAttribute="width" secondItem="NwG-Q7-t7A" secondAttribute="width" id="Tj3-Nq-hAd"/>
+                                    <constraint firstAttribute="height" constant="125" id="elM-Rg-2XE"/>
+                                    <constraint firstItem="NwG-Q7-t7A" firstAttribute="leading" secondItem="S6j-lA-oYn" secondAttribute="leading" constant="50" id="fwf-32-WQE"/>
+                                    <constraint firstAttribute="bottom" secondItem="hc1-CE-MVy" secondAttribute="bottom" constant="20" id="jiI-yA-Ktx"/>
+                                    <constraint firstItem="hc1-CE-MVy" firstAttribute="leading" secondItem="NwG-Q7-t7A" secondAttribute="trailing" constant="50" id="oZB-Qt-gEv"/>
+                                    <constraint firstAttribute="trailing" secondItem="UDh-0C-CdL" secondAttribute="trailing" constant="50" id="vpG-G8-6fB"/>
+                                    <constraint firstItem="UDh-0C-CdL" firstAttribute="height" secondItem="NwG-Q7-t7A" secondAttribute="height" id="yjJ-nD-IAj"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BTp-pe-qiG" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="298.5" width="414" height="299"/>
+                                <rect key="frame" x="0.0" y="135" width="414" height="626"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="s47-2s-Gbu">
-                                <rect key="frame" x="0.0" y="597.5" width="414" height="298.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7QC-24-uE6">
+                                <rect key="frame" x="0.0" y="771" width="414" height="125"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7QC-24-uE6">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="298.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="X3e-Of-rj5">
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="125"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MLN-yf-1c9">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="298.5"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZuX-FI-BwJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="62.5"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="01e-Pv-QUF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="207" height="149.5"/>
-                                                        <subviews>
-                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eNr-CA-Ajn" customClass="Checkbox" customModule="SimpleCheckbox">
-                                                                <rect key="frame" x="8" y="55" width="40" height="40"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                            </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3H-dx-n9b">
-                                                                <rect key="frame" x="56" y="55" width="143" height="40"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SUo-qI-C97" customClass="Checkbox" customModule="SimpleCheckbox">
+                                                        <rect key="frame" x="8" y="16.5" width="30" height="30"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="pkZ-cU-sxL"/>
+                                                            <constraint firstAttribute="width" constant="30" id="wxH-aP-5nW"/>
+                                                        </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEI-on-vsg">
-                                                        <rect key="frame" x="0.0" y="149.5" width="207" height="149"/>
-                                                        <subviews>
-                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lv8-lU-PMN" customClass="Checkbox" customModule="SimpleCheckbox">
-                                                                <rect key="frame" x="8" y="55" width="40" height="40"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                            </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mY-mg-cCj">
-                                                                <rect key="frame" x="56" y="55" width="143" height="40"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vmi-Yo-Tvl">
+                                                        <rect key="frame" x="46" y="11.5" width="42" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="KkV-8w-dHj"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="l97-rA-R8T">
-                                                <rect key="frame" x="207" y="0.0" width="207" height="298.5"/>
+                                                <constraints>
+                                                    <constraint firstItem="Vmi-Yo-Tvl" firstAttribute="leading" secondItem="SUo-qI-C97" secondAttribute="trailing" constant="8" id="9kv-sI-XGc"/>
+                                                    <constraint firstItem="Vmi-Yo-Tvl" firstAttribute="centerY" secondItem="ZuX-FI-BwJ" secondAttribute="centerY" id="MwI-62-5Nz"/>
+                                                    <constraint firstItem="SUo-qI-C97" firstAttribute="leading" secondItem="ZuX-FI-BwJ" secondAttribute="leading" constant="8" id="Q63-tL-7av"/>
+                                                    <constraint firstItem="SUo-qI-C97" firstAttribute="centerY" secondItem="ZuX-FI-BwJ" secondAttribute="centerY" id="VNu-59-0fq"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nav-e8-eYY">
+                                                <rect key="frame" x="0.0" y="62.5" width="207" height="62.5"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U4a-Bv-bJw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="207" height="149.5"/>
-                                                        <subviews>
-                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S7f-Mf-L6r" customClass="Checkbox" customModule="SimpleCheckbox">
-                                                                <rect key="frame" x="8" y="55" width="40" height="40"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                            </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PK1-qC-Oab">
-                                                                <rect key="frame" x="56" y="55" width="143" height="40"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MNo-be-bbJ" customClass="Checkbox" customModule="SimpleCheckbox">
+                                                        <rect key="frame" x="8" y="16.5" width="30" height="30"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="EPX-Md-cZa"/>
+                                                            <constraint firstAttribute="width" constant="30" id="uRq-BB-5Po"/>
+                                                        </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xi4-NB-3tD">
-                                                        <rect key="frame" x="0.0" y="149.5" width="207" height="149"/>
-                                                        <subviews>
-                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JuG-Qo-Dy8" customClass="Checkbox" customModule="SimpleCheckbox">
-                                                                <rect key="frame" x="8" y="55" width="40" height="40"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                            </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Th3-Cw-whh">
-                                                                <rect key="frame" x="56" y="55" width="143" height="40"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4o-6c-JqB">
+                                                        <rect key="frame" x="46" y="11.5" width="42" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="vqW-EF-CY1"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                            </stackView>
+                                                <constraints>
+                                                    <constraint firstItem="MNo-be-bbJ" firstAttribute="centerY" secondItem="nav-e8-eYY" secondAttribute="centerY" id="UCU-m1-rUV"/>
+                                                    <constraint firstItem="Y4o-6c-JqB" firstAttribute="centerY" secondItem="nav-e8-eYY" secondAttribute="centerY" id="VEq-O4-lKF"/>
+                                                    <constraint firstItem="MNo-be-bbJ" firstAttribute="leading" secondItem="nav-e8-eYY" secondAttribute="leading" constant="8" id="eRl-Dg-8fU"/>
+                                                    <constraint firstItem="Y4o-6c-JqB" firstAttribute="leading" secondItem="MNo-be-bbJ" secondAttribute="trailing" constant="8" id="hQa-Dd-NLD"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="l97-rA-R8T">
+                                        <rect key="frame" x="207" y="0.0" width="207" height="125"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OCn-e3-5kY">
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="62.5"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I88-Ys-ACI" customClass="Checkbox" customModule="SimpleCheckbox">
+                                                        <rect key="frame" x="8" y="16.5" width="30" height="30"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="X4Q-pC-EGe"/>
+                                                            <constraint firstAttribute="height" constant="30" id="wDg-fF-Dyr"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sk-Ej-sTE">
+                                                        <rect key="frame" x="46" y="11.5" width="42" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="BdO-7o-beN"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="I88-Ys-ACI" firstAttribute="centerY" secondItem="OCn-e3-5kY" secondAttribute="centerY" id="00d-ly-3WN"/>
+                                                    <constraint firstItem="3Sk-Ej-sTE" firstAttribute="centerY" secondItem="OCn-e3-5kY" secondAttribute="centerY" id="3Kz-1C-QoK"/>
+                                                    <constraint firstItem="I88-Ys-ACI" firstAttribute="leading" secondItem="OCn-e3-5kY" secondAttribute="leading" constant="8" id="QmX-Yx-yo4"/>
+                                                    <constraint firstItem="3Sk-Ej-sTE" firstAttribute="leading" secondItem="I88-Ys-ACI" secondAttribute="trailing" constant="8" id="lRL-n2-249"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pEQ-Em-pcV">
+                                                <rect key="frame" x="0.0" y="62.5" width="207" height="62.5"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kqS-r7-v09" customClass="Checkbox" customModule="SimpleCheckbox">
+                                                        <rect key="frame" x="8" y="16.5" width="30" height="30"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="fdh-4c-ub6"/>
+                                                            <constraint firstAttribute="width" constant="30" id="olu-Ai-Xhd"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfl-5g-Xou">
+                                                        <rect key="frame" x="46" y="11.5" width="42" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="wuN-q0-EbD"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="Nfl-5g-Xou" firstAttribute="centerY" secondItem="pEQ-Em-pcV" secondAttribute="centerY" id="3EY-2f-di0"/>
+                                                    <constraint firstItem="kqS-r7-v09" firstAttribute="centerY" secondItem="pEQ-Em-pcV" secondAttribute="centerY" id="7Hk-hf-M5s"/>
+                                                    <constraint firstItem="Nfl-5g-Xou" firstAttribute="leading" secondItem="kqS-r7-v09" secondAttribute="trailing" constant="8" id="g5S-gv-D98"/>
+                                                    <constraint firstItem="kqS-r7-v09" firstAttribute="leading" secondItem="pEQ-Em-pcV" secondAttribute="leading" constant="8" id="sEd-N1-nwD"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="wNT-Zz-tFS"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="BTp-pe-qiG" firstAttribute="centerY" secondItem="kxK-Vy-Zst" secondAttribute="centerY" id="U8J-rA-xB1"/>
-                            <constraint firstAttribute="bottom" secondItem="CYc-Wy-beC" secondAttribute="bottom" constant="597.5" id="fth-cF-vKt"/>
-                            <constraint firstItem="BTp-pe-qiG" firstAttribute="top" secondItem="CYc-Wy-beC" secondAttribute="bottom" id="vFF-vY-8kj"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Sca-OO-I39"/>
                     </stackView>
                 </viewController>

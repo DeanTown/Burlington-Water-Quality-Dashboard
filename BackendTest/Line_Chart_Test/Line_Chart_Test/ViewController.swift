@@ -20,25 +20,15 @@ class ViewController: UIViewController, ChartViewDelegate {
         chartView.backgroundColor = .systemBlue
         return chartView
     }()
-    
-    lazy var lineChartView2: LineChartView = {
-           let chartView = LineChartView()
-           chartView.backgroundColor = .systemOrange
-           return chartView
-       }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        view.subviews[0].addSubview(lineChartView1)
-        view.subviews[1].addSubview(lineChartView2)
+        view.subviews[1].addSubview(lineChartView1)
         lineChartView1.centerInSuperview()
         lineChartView1.width(to: view)
         lineChartView1.heightToSuperview()
-        lineChartView2.centerInSuperview()
-        lineChartView2.width(to: view)
-        lineChartView2.heightToSuperview()
         
         setData()
         
@@ -53,7 +43,6 @@ class ViewController: UIViewController, ChartViewDelegate {
         
         let data = LineChartData(dataSet: set1)
         lineChartView1.data = data
-        lineChartView2.data = data
     }
     
     let yValues: [ChartDataEntry] = [
