@@ -8,6 +8,7 @@ target 'Line_Chart_Test' do
   # Pods for Line_Chart_Test
   pod 'Charts'
   pod 'TinyConstraints'
+  pod 'SimpleCheckbox'
 
   target 'Line_Chart_TestTests' do
     inherit! :search_paths

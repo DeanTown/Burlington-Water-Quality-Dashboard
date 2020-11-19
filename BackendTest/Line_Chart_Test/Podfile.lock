@@ -2,21 +2,25 @@ PODS:
   - Charts (3.6.0):
     - Charts/Core (= 3.6.0)
   - Charts/Core (3.6.0)
+  - SimpleCheckbox (2.1.0)
   - TinyConstraints (4.0.1)
 
 DEPENDENCIES:
   - Charts
+  - SimpleCheckbox
   - TinyConstraints
 
 SPEC REPOS:
   trunk:
     - Charts
+    - SimpleCheckbox
     - TinyConstraints
 
 SPEC CHECKSUMS:
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
+  SimpleCheckbox: ddcd433ab8c3a8f57300bebda13151a8f302c7f9
   TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
 
-PODFILE CHECKSUM: 23742b41e32ba12fad1bcfddf82eeb85be33b706
+PODFILE CHECKSUM: 877fba88073ba699a51b98305603851913ecac2a
 
 COCOAPODS: 1.10.0
