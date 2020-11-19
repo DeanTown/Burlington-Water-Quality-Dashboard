@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -165,7 +165,6 @@
 				8C7A6C782D653BF54ADAFBD4 /* Pods-Line_Chart_TestTests.debug.xcconfig */,
 				8EE9FB87D54DD5B801B0EB23 /* Pods-Line_Chart_TestTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
