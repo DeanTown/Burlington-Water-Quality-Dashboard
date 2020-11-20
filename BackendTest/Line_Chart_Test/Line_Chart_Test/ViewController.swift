@@ -46,8 +46,13 @@ class ViewController: UIViewController, ChartViewDelegate {
     }
     
     let yValues: [ChartDataEntry] = [
-        ChartDataEntry(x: 1, y: 10),
-        ChartDataEntry(x: 2, y: 13)
+        ChartDataEntry(x: 1500, y: 10),
+        ChartDataEntry(x: 1600, y: 13),
+        ChartDataEntry(x: 1700, y: 14),
+        ChartDataEntry(x: 1800, y: 16),
+        ChartDataEntry(x: 1900, y: 18),
+        ChartDataEntry(x: 2000, y: 17),
+        ChartDataEntry(x: 2100, y: 21)
     ]
 }
 
