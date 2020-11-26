@@ -14,6 +14,8 @@ import Firestore
 class ViewController: UIViewController {
     
     @IBOutlet private var mapView: MKMapView!
+    @IBOutlet weak var mapFilter: UIView!
+    @IBOutlet weak var annotationFilter: UIButton!
     
     private var poi: [PointsOfInterest] = []
     
@@ -23,6 +25,7 @@ class ViewController: UIViewController {
     
 
     override func viewDidLoad() {
+        view.bringSubviewToFront(mapFilter)
         self.mapView.delegate = self
         
         // FRONT END HANDLING
@@ -84,18 +87,8 @@ class ViewController: UIViewController {
           forAnnotationViewWithReuseIdentifier:
             MKMapViewDefaultAnnotationViewReuseIdentifier)
         loadPOIData()
+        annotationFilter.isSelected = true;
         mapView.addAnnotations(poi)
-        
-        
-
-//        mapView.addOverlay(MKPolygon(
-//          coordinates:  Constants.testArea,
-//          count:  Constants.testArea.count))
-        
-        mapView.addOverlay(MKPolygon(
-          coordinates:  Constants.burlingtonArea,
-          count:  Constants.burlingtonArea.count))
-        
     } // end map_handler
 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
@@ -167,6 +160,32 @@ class ViewController: UIViewController {
         print("\(uniqueLocations.count)\n\n") // DEBUG -- REMOVE
         
     } // end back_end_handler function
+    
+    // Whatever 'filters' we want to add, we can create individual checkboxes for them
+    // and for each filter, create an overlay and add and remove it
+    //this one is for overlays
+    @IBAction func checkBoxTapped(_ sender: UIButton) {
+        
+        let burlingtonVerlay = (MKPolygon(coordinates:Constants.burlingtonArea,count:Constants.burlingtonArea.count))
+        if sender.isSelected {
+            sender.isSelected = false
+            mapView.removeOverlays(mapView.overlays)
+        } else {
+            sender.isSelected = true
+            mapView.addOverlay(burlingtonVerlay)
+        }
+    }
+    // this one is for annotations (pins for Points of interest)
+    // for this one, in view did load we set it to selected right away
+    @IBAction func checkBoxTapped2(_ sender: UIButton) {
+        if (sender.isSelected) {
+            sender.isSelected = false
+            mapView.removeAnnotations(mapView.annotations)
+        } else {
+            sender.isSelected = true
+            mapView.addAnnotations(poi)
+        }
+    }
 
 } // end ViewController class
 
@@ -206,3 +225,4 @@ extension ViewController: MKMapViewDelegate {
 //    }
     
 } // end extension
+

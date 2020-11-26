@@ -21,11 +21,59 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </mapView>
+                            <view alpha="0.55000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CTQ-wv-jta">
+                                <rect key="frame" x="20" y="44" width="139" height="174"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="epZ-1a-JbL">
+                                        <rect key="frame" x="8" y="1" width="122" height="191"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kOc-jV-gc6">
+                                                <rect key="frame" x="0.0" y="0.0" width="122" height="70"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGA-kX-2gm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="122" height="70"/>
+                                                        <state key="normal" image="unchecked"/>
+                                                        <state key="selected" image="checked"/>
+                                                        <connections>
+                                                            <action selector="checkBoxTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ldl-7B-ghC"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="IGA-kX-2gm" secondAttribute="bottom" constant="5" id="2kY-U4-Moa"/>
+                                                    <constraint firstItem="IGA-kX-2gm" firstAttribute="top" secondItem="kOc-jV-gc6" secondAttribute="top" constant="5" id="KOD-IP-1cU"/>
+                                                    <constraint firstItem="IGA-kX-2gm" firstAttribute="leading" secondItem="kOc-jV-gc6" secondAttribute="leading" constant="5" id="Q3V-NC-j09"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Uf-lW-81f">
+                                                <rect key="frame" x="0.0" y="70" width="122" height="70"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnt-r5-boX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="122" height="70"/>
+                                                        <state key="normal" image="unchecked"/>
+                                                        <state key="selected" image="checked"/>
+                                                        <connections>
+                                                            <action selector="checkBoxTapped2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sI9-tP-VnD"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gy3-Ja-joO">
+                                                <rect key="frame" x="0.0" y="140" width="122" height="51"/>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="annotationFilter" destination="bnt-r5-boX" id="xh4-CG-46N"/>
+                        <outlet property="mapFilter" destination="CTQ-wv-jta" id="oJX-U9-Uty"/>
                         <outlet property="mapView" destination="B8A-uO-qnz" id="Zkz-2Z-Zh4"/>
                     </connections>
                 </viewController>
@@ -35,6 +83,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checked" width="70" height="70"/>
+        <image name="unchecked" width="70" height="70"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
