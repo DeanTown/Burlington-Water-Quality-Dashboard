@@ -46,7 +46,7 @@ class PointsOfInterest: NSObject, MKAnnotation {
     }
     
     var subtitle: String? {
-        return title
+        return descriptionOfPlace
     }
     
     

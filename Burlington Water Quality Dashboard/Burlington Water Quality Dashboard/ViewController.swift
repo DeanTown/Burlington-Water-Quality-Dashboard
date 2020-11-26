@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     
 
     override func viewDidLoad() {
+        self.mapView.delegate = self
         
         // FRONT END HANDLING
         map_handler()
@@ -47,6 +48,15 @@ class ViewController: UIViewController {
 
     } // end viewDidLoad function
     
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        //TODO: Oliver when your code is all set, use this to navigate to your screen, and use this to also
+        //tell your screen what to do
+//      let anotherViewController = self.storyboard?.instantiateViewController(withIdentifier: "anotherViewController") as! AnotherViewController
+//      anotherViewController.dataToLoad = thisButtonsData
+//      self.navigationController?.pushViewController(anotherViewController, animated: true)
+        print("annotation has been clicked on!")
+
+    }
     
     func map_handler(){
         
@@ -75,6 +85,7 @@ class ViewController: UIViewController {
             MKMapViewDefaultAnnotationViewReuseIdentifier)
         loadPOIData()
         mapView.addAnnotations(poi)
+        
         
 
 //        mapView.addOverlay(MKPolygon(
