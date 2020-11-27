@@ -17,62 +17,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" rotateEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8A-uO-qnz">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8A-uO-qnz">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask"/>
                             </mapView>
-                            <view alpha="0.55000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CTQ-wv-jta">
-                                <rect key="frame" x="20" y="44" width="139" height="174"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CTQ-wv-jta">
+                                <rect key="frame" x="20" y="64" width="60" height="230"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="epZ-1a-JbL">
-                                        <rect key="frame" x="8" y="1" width="122" height="191"/>
+                                    <stackView opaque="NO" contentMode="center" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LeM-Cl-gnT">
+                                        <rect key="frame" x="-36" y="-38.5" width="132" height="307"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kOc-jV-gc6">
-                                                <rect key="frame" x="0.0" y="0.0" width="122" height="70"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGA-kX-2gm">
-                                                        <rect key="frame" x="0.0" y="0.0" width="122" height="70"/>
-                                                        <state key="normal" image="unchecked"/>
-                                                        <state key="selected" image="checked"/>
-                                                        <connections>
-                                                            <action selector="checkBoxTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ldl-7B-ghC"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="IGA-kX-2gm" secondAttribute="bottom" constant="5" id="2kY-U4-Moa"/>
-                                                    <constraint firstItem="IGA-kX-2gm" firstAttribute="top" secondItem="kOc-jV-gc6" secondAttribute="top" constant="5" id="KOD-IP-1cU"/>
-                                                    <constraint firstItem="IGA-kX-2gm" firstAttribute="leading" secondItem="kOc-jV-gc6" secondAttribute="leading" constant="5" id="Q3V-NC-j09"/>
-                                                </constraints>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Uf-lW-81f">
-                                                <rect key="frame" x="0.0" y="70" width="122" height="70"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnt-r5-boX">
-                                                        <rect key="frame" x="0.0" y="0.0" width="122" height="70"/>
-                                                        <state key="normal" image="unchecked"/>
-                                                        <state key="selected" image="checked"/>
-                                                        <connections>
-                                                            <action selector="checkBoxTapped2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sI9-tP-VnD"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gy3-Ja-joO">
-                                                <rect key="frame" x="0.0" y="140" width="122" height="51"/>
-                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pop-Cj-PnJ">
+                                                <rect key="frame" x="42" y="0.0" width="48" height="105.5"/>
+                                                <state key="normal" image="beachesUnselected"/>
+                                                <state key="selected" image="beachesSelected"/>
+                                                <connections>
+                                                    <action selector="checkBoxTapped2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XZ6-b5-8Ec"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kok-0t-bet">
+                                                <rect key="frame" x="42" y="105.5" width="48" height="105"/>
+                                                <state key="normal" image="placesUnselected"/>
+                                                <state key="selected" image="placesSelected"/>
+                                                <connections>
+                                                    <action selector="checkBoxTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dV8-Oy-GWb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOM-4n-jSF">
+                                                <rect key="frame" x="42" y="210.5" width="48" height="96.5"/>
+                                                <state key="normal" image="sewageUnselected"/>
+                                                <state key="selected" image="sewageSelected"/>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="LeM-Cl-gnT" firstAttribute="centerX" secondItem="CTQ-wv-jta" secondAttribute="centerX" id="Edf-Sc-2kt"/>
+                                    <constraint firstItem="LeM-Cl-gnT" firstAttribute="width" secondItem="CTQ-wv-jta" secondAttribute="width" multiplier="2.2" id="Frh-P1-KaX"/>
+                                    <constraint firstItem="LeM-Cl-gnT" firstAttribute="height" secondItem="CTQ-wv-jta" secondAttribute="height" multiplier="1.33333" id="M1x-xS-5QD"/>
+                                    <constraint firstAttribute="width" constant="60" id="S6b-KQ-jEy"/>
+                                    <constraint firstAttribute="height" constant="230" id="gi8-Ck-dF8"/>
+                                    <constraint firstItem="LeM-Cl-gnT" firstAttribute="centerY" secondItem="CTQ-wv-jta" secondAttribute="centerY" id="qhD-Qf-riR"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CTQ-wv-jta" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="5HG-sU-HUZ"/>
+                            <constraint firstAttribute="trailing" secondItem="B8A-uO-qnz" secondAttribute="trailing" id="90A-nM-ujG"/>
+                            <constraint firstItem="B8A-uO-qnz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ajx-Q6-gd8"/>
+                            <constraint firstAttribute="bottom" secondItem="B8A-uO-qnz" secondAttribute="bottom" id="fgi-na-ZQz"/>
+                            <constraint firstItem="CTQ-wv-jta" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ix3-jp-gyd"/>
+                            <constraint firstItem="B8A-uO-qnz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xwK-gs-Ef2"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="annotationFilter" destination="bnt-r5-boX" id="xh4-CG-46N"/>
+                        <outlet property="annotationFilter" destination="pop-Cj-PnJ" id="P0y-Bc-Myk"/>
+                        <outlet property="areasFilter" destination="Kok-0t-bet" id="Yhd-kQ-o4Y"/>
                         <outlet property="mapFilter" destination="CTQ-wv-jta" id="oJX-U9-Uty"/>
                         <outlet property="mapView" destination="B8A-uO-qnz" id="Zkz-2Z-Zh4"/>
                     </connections>
@@ -83,8 +85,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="checked" width="70" height="70"/>
-        <image name="unchecked" width="70" height="70"/>
+        <image name="beachesSelected" width="48" height="48"/>
+        <image name="beachesUnselected" width="48" height="48"/>
+        <image name="placesSelected" width="48" height="48"/>
+        <image name="placesUnselected" width="48" height="48"/>
+        <image name="sewageSelected" width="48" height="44"/>
+        <image name="sewageUnselected" width="48" height="44"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

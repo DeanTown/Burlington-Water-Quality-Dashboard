@@ -16,8 +16,13 @@ class ViewController: UIViewController {
     @IBOutlet private var mapView: MKMapView!
     @IBOutlet weak var mapFilter: UIView!
     @IBOutlet weak var annotationFilter: UIButton!
+    @IBOutlet weak var areasFilter: UIButton!
+    //manually adding one sewage runoff location point till we get a list of lats and longs
+    let sewageRunoff = PointsOfInterest(title: "Runoff from ___", descriptionOfPlace: "tap here for more sewage info", coordinate: CLLocationCoordinate2D(latitude: 44.5317895, longitude: -73.2772155))
     
     private var poi: [PointsOfInterest] = []
+    
+    private var sewageRunoffs: [PointsOfInterest] = []
     
     var sewageDataStore = SewageDataStore()
     let sewageAPI = SewageDataAPI()
@@ -27,6 +32,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         view.bringSubviewToFront(mapFilter)
         self.mapView.delegate = self
+        
+        // Adding a bit of styling to the map filter
+        self.mapFilter.layer.cornerRadius = 25
+        self.mapFilter.layer.masksToBounds = true
+        
+        
+        mapView.register(
+          LocationViews.self,
+          forAnnotationViewWithReuseIdentifier:
+            MKMapViewDefaultAnnotationViewReuseIdentifier)
         
         // FRONT END HANDLING
         map_handler()
@@ -81,14 +96,22 @@ class ViewController: UIViewController {
 //        let northBeach = PointsOfInterest(title: "North Beach", descriptionOfPlace: "A public beach in burlington VT", coordinate: CLLocationCoordinate2D(latitude: 44.492238, longitude: -73.2431204))
 //        mapView.addAnnotation(northBeach)
         
+        
+        //creating an annotation for sewage run off, we can add more once we get the lats and longs for it:
+
+        mapView.addAnnotation(sewageRunoff)
+        
         // displaying the array of points of interest to the map
         mapView.register(
           LocationViews.self,
           forAnnotationViewWithReuseIdentifier:
             MKMapViewDefaultAnnotationViewReuseIdentifier)
         loadPOIData()
-        annotationFilter.isSelected = true;
+        annotationFilter.isSelected = true
+        areasFilter.isSelected = true
         mapView.addAnnotations(poi)
+        let burlingtonVerlay = (MKPolygon(coordinates:Constants.burlingtonArea,count:Constants.burlingtonArea.count))
+        mapView.addOverlay(burlingtonVerlay)
     } // end map_handler
 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
@@ -165,7 +188,6 @@ class ViewController: UIViewController {
     // and for each filter, create an overlay and add and remove it
     //this one is for overlays
     @IBAction func checkBoxTapped(_ sender: UIButton) {
-        
         let burlingtonVerlay = (MKPolygon(coordinates:Constants.burlingtonArea,count:Constants.burlingtonArea.count))
         if sender.isSelected {
             sender.isSelected = false
@@ -183,6 +205,7 @@ class ViewController: UIViewController {
             mapView.removeAnnotations(mapView.annotations)
         } else {
             sender.isSelected = true
+            mapView.addAnnotation(sewageRunoff)
             mapView.addAnnotations(poi)
         }
     }
@@ -226,3 +249,11 @@ extension ViewController: MKMapViewDelegate {
     
 } // end extension
 
+
+// citing icons below
+// icon for beaches (not filter ones) is from:https://www.flaticon.com/free-icon/beach_119596
+// icon for sewage runoff (not filter ones): https://www.flaticon.com/free-icon/sewage_2154837
+// these below are filter icons:
+// icon for areas is from: https://img.icons8.com/cotton/2x/worldwide-location--v2.png
+// icon for beaches is from: https://img.icons8.com/cotton/2x/ffffff/safety-float-1.png
+// I (Prasidha) made the icon for sewage
