@@ -1,0 +1,706 @@
+Date,Min gal,Max gal.,Type,Receiving Water,Location
+1.1.19,"12,818","12,818",CSO,East Creek,Rutland
+1.24.19,"149,915","149,915",CSO,East Creek,Rutland
+1.24.19,"2,686,426","2,686,426",CSO,Otter Creek,Rutland
+1.24.19,0,100,CSO,East Creek,Rutland
+1.24.19,0,100,CSO,East Creek,Rutland
+1.24.19,0,100,Sewage,East Creek,Rutland
+2.5.19,"12,959","12,959",CSO,East Creek,Rutland
+2.5.19,"358,028","358,028",CSO,Otter Creek,Rutland
+2.8.19,"1,220,564","1,220,564",CSO,Otter Creek,Rutland
+4.9.19,"15,998","15,998",CSO,East Creek,Rutland
+4.15.19,"175,986","175,986",CSO,East Creek,Rutland
+4.15.19,"2,261,691","2,261,691",CSO,East Creek,Rutland
+4.15.19,"4,042,572","4,042,572",CSO,East Creek,Rutland
+4.15.19,"1,252,489","1,252,489",CSO,Otter Creek,Rutland
+4.19.19,"37,110","37,110",CSO,East Creek,Rutland
+4.20.19,"2,159","2,159",CSO,East Creek,Rutland
+4.20.19,"67,113","67,113",CSO,Otter Creek,Rutland
+4.20.19,316,316,CSO,East Creek,Rutland
+4.20.19,"141,255","141,255",CSO,East Creek,Rutland
+4.20.19,"139,971","139,971",CSO,East Creek,Rutland
+4.20.19,"105,105","105,105",CSO,East Creek,Rutland
+4.20.19,"4,175","4,175",CSO,East Creek,Rutland
+4.20.19,"84,200","84,200",CSO,Otter Creek,Rutland
+4.27.19,"44,950","44,950",CSO,East Creek,Rutland
+4.27.19,"917,490","917,490",CSO,Otter Creek,Rutland
+5.1.19,"2,843","2,843",CSO,East Creek,Rutland
+5.3.19,"5,679","5,679",CSO,East Creek,Rutland
+5.3.19,"360,829","360,829",CSO,Otter Creek,Rutland
+5.3.19,476,476,CSO,East Creek,Rutland
+5.3.19,"95,927","95,927",CSO,East Creek,Rutland
+5.10.19,"33,981","33,981",CSO,East Creek,Rutland
+5.10.19,"117,146","117,146",CSO,Otter Creek,Rutland
+5.13.19,"9,137","9,137",CSO,East Creek,Rutland
+5.19.19,"226,271","226,271",CSO,East Creek,Rutland
+5.19.19,"276,842","276,842",CSO,East Creek,Rutland
+5.19.19,"22,741","22,741",CSO,East Creek,Rutland
+5.19.19,"1,527,000","1,527,000",CSO,Otter Creek,Rutland
+5.20.19,"45,297","45,297",CSO,East Creek,Rutland
+5.20.19,"369,132","369,132",CSO,Otter Creek,Rutland
+5.20.19,"8,004","8,004",CSO,East Creek,Rutland
+5.20.19,"37,204","37,204",CSO,East Creek,Rutland
+5.23.19,"7,322","7,322",CSO,East Creek,Rutland
+5.28.19,"19,972","19,972",CSO,East Creek,Rutland
+6.11.19,"12,240","12,240",CSO,East Creek,Rutland
+6.11.19,"119,215","119,215",CSO,East Creek,Rutland
+6.11.19,"65,383","65,383",CSO,East Creek,Rutland
+6.11.19,"53,972","53,972",CSO,Otter Creek,Rutland
+6.20.19,"948,984","948,984",CSO,East Creek,Rutland
+6.20.19,"745,451","745,451",CSO,Otter Creek,Rutland
+6.20.19,"781,220","781,220",CSO,East Creek,Rutland
+6.20.19,"63,500","63,500",CSO,East Creek,Rutland
+7.6.19,"109,658","109,658",CSO,Otter Creek,Rutland
+7.6.19,"121,853","121,853",CSO,East Creek,Rutland
+7.6.19,"18,024","18,024",CSO,East Creek,Rutland
+7.6.19,"122,721","122,721",CSO,East Creek,Rutland
+7.25.19,"1,716","1,716",CSO,East Creek,Rutland
+7.25.19,"7,531","7,531",CSO,East Creek,Rutland
+7.30.19,"51,336","51,336",CSO,East Creek,Rutland
+7.30.19,"6,797","6,797",CSO,East Creek,Rutland
+8.7.19,"5,086","5,086",CSO,East Creek,Rutland
+8.7.19,619,619,CSO,East Creek,Rutland
+1.26.19,1000000,1000000,Partially,Nashobe,Brandon
+6.20.19,1000000,1000000,Partially,Nashobe,Brandon
+5.19.19,15100,15100,CSO,Pine St. Barge Canal,Burlington
+6.20.19,177396,177396,CSO,Pine St. Barge Canal,Burlington
+7.11.19,79122,79122,CSO,Pine St. Barge Canal,Burlington
+7.28.19,1000,10000,CSO,Intervale Wetlands,Burlington
+8.6.19,100,1000,CSO,Intervale Wetlands,Burlington
+2.7.19,100000,500000,Partially,Winooski,Essex Junction
+4.2.19,1000,10000,sewage,Indian Brook,Essex Junction
+4.15.19,10000,100000,CSO,Castleton,Fair Haven
+4.11.19,10000,100000,Partially,Lamoille River,Hardwick
+4.20.19,1000,10000,CSO,Otter Creek,Middlebury
+6.20.19,10000,100000,CSO,Otter Creek,Middlebury
+6.20.19,10000,100000,CSO,Otter Creek,Middlebury
+7.31.19,1000,10000,CSO,Otter Creek,Middlebury
+7.31.19,1000,10000,CSO,Otter Creek,Middlebury
+8.8.19,1000,10000,CSO,Otter Creek,Middlebury
+3.15.19,100,1000,CSO,Winooski,Montpelier
+3.31.19,100,1000,CSO,Winooski,Montpelier
+4.2.19,100,100,Sewage,Winooski,Montpelier
+4.8.19,100,100,CSO,Winooski,Montpelier
+4.8.19,100,1000,CSO,Winooski,Montpelier
+4.9.19,100,100,Partially,Dog River,Montpelier
+4.15.19,100,100,Sewage,Winooski,Montpelier
+4.15.19,10000,100000,CSO,Winooski,Montpelier
+4.15.19,1000,10000,CSO,North Branch,Montpelier
+4.16.19,10000,100000,CSO,Winooski,Montpelier
+4.15.19,1000,10000,CSO,North Branch,Montpelier
+4.19.19,100,100,CSO,Winooski,Montpelier
+4.20.19,1000,10000,CSO,Winooski,Montpelier
+4.20.19,1000,10000,CSO,Winooski,Montpelier
+4.26.19,1000,10000,CSO,Winooski,Montpelier
+4.26.19,1000,10000,CSO,Winooski,Montpelier
+4.28.19,100,1000,CSO,Winooski,Montpelier
+5.13.19,100,1000,CSO,Winooski,Montpelier
+5.19.19,100,1000,CSO,Winooski,Montpelier
+5.19.19,10000,100000,CSO,Winooski,Montpelier
+5.19.19,10000,100000,CSO,Winooski,Montpelier
+6.5.19,1000,10000,CSO,Winooski,Montpelier
+6.5.19,1000,10000,CSO,Winooski,Montpelier
+6.5.19,100,1000,CSO,North Branch,Montpelier
+6.20.19,100,1000,CSO,Winooski,Montpelier
+6.20.19,100,1000,CSO,Winooski,Montpelier
+6.20.19,100,1000,CSO,Winooski,Montpelier
+6.20.19,100,1000,CSO,North Branch,Montpelier
+6.25.19,100,1000,CSO,Winooski,Montpelier
+8.6.19,100,1000,CSO,Winooski,Montpelier
+8.6.19,100,1000,CSO,North Branch,Montpelier
+8.6.19,100,1000,CSO,North Branch,Montpelier
+8.6.19,100,1000,CSO,Winooski,Montpelier
+8.6.19,100,1000,CSO,North Branch,Montpelier
+8.8.19,100,1000,CSO,Winooski,Montpelier
+8.8.19,100,1000,CSO,Winooski,Montpelier
+8.6.19,1000,10000,CSO,Dog Rive,Northfield
+1.24.19,1000,10000,Sewage,Otter Creek,Proctor
+4.15.19,1000,10000,Sewage,Otter Creek,Proctor
+4.20.19,1000,10000,Sewage,Otter Creek,Proctor
+2.15.19,10000,100000,Partially,Otter Creek,Pittsford
+3.15.19,100,1000,Sewage,Lake Champlain,Shelburne
+3.24.19,100,1000,Sewage,Lake Champlain,Shelburne
+1.24.19,10000,100000,CSO,Stevens Brook,St Albans City
+4.3.19,1000000,1000000,Partially,Stevens Brook,St Albans City
+2.6.19,1000000,1000000,Partially,Stevens Brook,St Albans City
+5.10.19,1000000,1000000,CSO,Stevens Brook,St Albans City
+7.30.19,10000,100000,CSO,Stevens Brook,St Albans City
+7.31.19,10000,100000,CSO,Stevens Brook,St Albans City
+8.8.19,10000,100000,CSO,Stevens Brook,St Albans City
+8.8.19,100000,500000,CSO,Stevens Brook,St Albans City
+1.24.19,167900,167900,CSO,Otter Creek,Vergennes
+2.5.19,79800,79800,CSO,Otter Creek,Vergennes
+4.27.19,77400,77400,CSO,Otter Creek,Vergennes
+6.5.19,183900,183900,CSO,Otter Creek,Vergennes
+6.20.19,207700,207700,CSO,Otter Creek,Vergennes
+1.16.19,10000,100000,Sewage,Otter Creek,Wallingford
+5.2.19,10000,100000,Partially,Clarendon River,West Rutland
+1.12.18,"161,000","161,000",CSO,Otter Creek,Rutland
+1.12.18,"84,000","84,000",CSO,Otter Creek,Rutland
+1.12.18,"84,000","84,000",CSO,Otter Creek,Rutland
+1.12.18,"31,500","31,500",CSO,Otter Creek,Rutland
+1.12.18,"80,000","80,000",CSO,Otter Creek,Rutland
+1.12.18,"63,000","63,000",CSO,Otter Creek,Rutland
+1.12.18,"52,500","52,500",CSO,Otter Creek,Rutland
+1.12.18,"204,000","204,000",CSO,Otter Creek,Rutland
+1.12.18,"52,500","52,500",CSO,Otter Creek,Rutland
+1.18.18,"1,000","10,000",Sewage,Otter Creek,Rutland
+1.23.18,"125,300","125,300",CSO,Otter Creek,Rutland
+1.23.18,"106,400","106,400",CSO,Otter Creek,Rutland
+1.23.18,"18,200","18,200",CSO,Otter Creek,Rutland
+1.23.18,"95,200","95,200",CSO,Otter Creek,Rutland
+2.16.2018,"3,586","3,586",CSO,Otter Creek,Rutland
+2.21.2018,"212,852","212,852",CSO,Otter Creek,Rutland
+2.21.2018,"99,312","99,312",CSO,Otter Creek,Rutland
+5.4.18,"939,850","939,850",CSO,East Creek,Rutland
+5.4.18,"257,336","257,336",CSO,East Creek,Rutland
+5.4.18,"520,000","520,000",CSO,East Creek,Rutland
+5.4.18,"600,000","600,000",CSO,Otter Creek,Rutland
+5.4.18,"24,500","24,500",CSO,East Creek,Rutland
+5.22.18,"1,728","1,728",CSO,East Creek,Rutland
+5.26.18,"3,530","3,530",CSO,East Creek,Rutland
+6.13.18,"549,795","549,795",CSO,East Creek,Rutland
+6.13.18,"29,396","29,396",CSO,East Creek,Rutland
+6.13.18,"345,495","345,495",CSO,East Creek,Rutland
+6.13.18,"669,152","669,152",CSO,East Creek,Rutland
+6.18.18,"41,816","41,816",CSO,East Creek,Rutland
+6.18.18,220,220,CSO,East Creek,Rutland
+6.23.18,"8,000","8,000",CSO,East Creek,Rutland
+6.23.18,"120,858","120,858",CSO,East Creek,Rutland
+6.23.18,"50,000","50,000",CSO,East Creek,Rutland
+6.23.18,"90,000","90,000",CSO,Otter Creek,Rutland
+6.23.18,"475,557","475,557",CSO,East Creek,Rutland
+6.27.18,"41,643","41,643",CSO,East Creek,Rutland
+6.27.18,"9,025","9,025",CSO,East Creek,Rutland
+6.28.18,"36,534","36,534",CSO,East Creek,Rutland
+6.28.18,"163,424","163,424",CSO,East Creek,Rutland
+6.28.18,"64,009","64,009",CSO,East Creek,Rutland
+7.06.18,"294,900","294,900",CSO,East Creek,Rutland
+7.06.18,"33,258","33,258",CSO,East Creek,Rutland
+7.06.18,"208,206","208,206",CSO,Otter Creek,Rutland
+7.06.18,"12,326","12,326",CSO,East Creek,Rutland
+7.10.18,"94,180","94,180",CSO,East Creek,Rutland
+7.10.18,"1,530","1,530",CSO,East Creek,Rutland
+7.23.18,"435,000","435,000",CSO,Otter Creek,Rutland
+7.23.18,"198,719","198,719",CSO,East Creek,Rutland
+7.23.18,"3,368,463","3,368,463",CSO,East Creek,Rutland
+7.23.18,"3,119,279","3,119,279",CSO,East Creek,Rutland
+7.25.18,"70,043","70,043",CSO,East Creek,Rutland
+7.26.18,"60,000","60,000",CSO,Otter Creek,Rutland
+7.26.18,857,857,CSO,East Creek,Rutland
+7.26.18,"99,060","99,060",CSO,East Creek,Rutland
+7.26.18,"62,710","62,710",CSO,East Creek,Rutland
+7.26.18,"40,000","40,000",CSO,Otter Creek,Rutland
+7.26.18,"137,188","137,188",CSO,East Creek,Rutland
+7.26.18,"44,826","44,826",CSO,East Creek,Rutland
+8.4.18,"955,581","955,581",CSO,East Creek,Rutland
+8.4.18,"1,521,047","1,521,047",CSO,Otter Creek,Rutland
+8.4.18,"686,036","686,036",CSO,East Creek,Rutland
+8.7.18,"998,558","998,558",CSO,East Creek,Rutland
+8.7.18,"691,006","691,006",CSO,Otter Creek,Rutland
+8.7.18,"32,317","32,317",CSO,East Creek,Rutland
+8.7.18,"647,847","647,847",CSO,East Creek,Rutland
+8.14.18,"2,673","2,673",CSO,East Creek,Rutland
+8.17.18,"96,172","96,172",CSO,East Creek,Rutland
+8.17.18,"189,089","189,089",CSO,Otter Creek,Rutland
+8.18.18,"346,249","346,249",CSO,Otter Creek,Rutland
+8.18.18,"37,505","37,505",CSO,East Creek,Rutland
+8.18.18,"283,280","283,280",CSO,East Creek,Rutland
+9.6.18,"18,557","18,557",CSO,East Creek,Rutland
+9.6.18,"96,681","96,681",CSO,Otter Creek,Rutland
+9.6.18,"380,416","380,416",CSO,East Creek,Rutland
+9.6.18,"224,985","224,985",CSO,East Creek,Rutland
+9.11.18,"38,330","38,330",CSO,East Creek,Rutland
+9.11.18,"86,588","86,588",CSO,Otter Creek,Rutland
+9.11.18,"3,120","3,120",CSO,East Creek,Rutland
+9.11.18,"41,684","41,684",CSO,East Creek,Rutland
+9.26.18,"31,656","31,656",CSO,East Creek,Rutland
+9.26.18,"565,450","565,450",CSO,East Creek,Rutland
+9.26.18,"368,091","368,091",CSO,East Creek,Rutland
+9.26.18,"235,136","235,136",CSO,Otter Creek,Rutland
+10.07.18,619,619,CSO,East Creek,Rutland
+10.07.18,"70,323","70,323",CSO,East Creek,Rutland
+10.07.18,"29,695","29,695",CSO,Otter Creek,Rutland
+10.11.18,"81,832","81,832",CSO,Otter Creek,Rutland
+10.11.18,"4,938","4,938",CSO,East Creek,Rutland
+10.11.18,"26,959","26,959",CSO,East Creek,Rutland
+10.11.18,"90,710","90,710",CSO,Otter Creek,Rutland
+10.11.18,"102,122","102,122",CSO,East Creek,Rutland
+11.02.18,"4,400","4,400",CSO,Otter Creek,Rutland
+11.02.18,"9,300","9,300",CSO,East Creek,Rutland
+11.03.18,"458,922","458,922",CSO,Otter Creek,Rutland
+11.03.18,"285,154","285,154",CSO,East Creek,Rutland
+11.03.18,"696,269","696,269",CSO,East Creek,Rutland
+11.03.18,"8,215","8,215",CSO,East Creek,Rutland
+4.5.18,"1,000,000","1,000,000",partially disinfected,Neshobe,Brandon
+4.5.18,"100,000","500,000",sewage,Neshobe,Brandon
+5.4.18,"10,000","100,000",undisinfected,Neshobe,Brandon
+8.9.18,"100,000","500,000",partially disinfected,Neshobe,Brandon
+1.12.18,"10,000","100,000",CSO,Lake Champlain,Burlington
+4.16.18,"7,138,000","7,138,000",partially disinfected,Lake Champlain,Burlington
+4.16.18,"10,000","100,000",CSO,Lake Champlain,Burlington
+5.21.18,500,500,sewage,Lake Champlain,Burlington
+6.1.18,"700,000","700,000",partially disinfected,Lake Champlain,Burlington
+6.4.18,"1,100,000","1,100,000",partially disinfected,Lake Champlain,Burlington
+6.18.18,"120,000","120,000",sewage,Pine Street Barge Canal,Burlington
+6.18.18,"25,000","25,000",sewage,Pine Street Barge Canal,Burlington
+6.18.18,200,200,CSO,Winooski,Burlington
+7.10.18,"3,000,000","3,000,000",undisinfected,Lake Champlain,Burlington
+7.25.18,"14,397","14,397",CSO,Intervale Wetlands,Burlington
+8.7.18,"15,250","15,250",CSO,Pine Street Barge Canal,Burlington
+8.24.18,"10,000","100,000",partially disinfected,Winooski,Burlington
+9.6.18,"74,581","74,581",CSO,Pine Street Barge Canal,Burlington
+9.21.18,"89,100","89,100",CSO,Pine Street Barge Canal,Burlington
+9.26.18,"300,000","300,000",CSO,Pine Street Barge Canal,Burlington
+10.11.18,"10,000","100,000",CSO,Pine Street Barge Canal,Burlington
+2.9.18,"10,000","100,000",partially disinfected,Castleton,Fair Haven
+7.16.18,"10,000","20,000",partially disinfected,Castleton,Fair Haven
+1.12.18,"1,000","10,000",CSO,Otter Creek,Middlebury
+1.12.18,"1,000","10,000",CSO,Otter Creek,Middlebury
+1.12.18,100,"1,000",CSO,Winooski,Montpelier
+1.12.18,100,"1,000",CSO,Winooski,Montpelier
+1.12.18,100,"1,000",CSO,Winooski,Montpelier
+1.12.18,100,"1,000",CSO,Winooski,Montpelier
+1.12.18,100,"1,000",CSO,Winooski,Montpelier
+1.12.18,100,"1,000",CSO,Winooski,Montpelier
+2.21.2018,100,"1,000",CSO,Winooski,Montpelier
+2.21.2018,100,"1,000",CSO,Winooski,Montpelier
+2.21.2018,100,"1,000",CSO,Winooski,Montpelier
+3.30.2018,"1,000","10,000",CSO,Winooski ,Montpelier
+4.17.18,100,"1,000",CSO,Winooski,Montpelier
+4.17.18,100,"1,000",CSO,Winooski,Montpelier
+4.30.18,100,"1,000",CSO,Winooski,Montpelier
+4.30.18,100,"1,000",CSO,Winooski,Montpelier
+6.18.18,100,"1,000",CSO,North Branch,Montpelier
+6.18.18,100,"1,000",CSO,North Branch,Montpelier
+6.18.19,100,"1,000",CSO,Winooski,Montpelier
+6.18.20,100,"1,000",CSO,Winooski,Montpelier
+9.11.18,100,"1,000",CSO,North Branch,Montpelier
+9.11.18,100,"1,000",CSO,Winooski,Montpelier
+11.02.18,100,"1,000",CSO,Winooski,Montpelier
+11.03.18,100,"1,000",CSO,Winooski,Montpelier
+11.03.18,100,"1,000",CSO,Winooski,Montpelier
+6.18.18,100,"1,000",CSO,Dog River,Northfield
+7.06.18,100,"1,000",CSO,Dog River,Northfield
+7.06.18,100,"1,000",CSO,Dog River,Northfield
+7.23.18,100,"1,000",CSO,Dog River,Northfield
+9.6.18,100,"1,000",CSO,Dog River,Northfield
+10.10.18,"10,000","100,000",partially disinfected,Dog River,Northfield
+1.25.2018,"100,000","500,000",Partially disinfected,Mississquoi River,North Troy
+4.5.18,"1,000","10,000",partially disinfected,Indian River,Pawlet
+4.30.18,100,"1,000",partially disinfected,Otter Creek,Pittsford
+2.22.2018,"100,000","500,000",partially disinfected,Lake Champlain,Shelburne
+5.4.18,"10,000","100,000",sewage,Laplatte,Shelburne
+1.12.18,"1,000,000","1,000,000",CSO,Stevens Brook,St Albans City
+11.03.18,"10,000","100,000",CSO,Stevens Brook,St Albans City
+1.12.18,"743,600","743,600",CSO,Otter Creek,Vergennes
+5.4.18,"23,000","23,000",CSO,Otter Creek,Vergennes
+8.15.18,"26,000","26,000",CSO,Otter Creek,Vergennes
+11.03.18,"64,300","64,300",CSO,Otter Creek,Vergennes
+1.13.8,"10,000","100,000",sewage,Otter Creek,Wallingford
+6.8.18,"1,000","10,000",sewage,Allen Brook,Williston
+2.25.17,"35,200","35,200",CSO,East Creek,Rutland
+2.25.17,151900,151900,CSO,Otter Creek,Rutland
+2.25.17,151900,151900,CSO,East Creek,Rutland
+2.25.17,151900,151900,CSO,East Creek,Rutland
+4.1.17,"11,550","11,550",CSO,East Creek,Rutland
+4.1.17,"11,550","11,550",CSO,East Creek,Rutland
+4.4.17,"56,000",56000,CSO,East Creek,Rutland
+4.4.17,"56,000","56,000",CSO,East Creek,Rutland
+4.4.17,"22,400","22,400",CSO,East Creek,Rutland
+4.4.17,"115,000","115,000",CSO,Otter Creek,Rutland
+4.4.17,"62,990","62,990",CSO,Otter Creek,Rutland
+5.1.17,"91,000","91,000",CSO,East Creek,Rutland
+5.1.17,"56,000","56,000",CSO,East Creek,Rutland
+5.1.17,"56,000","56,000",CSO,Otter Creek,Rutland
+5.1.17,"56,000","56,000",CSO,East Creek,Rutland
+5.22.17,"56,000","56,000",CSO,Otter Creek,Rutland
+5.22.17,"31,500","31,500",CSO,East Creek,Rutland
+5.22.17,"24,000","24,000",CSO,East Creek,Rutland
+5.22.17,"31,500","31,500",CSO,East Creek,Rutland
+5.25.17,"24,500","24,500",CSO,East Creek,Rutland
+5.25.17,"24,500","24,500",CSO,Otter Creek,Rutland
+5.25.17,"33,600","33,600",CSO,East Creek,Rutland
+5.25.17,"24,500","24,500",CSO,East Creek,Rutland
+6.19.17,"97,300","97,300",CSO,East Creek,Rutland
+6.19.17,"97,300","97,300",CSO,Otter Creek,Rutland
+6.19.17,"97,300","97,300",CSO,East Creek,Rutland
+6.19.17,"150,400","150,400",CSO,East Creek,Rutland
+6.19.17,"97,300","97,300",CSO,East Creek,Rutland
+6.19.17,"97,300","97,300",CSO,East Creek,Rutland
+6.19.17,"97,300","97,300",CSO,Otter Creek,Rutland
+6.20.17,"25,600","25,600",CSO,East Creek,Rutland
+6.26.17,"19,200","19,200",CSO,East Creek,Rutland
+6.30.17,"12,800","12,800",CSO,East Creek,Rutland
+7.1.17,"86,100","86,100",CSO,East Creek,Rutland
+7.1.17,"62,400","62,400",CSO,East Creek,Rutland
+7.1.17,"86,100","86,100",CSO,Otter Creek,Rutland
+7.1.17,"86,100","86,100",CSO,East Creek,Rutland
+7.7.17,"36,000","36,000",CSO,East Creek,Rutland
+7.7.17,"21,000","21,000",CSO,East Creek,Rutland
+7.7.17,"21,000","21,000",CSO,East Creek,Rutland
+7.7.17,"21,000","21,000",CSO,Otter Creek,Rutland
+7.8.17,"24,500","24,500",CSO,East Creek,Rutland
+7.8.17,"17,000","17,000",CSO,East Creek,Rutland
+7.8.17,"24,500","24,500",CSO,East Creek,Rutland
+7.8.17,"24,500","24,500",CSO,Otter Creek,Rutland
+7.13.17,"78,400","78,400",CSO,East Creek,Rutland
+7.13.17,"78,400","78,400",CSO,East Creek,Rutland
+7.13.17,"59,200","59,200",CSO,East Creek,Rutland
+7.13.17,"78,400","78,400",CSO,Otter Creek,Rutland
+7.17.17,"6,000","6,000",CSO,Otter Creek,Rutland
+7.27.17,"14,000","14,000",CSO,East Creek,Rutland
+7.27.17,"14,000","14,000",CSO,Otter Creek,Rutland
+7.27.17,"12,800","12,800",CSO,East Creek,Rutland
+7.27.17,"14,000","14,000",CSO,East Creek,Rutland
+8.5.17,"300,000","300,000",Discharged sewage,East Creek,Rutland
+8.5.17,"300,000","300,000",Discharged sewage,Otter Creek,Rutland
+8.5.17,"300,000","300,000",Discharged sewage,East Creek,Rutland
+8.9.17,"20,300","20,300",CSO,East Creek,Rutland
+8.9.17,"20,300","20,300",CSO,East Creek,Rutland
+8.9.17,"20,300","20,300",CSO,Otter Creek,Rutland
+8.9.17,"25,600","25,600",CSO,East Creek,Rutland
+8.18.17,"7,500","7,500",CSO,East Creek,Rutland
+8.19.17,"1,000","10,000",CSO,East Creek,Rutland
+8.19.17,"18,000","18,000",CSO,Otter Creek,Rutland
+8.19.17,"19,800","19,800",CSO,East Creek,Rutland
+8.19.17,"1,000","10,000",CSO,East Creek,Rutland
+8.19.17,"44,800","44,800",CSO,East Creek,Rutland
+8.22.17,"38,500","38,500",CSO,East Creek,Rutland
+8.22.17,"88,000","88,000",CSO,East Creek,Rutland
+8.22.17,"46,900","46,900",CSO,Otter Creek,Rutland
+8.22.17,"52,500","52,500",CSO,East Creek,Rutland
+8.22.17,"37,800","37,800",CSO,East Creek,Rutland
+9.3.17,"10,000","10,000",CSO,Otter Creek,Rutland
+10.09.17,"27,000","27,000",CSO,East Creek,Rutland
+10.09.17,"45,500","45,500",CSO,East Creek,Rutland
+10.9.17,"11,500","11,500",CSO,Otter Creek,Rutland
+10.9.17,"10,000","10,000",CSO,East Creek,Rutland
+10.24.17,"32,000","32,000",CSO,East Creek,Rutland
+10.24.17,"38,500","38,500",CSO,East Creek,Rutland
+10.24.17,"36,000","36,000",CSO,East Creek,Rutland
+10.24.17,"18,000","18,000",CSO,East Creek,Rutland
+10.24.17,"38,500","38,500",CSO,Otter Creek,Rutland
+10.26.17,"45,000","45,000",CSO,East Creek,Rutland
+10.26.17,"31,500","31,500",CSO,East Creek,Rutland
+10.26.17,"21,000","21,000",CSO,Otter Creek,Rutland
+10.29.17,"16,100","16,100",CSO,East Creek,Rutland
+10.29.17,"46,200","46,200",CSO,East Creek,Rutland
+10.30.17,"105,000","105,000",CSO,Otter Creek,Rutland
+11.21.17,1,1,sewage  'sanitary',Edgewood Brook,Barre City
+1.27.17,1,100,sewage,Winooski River,Burlington
+2.26.17,"10,000","100,000",sewage,Pine St Barge Canal,Burlington
+3.31.17,"1,000,000","1,000,000",partially disinfected ,Lake Champlain,Burlington
+5.31.17,"10,000","100,000",Discharged untreated sewage,Pine Street Barge Canal,Burlington
+6.19.17,"10,000","100,000",Discharged untreated sewage,Pine St Barge Canal,Burlington
+6.23.17,"10,000","100,000",Discharged untreated sewage,,Burlington
+6.29.17,"500,000","1,000,000",Discharged untreated sewage,Pine St Barge Canal,Burlington
+6.29.170,"1,000","10,000",CSO,Winooski River,Burlington
+7.8.17,"1,000","10,000",CSO,Intervale Wetlands,Burlington
+7.17.17,"10,000","100,000",Discharged untreated sewage,Pine Street Barge Canal,Burlington
+8.22.17,"10,000","100,000",Discharged untreated sewage,Pine Street Barge Canal,Burlington
+3.15.17,"100,000","500,000",partially disinfected,Winooski river,Essex Junciton
+3.16.17,"100,000","500,000",partially disinfected,Winooski river,Essex Junciton
+8.24.17,100,1000,Discharged untreated sewage,Indian Brook,Essex Junciton
+12.12.17,100,1000,Discharged untreated sewage,Indian Brook,Essex Junciton
+12.05.17,1,1,sewage,Lamoille,Hyde Park
+2.6.17,"1,000","10,000",sewage,Lamoille River,Jeffersonville
+2.27.17,100,1000,sewage,Brewster River,Jeffersonville
+2.25.17,"1,000","10,000",CSO,Otter Creek,Middlebury
+6.23.17,"1,000","10,000",CSO,Otter Creek,Middlebury
+6.30.17,100,"1,000",CSO,Otter Creek,Middlebury
+6.30.17,100,"1,000",CSO,Otter Creek,Middlebury
+7.1.17,"1,000","10,000",CSO,Otter Creek,Middlebury
+7.1.17,"1,000","10,000",CSO,Otter Creek,Middlebury
+7.1.17,"1,000","10,000",CSO,Otter Creek,Middlebury
+3.11.17,3600,3600,sewage,Lamoille river,Milton
+2.25.17,100,1000,CSO,North Branch,Montpelier
+2.25.17,100,1000,CSO,Winooski River,Montpelier
+2.25.17,100,1000,CSO,Winooski River,Montpelier
+2.25.17,100,1000,CSO,Winooski River,Montpelier
+2.25.17,100,1000,CSO,North Branch,Montpelier
+4.4.17,100,"1,000",CSO,Winooski river,Montpelier
+4.7.17,"1,000","10,000",CSO,Winooski River,Montpelier
+4.7.17,100,"1,000",CSO,Winooski River,Montpelier
+4.7.17,100,"1,000",CSO,North Branch,Montpelier
+4.7.17,100,"1,000",CSO,Winooski River,Montpelier
+4.7.17,100,"1,000",sewage,Winooski River,Montpelier
+6.5.17,100,"1,000",sewage,Winooski River,Montpelier
+6.6.17,100,"1,000",CSO,Winooski River,Montpelier
+6.6.17,100,"1,000",CSO,Winooski River,Montpelier
+6.6.17,100,"1,000",sewage,Winooski River,Montpelier
+6.23.17,100,"1,000",CSO,Winooski River,Montpelier
+6.23.17,100,"1,000",CSO,Winooski River,Montpelier
+6.23.17,100,"1,000",CSO,Winooski River,Montpelier
+6.23.17,100,"1,000",CSO,Winooski River,Montpelier
+6.23.17,100,"1,000",CSO,Winooski River,Montpelier
+6.23.17,100,"1,000",CSO,Winooski River,Montpelier
+6.23.17,100,"1,000",CSO,Winooski River,Montpelier
+6.23.17,100,"1,000",CSO,Winooski River,Montpelier
+6.29.17,100,"1,000",CSO,Winooski River,Montpelier
+6.29.17,100,"1,000",CSO,North Branch,Montpelier
+6.29.17,100,"1,000",CSO,North Branch,Montpelier
+6.29.17,"1,000","10,000",CSO,Winooski River,Montpelier
+7.1.17,100,"1,000",CSO,North Branch,Montpelier
+7.1.17,"1,000","10,000",CSO,Winooski River,Montpelier
+7.1.17,"1,000","10,000",CSO,Winooski River,Montpelier
+7.1.17,100,"1,000",CSO,North Branch,Montpelier
+7.1.17,100,"1,000",CSO,Winooski River,Montpelier
+7.17.17,100,"1,000",CSO,Winooski River,Montpelier
+7.17.17,100,"1,000",CSO,Winooski River,Montpelier
+7.17.17,100,"1,000",CSO,Winooski River,Montpelier
+7.17.17,100,"1,000",CSO,North Branch,Montpelier
+7.17.17,100,"1,000",CSO,North Branch,Montpelier
+8.3.17,100,"1,000",CSO,North Branch,Montpelier
+8.3.17,100,"1,000",CSO,North Branch,Montpelier
+8.3.17,100,"1,000",CSO,Winooski River,Montpelier
+8.3.17,100,"1,000",CSO,North Branch,Montpelier
+8.18.17,100,"1,000",CSO,Winooski River,Montpelier
+8.18.17,100,"1,000",CSO,Winooski River,Montpelier
+10.04.17,100,"1,000",CSO,Winooski River,Montpelier
+10.30.17,"1,000","10,000",CSO,Winooski River,Montpelier
+8.3.17,100,1000,sewage,Dog River,Northfield
+3.30.17,1,1,sewage,Missisquoi River,North Troy
+4.05.17,"10,000","100,000",partially disinfected ,Missisquoi River,North Troy
+4.11.17,1,1,partially disinfected ,Missisquoi River,North Troy
+1.5.17,1,1,sewage,Intervale Wetlands,Private
+3.30.17,100,1000,untreated sewage,Missisquoi River,Richford
+3.30.17,100,"1,000", sewage,LaPlatte,Shelburne
+4.11.17,"10,000","100,000", sewage,Munroe Brook,Shelburne
+8.19.17,"10,000","100,000",partially disinfected,McCabe's Brook,Shelburne
+9.19.17,100,"1,000",sewage,LaPlatte,Shelburne
+2.25.17,1000000,"1,000,000",CSO,Stevens Brook,St Albans City
+4.6.17,"1,000,000","1,000,000",CSO,Stevens Brook,St Albans City
+6.23.17,"1,000","10,000",CSO,Stevens Brook,St Albans City
+6.24.17,"100,000","500,000",CSO,Stevens Brook,St Albans City
+6.29.17,"100,000","500,000",CSO,Stevens Brook,St Albans City
+8.31.17,"1,000,000","1,000,000",CSO,Stevens Brook,St Albans City
+12.01.17,1,1,gasoline,Lake Champlain,South Hero
+2.25.17,331900,331900,CSO,Otter Creek ,Vergennes
+4.6.17,"60,500","60,500",CSO,Otter Creek ,Vergennes
+8.12.17,"111,700","111,700",CSO,Otter Creek ,Vergennes
+4.17.17,1,1,sewage,Indian River,West Pawlet
+1.5.17,"1,000","10,000",partially disinfected,Clarenden River,West Rutland
+5.25.17,10000,100000,Discharged treated and partly disinfected effluent,Clarendon River,West Rutland
+5.3.17,1,1,partially disinfected,Stevens Branch,Williamstown
+1.10.16,"100,000","500,000",CSO,East Creek,Rutland
+1.10.16,"100,000","500,000",CSO,East Creek,Rutland
+1.10.16,"100,000","500,000",CSO,East Creek,Rutland
+1.10.16,"100,000","500,000",CSO,Otter Creek,Rutland
+1.10.16,"10,000","100,000",CSO,East Creek,Rutland
+1.25.16,"2,700","2,700",discharged Untreated sewage,East Creek,Rutland
+2.03.16,"100,000","500,000",CSO,East Creek,Rutland
+2.03.16,"10,000","100,000",CSO,East Creek,Rutland
+2.03.16,"10,000","100,000",CSO,East Creek,Rutland
+2.03.16,"10,000","100,000",CSO,East Creek,Rutland
+2.03.16,"10,000","100,000",CSO,Otter Creek,Rutland
+2.03.16,"10,000","100,000",CSO,East Creek,Rutland
+2.03.16,"10,000","100,000",CSO,Otter Creek,Rutland
+2.16.16,"10,000","100,000",CSO,East Creek,Rutland
+2.16.16,"10,000","100,000",CSO,East Creek,Rutland
+2.16.16,"10,000","100,000",CSO,Otter Creek,Rutland
+2.16.16,"10,000","100,000",CSO,East Creek,Rutland
+2.24.16,"10,000","100,000",CSO,East Creek,Rutland
+2.25.16,"100,000","500,000",CSO,Otter Creek,Rutland
+2.25.16,"100,000","500,000",CSO,East Creek,Rutland
+2.25.16,"100,000","500,000",CSO,East Creek,Rutland
+2.25.16,"100,000","500,000",CSO,East Creek,Rutland
+2.25.16,"10,000","100,000",CSO,East Creek,Rutland
+2.25.16,"100,000","500,000",CSO,Otter Creek,Rutland
+2.25.16,"1,000","10,000",CSO,East Creek,Rutland
+2.25.16,"100,000","500,000",CSO,East Creek,Rutland
+2.25.16,"100,000","500,000",CSO,East Creek,Rutland
+2.25.16,"100,000","500,000",CSO,East Creek,Rutland
+3.16.16,"10,000","100,000",CSO,East Creek,Rutland
+3.16.16,"10,000","100,000",CSO,East Creek,Rutland
+3.16.16,"10,000","100,000",CSO,East Creek,Rutland
+3.16.16,"10,000","100,000",CSO,Otter Creek,Rutland
+5.13.16,"1,000","10,000",CSO,East Creek,Rutland
+5.13.16,"10,000","100,000",CSO,Otter Creek,Rutland
+5.13.16,"10,000","100,000",CSO,East Creek,Rutland
+5.13.16,"10,000","100,000",CSO,East Creek,Rutland
+5.31.16,"1,000","10,000",CSO,East Creek,Rutland
+6.5.16,"10,000","100,000",CSO,East Creek,Rutland
+6.5.16,"10,000","100,000",CSO,Otter Creek,Rutland
+6.5.16,"10,000","100,000",CSO,East Creek,Rutland
+6.5.16,"10,000","100,000",CSO,East Creek,Rutland
+6.5.16,"10,000","100,000",CSO,East Creek,Rutland
+6.5.16,"10,000","100,000",CSO,Otter Creek,Rutland
+6.5.16,"10,000","100,000",CSO,East Creek,Rutland
+6.7.16,"10,000","100,000",CSO,Otter Creek,Rutland
+6.7.16,"10,000","100,000",CSO,East Creek,Rutland
+6.7.16,"10,000","100,000",CSO,East Creek,Rutland
+6.7.16,"10,000","100,000",CSO,East Creek,Rutland
+6.22.16,"10,000","100,000",Discharged partially treated undisinfected sewage,Steven's Brook,Rutland
+6.29.16,"10,000","100,000",CSO,East Creek,Rutland
+7.1.16,"10,000","100,000",CSO,Otter Creek,Rutland
+7.1.16,"10,000","100,000",CSO,East Creek,Rutland
+7.1.16,"10,000","100,000",CSO,East Creek,Rutland
+7.1.16,"100,000","500,000",CSO,East Creek,Rutland
+7.14.16,10000,"100,000",CSO,East Creek,Rutland
+7.23.16,"1,000","10,000",CSO,East Creek,Rutland
+8.1.16,"1,000","10,000",CSO,East Creek,Rutland
+8.10.16,"10,000","100,000",CSO,Otter Creek,Rutland
+8.10.16,"10,000","100,000",CSO,East Creek,Rutland
+8.10.16,"10,000","100,000",CSO,East Creek,Rutland
+8.10.16,"1,000","10,000",CSO,East Creek,Rutland
+8.13.16,"10,000","100,000",CSO,East Creek,Rutland
+8.21.16,"10,000","100,000",CSO,East Creek,Rutland
+8.21.16,"10,000","100,000",CSO,East Creek,Rutland
+8.21.16,"10,000","100,000",CSO,Otter Creek,Rutland
+8.21.16,"10,000","100,000",CSO,East Creek,Rutland
+9.11.16,"10,000","100,000",CSO,East Creek,Rutland
+9.11.16,"10,000","100,000",CSO,East Creek,Rutland
+9.11.16,"10,000","100,000",CSO,Otter Creek,Rutland
+9.11.16,"10,000","100,000",CSO,Otter Creek,Rutland
+9.19.16,"168,000","168,000",CSO,East Creek,Rutland
+9.19.16,"71,400","71,400",CSO,East Creek,Rutland
+9.19.16,"71,400","71,400",CSO,Otter Creek,Rutland
+10.21.16,"100,000","500,000",CSO,East Creek,Rutland
+10.21.16,"100,000","500,000",CSO,East Creek,Rutland
+10.21.16,"100,000","500,000",CSO,Otter Creek,Rutland
+10.21.16,"100,000","500,000",CSO,East Creek,Rutland
+11.03.16,"33,600","33,600",CSO,East Creek,Rutland
+11.03.16,"35,700","35,700",CSO,East Creek,Rutland
+11.03.16,"35,700","35,700",CSO,East Creek,Rutland
+11.03.16,"35,700","35,700",CSO,Otter Creek,Rutland
+12.18.16,"28,000","28,000",CSO,Otter Creek,Rutland
+12.18.16,"28,000","28,000",CSO,East Creek,Rutland
+12.18.16,"28,000","28,000",CSO,East Creek,Rutland
+1.10.16,92400,"92,400",CSO,Otter Creek,Vergennes
+2.03.16,20100,"20,100",CSO,Otter Creek,Vergennes
+ 2.16.16,61300,"61,300",CSO,Otter Creek,Vergennes
+2.25.16,259300,"259,300",CSO,Otter Creek,Vergennes
+3.10.16,5200,"5,200",CSO,Otter Creek,Vergennes
+06.5.16,1300,"1,300",CSO,Big Otter Creek,Vergennes
+07.7.16,7600,"7,600",CSO,Otter Creek,Vergennes
+02.16.16,1000,10000,CSO,Pine St Barge Canal,Burlington
+02.24.16,1000,10000,CSO,Pine St Barge Canal,Burlington
+02.25.16,10000,100000,CSO,Pine St Barge Canal,Burlington
+ 03.30.16,100,1000,Discharged untreated sewage,Pine St Barge Canal,Burlington
+05.12.16,150,175,fuel,North Brook,Burlington
+06.05.16,1000,10000,CSO,Pine St Barge Canal,Burlington
+07.14.16,1000,10000,CSO,Pine St Barge Canal,Burlington
+07.14.16,100,1000,CSO,Intervale wetlands,Burlington
+06.09.16,1,1,fire suppressant foam,Lake Champlain,Burlington
+9.11.16,"1,000","10,000",CSO,Pine St Barge Canal,Burlington
+ 2.25.16,1000,10000,CSO,Winooski river,Montpelier
+ 2.25.16,1000,10000,CSO,Winooski river,Montpelier
+ 2.25.16,1000,10000,CSO,Winooski river,Montpelier
+ 2.25.16,1000,10000,CSO,Winooski river,Montpelier
+06.07.16,1,1,sewage,Winooski river,Montpelier
+8.13.16,10000,100000,CSO,Winooski river,Montpelier
+8.13.17,10000,100000,CSO,Winooski river,Montpelier
+8.13.18,10000,100000,CSO,Winooski river,Montpelier
+8.13.19,10000,100000,CSO,Winooski river,Montpelier
+8.17.16,100,"1,000",CSO,Winooski river,Montpelier
+8.17.16,100,"1,000",CSO,Winooski river,Montpelier
+8.17.16,100,"1,000",CSO,Winooski river,Montpelier
+8.17.16,100,"1,000",CSO,Winooski river,Montpelier
+8.17.16,100,"1,000",CSO,Winooski river,Montpelier
+8.17.16,100,"1,000",CSO,Winooski river,Montpelier
+9.07.16,1,1,sewage,Winooski river,Montpelier
+02.04.16 ,1000,10000,Discharged untreated sewage,Castleton River,Fair Haven
+02.11.16,100,1000,Discharged untreated sewage,Castleton River,Fair Haven
+04.08.16,100000,100000,"Discharged treated, undisenfected sewage",Castleton River,Fair Haven
+07.05.16,1,1,sewage,trib. To Poultney,Fair Haven
+8.30.16,1,1,sewage,Castleton River,Fair Haven
+1.25.16 ,1000,10000,Discharged untreated sewage,Winooski River,Winooski
+5.23.16,100,1000,Discharged untreated sewage,Winooski River,Winooski
+2.25.16,100,1000,CSO,Otter Creek,Middlebury
+2.25.16,1000,10000,CSO,Otter Creek,Middlebury
+0 1.12.16,590000,590000,Failure of Dechlorination System undisinfected sewage,Stevens Branch,Barre City
+08.01.16,1,1,sewage,Edgewood Brook,Barre City
+08.01.16,1,1,sewage,Edgewood Brook,Barre City
+08.01.16,1,1,sewage,Edgewood Brook,Barre City
+08.01.16,1,1,sewage,Gunner's Brook,Barre City
+ 1.5.16,9000,9000,Discharged untreated sewage,Stevens Branch,Private
+2.24.16,100,1000,CSO,Stevens Brook,St Albans City
+6.22.16,10000,100000,"Discharged partially treated, undisinfected sewage",Stevens Brook,St Albans City
+8.21.16,"100,000","500,000",CSO,Stevens Brook,St Albans City
+8.28.16,"100,000","500,000",CSO,Stevens Brook,St Albans City
+8.31.16,"100,000","500,000",CSO,Stevens Brook,St Albans City
+2.26.16,183000,183000,Discharged treated and undisinfected sewage,Lamoille River,Hardwick
+2.26.17,234300,234300,Discharged untreated sewage,Lamoille River,Hardwick
+4.10.16,100,1000,"Discharged, Untreated sewage",Laplatte River,Shelburne
+7.20.16,10000,100000,"Discharged, treated, undisinfected sewage",Shelburne Bay,Shelburne
+7.29.16,100,1000,unstated,LaPlatte River,Shelburne
+9.8.16,"10,000","100,000","Treated, partially disinfected sewage",Shelburne Bay,Shelburne
+7.01.16,100,1000,CSO,Dog River,Northfield
+7.18.16,100,1000,CSO,Dog River,Northfield
+8.12.16,100,1000,CSO,Dog River,Northfield
+05.20.16,25,40,tar,wetland,Orange
+07.01.16,1,1,sewage,tributary to Neshobe,Brandon
+07.01.16,1,1,sewage,tributary to Neshobe,Brandon
+07.26.16,1,1,red coloring substance,Godin Brook,Berkshire
+07.26.16,1,1,sewage,Poultney River,Poultney
+08.22.16,1,1,sewage,Flower Brook,Pawlett
+08.22.16,1,1,sewage,trib Otter Creek,Proctor
+11.03.16,1,1,sewage or agricultural runoff,Sodom Pond Brook,East Montpelier
+12.24.15,"1,000","10,000",CSO,East Creek,Rutland
+12.22.15,"10,000","100,000",CSO,East Creek,Rutland
+11.19.15,"10,000","100,000",CSO,East Creek,Rutland
+10.29.15,"10,000","100,000",CSO,East Creek,Rutland
+10.29.15,"10,000","100,000",CSO,East Creek,Rutland
+10.09.15,"10,000","100,000",CSO,East Creek,Rutland
+09.30.15,"10,000","100,000",CSO,Otter Creek ,Rutland
+09.30.15,"10,000","100,000",CSO,East Creek,Rutland
+09.30.15,"100,000","500,000",CSO,East Creek,Rutland
+09.30.15,"100,000","500,000",CSO,Otter Creek ,Rutland
+09.30.15,"100,000","500,000",CSO,East Creek,Rutland
+09.30.15,"100,000","500,000",CSO,East Creek,Rutland
+09.30.15,"100,000","500,000",CSO,East Creek,Rutland
+09.30.15,"10,000","100,000",CSO,East Creek,Rutland
+09.30.15,"10,000","100,000",CSO,East Creek,Rutland
+09.13.15,"500,000","1,000,000",CSO,Otter Creek and East Creek,Rutland
+09.13.15,100,"1,000",CSO,East Creek,Rutland
+07.30.15,"1,000","10,000",CSO,Otter Creek,Rutland
+07.21.15,"1,000","10,000",CSO,East Creek,Rutland
+07.20.15,"1,000","10,000",CSO,East Creek,Rutland
+06.28.15,"10,000","100,000",CSO,East Creek,Rutland
+06.21.15,"1,000","10,000",CSO,East Creek,Rutland
+06.16.15,100,"1,000",CSO,East Creek,Rutland
+06.06.15,500,500,CSO,East Creek,Rutland
+06.01.15,100,"1,000",CSO,East Creek,Rutland
+05.30.15,100,"1,000",CSO,Otter Creek,Rutland
+05.30.15,100,"1,000",CSO,East Creek,Rutland
+08.07.15,"1,000","10,000",Discharged untreated sewage,East Creek,Rutland
+08.03.15,"100,000","100,000",Discharged untreated sewage,East Creek,Rutland
+10.29.15,"404,400","404,400",CSO,Otter Creek ,Vergennes
+09.30.15,"39,900","39,900",CSO,Otter Creek ,Vergennes
+08.04.15,"48,600","48,600",CSO,Potash Brook & Otter Creek,Vergennes
+07.01.15,"752,00","752,00",CSO,Potash Brook & Otter Creek,Vergennes
+06.23.15,"262,000","262,000",CSO,Potash Brook & Otter Creek,Vergennes
+06.19.15,"24,000","24,000",CSO,Potash Brook & Otter Creek,Vergennes
+06.16.15,"1,280","1,280",CSO,Potash Brook & Otter Creek,Vergennes
+06.09-15,"189,600","189,600",CSO,Potash Brook & Otter Creek,Vergennes
+05.30.15,"237,280","237,280",CSO,Potash Brook & Otter Creek,Vergennes
+09.27.15,"110,000","110,000",Discharged treated and undisinfected effluent,Otter Creek ,Vergennes
+09.30.15,"10,000","100,000",CSO,Winooski River,City of Montpelier
+09.30.15,"10,000","100,000",CSO,Winooski River,City of Montpelier
+09.30.15,"10,000","100,000",CSO,Winooski River,City of Montpelier
+09.30.15,"10,000","100,000",CSO,Winooski River,City of Montpelier
+08.11.15,150,150,CSO,Wetlands contiguous w/ Winooski River,Burlington
+06.12.15,126,126,CSO,Wetlands contiguous w/ Winooski River,Burlington
+05.11.15,126,126,CSO,Wetlands contiguous w/ Winooski River,Burlington
+05.11.15,30,30,CSO,Winooski River,Burlington
+10.29.15,"1,000","10,000",Discharged untreated sewage,Barge Canal,Burlington
+09.29.15,1092,1092,Discharged untreated sewage,Barge Canal,Burlington
+09.13.15,100,"1,000",Discharged untreated sewage,Barge Canal,Burlington
+09.02.15,210/day,210/day,Discharged untreated sewage,Lake Champlain,Burlington
+08.31.15,"3,000","3,000",Discharged untreated sewage,Englesby Brook,Burlington
+08.11.15,1167,1167,Discharged untreated sewage,Barge Canal,Burlington
+07.30.15,1500,1500,CSO,Dog River,Northfield
+07.20.15,100,"1,000",CSO,Dog River,Northfield
+06.01.15,500,500,CSO,Dog River,Northfield
+06.23.15,34,34,CSO,Otter Creek,Middlebury
+06.21.15,7,7,CSO,Otter Creek,Middlebury
+06.09.15,12,12,CSO,Otter Creek,Middlebury
+05.12.15,94,94,CSO,Otter Creek,Middlebury
+06.22.15,"333,600","333,600",CSO,North Branch Stevens Brook,St. Albans
+06.12.15,"1,000","10,000",CSO,Stevens Brook,St. Albans
+06.09.15,"1,000","10,000",CSO,Stevens Brook,St. Albans
+09.27.15,"8,000","8,000",Discharged treated and undisinfected effluent,Stevens Branch,Barre
+08.14.15,"173,000","173,000",Untreated industrial process wastewater,Missisquoi River,Sheldon Springs
+08.05.15,"100,000","500,000",Discharged treated and undisinfected effluent,Otter Creek,Brandon
+07.29.15,"95,000","95,000",Discharged untreated sewage,Macabe's Brook,Shelburne
