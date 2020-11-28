@@ -1,0 +1,318 @@
+Columns from our CSV dataframe:
+['Date', 'Min gal', 'Max gal.', 'Type', 'Receiving Water', 'Location']
+
+Unique receivingWater Values: 
+East Creek
+Otter Creek
+Nashobe
+Pine St. Barge Canal
+Intervale Wetlands
+Winooski
+Indian Brook
+Castleton
+Lamoille River
+Dog River
+North Branch
+Dog Rive
+Lake Champlain
+Stevens Brook
+Clarendon River
+Neshobe
+Pine Street Barge Canal
+Winooski 
+Mississquoi River
+Indian River
+Laplatte
+Allen Brook
+Edgewood Brook
+Winooski River
+Pine St Barge Canal
+nan
+Winooski river
+Lamoille
+Brewster River
+Lamoille river
+Missisquoi River
+LaPlatte
+Munroe Brook
+McCabe's Brook
+Otter Creek 
+Clarenden River
+Stevens Branch
+Steven's Brook
+Big Otter Creek
+North Brook
+Intervale wetlands
+Castleton River
+trib. To Poultney
+Gunner's Brook
+Laplatte River
+Shelburne Bay
+LaPlatte River
+wetland
+tributary to Neshobe
+Godin Brook
+Poultney River
+Flower Brook
+trib Otter Creek
+Sodom Pond Brook
+Otter Creek 
+Otter Creek and East Creek
+Potash Brook & Otter Creek
+Wetlands contiguous w/ Winooski River
+Barge Canal
+Englesby Brook
+North Branch Stevens Brook
+Macabe's Brook
+
+Unique location Values: 
+Rutland
+Brandon
+Burlington
+Essex Junction
+Fair Haven
+Hardwick
+Middlebury
+Montpelier
+Northfield
+Proctor
+Pittsford
+Shelburne
+St Albans City
+Vergennes
+Wallingford
+West Rutland
+North Troy
+Pawlet
+Williston
+Barre City
+Essex Junciton
+Hyde Park
+Jeffersonville
+Milton
+Private
+Richford
+South Hero
+West Pawlet
+Williamstown
+Winooski
+Orange
+Berkshire
+Poultney
+Pawlett
+East Montpelier
+City of Montpelier
+St. Albans
+Barre
+Sheldon Springs
+
+Locations associated with the receiving water body: East Creek
+East Creek
+
+Locations associated with the receiving water body: Otter Creek
+Otter Creek
+Otter Creek
+Otter Creek
+Otter Creek
+Otter Creek
+Otter Creek
+Otter Creek
+
+Locations associated with the receiving water body: Nashobe
+Nashobe
+
+Locations associated with the receiving water body: Pine St. Barge Canal
+Pine St. Barge Canal
+
+Locations associated with the receiving water body: Intervale Wetlands
+Intervale Wetlands
+Intervale Wetlands
+
+Locations associated with the receiving water body: Winooski
+Winooski
+Winooski
+Winooski
+
+Locations associated with the receiving water body: Indian Brook
+Indian Brook
+Indian Brook
+
+Locations associated with the receiving water body: Castleton
+Castleton
+
+Locations associated with the receiving water body: Lamoille River
+Lamoille River
+Lamoille River
+
+Locations associated with the receiving water body: Dog River
+Dog River
+Dog River
+
+Locations associated with the receiving water body: North Branch
+North Branch
+
+Locations associated with the receiving water body: Dog Rive
+Dog Rive
+
+Locations associated with the receiving water body: Lake Champlain
+Lake Champlain
+Lake Champlain
+Lake Champlain
+
+Locations associated with the receiving water body: Stevens Brook
+Stevens Brook
+Stevens Brook
+
+Locations associated with the receiving water body: Clarendon River
+Clarendon River
+
+Locations associated with the receiving water body: Neshobe
+Neshobe
+
+Locations associated with the receiving water body: Pine Street Barge Canal
+Pine Street Barge Canal
+
+Locations associated with the receiving water body: Winooski 
+Winooski 
+
+Locations associated with the receiving water body: Mississquoi River
+Mississquoi River
+
+Locations associated with the receiving water body: Indian River
+Indian River
+Indian River
+
+Locations associated with the receiving water body: Laplatte
+Laplatte
+
+Locations associated with the receiving water body: Allen Brook
+Allen Brook
+
+Locations associated with the receiving water body: Edgewood Brook
+Edgewood Brook
+
+Locations associated with the receiving water body: Winooski River
+Winooski River
+Winooski River
+Winooski River
+Winooski River
+
+Locations associated with the receiving water body: Pine St Barge Canal
+Pine St Barge Canal
+
+Locations associated with the receiving water body: nan
+
+Locations associated with the receiving water body: Winooski river
+Winooski river
+Winooski river
+
+Locations associated with the receiving water body: Lamoille
+Lamoille
+
+Locations associated with the receiving water body: Brewster River
+Brewster River
+
+Locations associated with the receiving water body: Lamoille river
+Lamoille river
+
+Locations associated with the receiving water body: Missisquoi River
+Missisquoi River
+Missisquoi River
+Missisquoi River
+
+Locations associated with the receiving water body: LaPlatte
+LaPlatte
+
+Locations associated with the receiving water body: Munroe Brook
+Munroe Brook
+
+Locations associated with the receiving water body: McCabe's Brook
+McCabe's Brook
+
+Locations associated with the receiving water body: Otter Creek 
+Otter Creek 
+
+Locations associated with the receiving water body: Clarenden River
+Clarenden River
+
+Locations associated with the receiving water body: Stevens Branch
+Stevens Branch
+Stevens Branch
+Stevens Branch
+Stevens Branch
+
+Locations associated with the receiving water body: Steven's Brook
+Steven's Brook
+
+Locations associated with the receiving water body: Big Otter Creek
+Big Otter Creek
+
+Locations associated with the receiving water body: North Brook
+North Brook
+
+Locations associated with the receiving water body: Intervale wetlands
+Intervale wetlands
+
+Locations associated with the receiving water body: Castleton River
+Castleton River
+
+Locations associated with the receiving water body: trib. To Poultney
+trib. To Poultney
+
+Locations associated with the receiving water body: Gunner's Brook
+Gunner's Brook
+
+Locations associated with the receiving water body: Laplatte River
+Laplatte River
+
+Locations associated with the receiving water body: Shelburne Bay
+Shelburne Bay
+
+Locations associated with the receiving water body: LaPlatte River
+LaPlatte River
+
+Locations associated with the receiving water body: wetland
+wetland
+
+Locations associated with the receiving water body: tributary to Neshobe
+tributary to Neshobe
+
+Locations associated with the receiving water body: Godin Brook
+Godin Brook
+
+Locations associated with the receiving water body: Poultney River
+Poultney River
+
+Locations associated with the receiving water body: Flower Brook
+Flower Brook
+
+Locations associated with the receiving water body: trib Otter Creek
+trib Otter Creek
+
+Locations associated with the receiving water body: Sodom Pond Brook
+Sodom Pond Brook
+
+Locations associated with the receiving water body: Otter Creek 
+Otter Creek 
+Otter Creek 
+
+Locations associated with the receiving water body: Otter Creek and East Creek
+Otter Creek and East Creek
+
+Locations associated with the receiving water body: Potash Brook & Otter Creek
+Potash Brook & Otter Creek
+
+Locations associated with the receiving water body: Wetlands contiguous w/ Winooski River
+Wetlands contiguous w/ Winooski River
+
+Locations associated with the receiving water body: Barge Canal
+Barge Canal
+
+Locations associated with the receiving water body: Englesby Brook
+Englesby Brook
+
+Locations associated with the receiving water body: North Branch Stevens Brook
+North Branch Stevens Brook
+
+Locations associated with the receiving water body: Macabe's Brook
+Macabe's Brook
