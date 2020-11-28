@@ -190,7 +190,7 @@ class ViewController: UIViewController {
     func cyano_back_end_handler(){
         self.dispatchGroup.enter() // Starting thread
         // Getting all the unique locations from our cyanobacteria data
-        self.cyanobacteriaAPI.getDataFromLocationByMonth(cyanobacteriaDataStore: cyanobacteriaDataStore, location: 72, date: "2017-08"){ result in
+        self.cyanobacteriaAPI.getDataFromLocationByYear(cyanobacteriaDataStore: cyanobacteriaDataStore, location: 22, year: "2017"){ result in
             self.cyanobacteriaDataStore = result
             self.dispatchGroup.leave() // Leaving thread
         }

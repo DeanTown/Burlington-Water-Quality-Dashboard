@@ -107,7 +107,7 @@ class CyanobacteriaDataAPI {
         
         var UniqueLocations = uniqueLocations
         
-        // Query the sewage data collection for a list of the unique locations in our db
+        // Query the cyanobacteria data collection for a list of the unique locations in our db
         let dispatchGroup = DispatchGroup()
         
         // Load the Firestore db
@@ -145,16 +145,16 @@ class CyanobacteriaDataAPI {
     } // end func
     
     
-    func getDataFromLocationByMonth(cyanobacteriaDataStore: CyanobacteriaDataStore, location: Int, date: String, completion:@escaping((CyanobacteriaDataStore) -> ())) -> CyanobacteriaDataStore {
+    func getDataFromLocationByYear(cyanobacteriaDataStore: CyanobacteriaDataStore, location: Int, year: String, completion:@escaping((CyanobacteriaDataStore) -> ())) -> CyanobacteriaDataStore {
         
-        // Query the sewage data collection for a list of the unique locations in our db
+        // Query the cyanobacteria data collection for a list of the unique locations in our db
         let dispatchGroup = DispatchGroup()
         
         // Load the Firestore db
         let db = Firestore.firestore()
         
-        let date_lower = "\(date)-01"
-        let date_upper = "\(date)-31"
+        let date_lower = "\(year)-01-01"
+        let date_upper = "\(year)-12-31"
         // For each of the locations, get its most recent data
         dispatchGroup.enter()
         db.collection("cyanobacteria").whereField("site", isEqualTo: location).whereField("date", isGreaterThanOrEqualTo: date_lower).whereField("date", isLessThanOrEqualTo: date_upper).order(by: "date",descending: true).getDocuments() { (querySnapshot, err) in
@@ -180,7 +180,7 @@ class CyanobacteriaDataAPI {
                     let waterSurface = sanatizeString(input: testVar["waterSurface"])
                     let waterbody = sanatizeString(input: testVar["waterbody"])
                     
-                    // Add the cyanobacteriaDataItem object to the sewage store cart
+                    // Add the cyanobacteriaDataItem object to the cyanobacteria store cart
                     cyanobacteriaDataStore.createCyanobacteriaDataItem(date: date, latitude: latitude, longitude: longitude,  bloomIntensity: bloomIntensity, cyanoTaxaPresent: cyanoTaxaPresent, cyanobacteriaDensity: cyanobacteriaDensity, region: region, site: site, station: station, status: status, temperature: temperature, waterSurface: waterSurface, waterbody: waterbody)
                 } // end for
                 dispatchGroup.leave()
@@ -194,7 +194,7 @@ class CyanobacteriaDataAPI {
     
     func getDataFromLocation(cyanobacteriaDataStore: CyanobacteriaDataStore, location: Int, completion:@escaping((CyanobacteriaDataStore) -> ())) -> CyanobacteriaDataStore {
         
-        // Query the sewage data collection for a list of the unique locations in our db
+        // Query the cyanobacteria data collection for a list of the unique locations in our db
         let dispatchGroup = DispatchGroup()
         
         // Load the Firestore db
@@ -224,7 +224,7 @@ class CyanobacteriaDataAPI {
                     let waterSurface = sanatizeString(input: testVar["waterSurface"])
                     let waterbody = sanatizeString(input: testVar["waterbody"])
                     
-                    // Add the sewageDataItem object to the sewage store cart
+                    // Add the cyanobacteriaDataItem object to the cyanobacteria store cart
                     cyanobacteriaDataStore.createCyanobacteriaDataItem(date: date, latitude: latitude, longitude: longitude,  bloomIntensity: bloomIntensity, cyanoTaxaPresent: cyanoTaxaPresent, cyanobacteriaDensity: cyanobacteriaDensity, region: region, site: site, station: station, status: status, temperature: temperature, waterSurface: waterSurface, waterbody: waterbody)
                     
                 } // end for
