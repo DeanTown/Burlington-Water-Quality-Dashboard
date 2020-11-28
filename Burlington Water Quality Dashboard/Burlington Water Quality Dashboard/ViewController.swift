@@ -26,6 +26,8 @@ class ViewController: UIViewController {
     
     var sewageDataStore = SewageDataStore()
     let sewageAPI = SewageDataAPI()
+    var cyanobacteriaDataStore = CyanobacteriaDataStore()
+    let cyanobacteriaAPI = CyanobacteriaDataAPI()
     let dispatchGroup = DispatchGroup()
     
 
@@ -49,7 +51,8 @@ class ViewController: UIViewController {
 
             
         // BACK END DATA HANDLING
-        back_end_handler()
+        //back_end_handler()
+        cyano_back_end_handler()
         // Notes:
         // Sewage data on the 16 unique locations in the sewage db is stored in the
         // sewageDataStore ViewController class-level variable.
@@ -183,6 +186,18 @@ class ViewController: UIViewController {
         print("\(uniqueLocations.count)\n\n") // DEBUG -- REMOVE
         
     } // end back_end_handler function
+    
+    func cyano_back_end_handler(){
+        self.dispatchGroup.enter() // Starting thread
+        // Getting all the unique locations from our cyanobacteria data
+        self.cyanobacteriaAPI.getDataFromLocationByMonth(cyanobacteriaDataStore: cyanobacteriaDataStore, location: 72, date: "2017-08"){ result in
+            self.cyanobacteriaDataStore = result
+            self.dispatchGroup.leave() // Leaving thread
+        }
+        self.dispatchGroup.notify(queue:.main) {
+            self.cyanobacteriaDataStore.printStore()
+        }
+    }
     
     // Whatever 'filters' we want to add, we can create individual checkboxes for them
     // and for each filter, create an overlay and add and remove it
