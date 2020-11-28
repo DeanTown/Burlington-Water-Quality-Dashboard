@@ -311,6 +311,9 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.13):
     - BoringSSL-GRPC/Interface (= 0.0.13)
   - BoringSSL-GRPC/Interface (0.0.13)
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
   - Firebase/Auth (4.13.0):
     - Firebase/Core
     - FirebaseAuth (= 4.6.1)
@@ -402,16 +405,22 @@ PODS:
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
   - Protobuf (3.13.0)
+  - SimpleCheckbox (2.1.0)
+  - TinyConstraints (4.0.1)
 
 DEPENDENCIES:
+  - Charts
   - Firebase/Auth
   - Firebase/Core
   - Firestore (from `https://storage.googleapis.com/firebase-preview-drop/ios/firestore/0.7.0/Firestore.podspec.json`)
+  - SimpleCheckbox
+  - TinyConstraints
 
 SPEC REPOS:
   trunk:
     - abseil
     - BoringSSL-GRPC
+    - Charts
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -426,6 +435,8 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
+    - SimpleCheckbox
+    - TinyConstraints
 
 EXTERNAL SOURCES:
   Firestore:
@@ -434,6 +445,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   abseil: 4fcdce446caa49368e0f5ba328cff93326c72a49
   BoringSSL-GRPC: 41adfd4432a3de4d89c5804e901749e62a7fe3e9
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   Firebase: 5ec5e863d269d82d66b4bf56856726f8fb8f0fb3
   FirebaseAnalytics: 7ef69e76a5142f643aeb47c780e1cdce4e23632e
   FirebaseAuth: bf22cacf22c60ab454bf2636f556d8892b10b53f
@@ -449,7 +461,9 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Protobuf: 3dac39b34a08151c6d949560efe3f86134a3f748
+  SimpleCheckbox: ddcd433ab8c3a8f57300bebda13151a8f302c7f9
+  TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
 
-PODFILE CHECKSUM: cba4456cead8f7218e0bd0b81db326f143736b3f
+PODFILE CHECKSUM: 321c5dbf73bfd36d9d67d080ba02851b3d5e4410
 
 COCOAPODS: 1.10.0

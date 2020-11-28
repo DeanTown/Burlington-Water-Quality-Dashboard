@@ -20,6 +20,8 @@
 		63B9797D2548B07E00336E24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B9797C2548B07E00336E24 /* Assets.xcassets */; };
 		63B979802548B07E00336E24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B9797E2548B07E00336E24 /* LaunchScreen.storyboard */; };
 		87C8CCFA2306D744EB00880B /* Pods_Burlington_Water_Quality_Dashboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ACF906B72E301E806406419 /* Pods_Burlington_Water_Quality_Dashboard.framework */; };
+		A7207981257301C300E38DB8 /* GraphingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7207980257301C300E38DB8 /* GraphingVC.swift */; };
+		A760A31F2573023E00A28333 /* Graphing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A760A31E2573023E00A28333 /* Graphing.storyboard */; };
 		E387C46A2558B7F2009374B0 /* Sewage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E387C4682558B7F2009374B0 /* Sewage.swift */; };
 		E387C46B2558B7F2009374B0 /* SewageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E387C4692558B7F2009374B0 /* SewageStore.swift */; };
 		E387C46E2558CE63009374B0 /* Firebase_DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E387C46D2558CE63009374B0 /* Firebase_DAO.swift */; };
@@ -43,6 +45,8 @@
 		63B9797C2548B07E00336E24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63B9797F2548B07E00336E24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63B979812548B07E00336E24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7207980257301C300E38DB8 /* GraphingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphingVC.swift; sourceTree = "<group>"; };
+		A760A31E2573023E00A28333 /* Graphing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Graphing.storyboard; sourceTree = "<group>"; };
 		C9A6080BA17335EE1EFAD1F8 /* Pods-Burlington Water Quality Dashboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Burlington Water Quality Dashboard.debug.xcconfig"; path = "Target Support Files/Pods-Burlington Water Quality Dashboard/Pods-Burlington Water Quality Dashboard.debug.xcconfig"; sourceTree = "<group>"; };
 		E387C4682558B7F2009374B0 /* Sewage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sewage.swift; path = ../../BackendTest/SewageData_Backend_Test/TestFireStoreQuery_1/Sewage.swift; sourceTree = "<group>"; };
 		E387C4692558B7F2009374B0 /* SewageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SewageStore.swift; path = ../../BackendTest/SewageData_Backend_Test/TestFireStoreQuery_1/SewageStore.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 				4DE35E432571F1DE00B36420 /* Cyanobacteria.swift */,
 				63B979772548B07B00336E24 /* ViewController.swift */,
 				63B979792548B07B00336E24 /* Main.storyboard */,
+				A760A31E2573023E00A28333 /* Graphing.storyboard */,
 				63B9797C2548B07E00336E24 /* Assets.xcassets */,
 				63B9797E2548B07E00336E24 /* LaunchScreen.storyboard */,
 				63B979812548B07E00336E24 /* Info.plist */,
@@ -117,6 +122,7 @@
 				6326BCEB254D094700D4C56F /* PointsOfInterest.swift */,
 				6326BCEE254D157200D4C56F /* LocationViews.swift */,
 				63101B192550D4CF002CCEE0 /* AreaOutlineCoordinates.swift */,
+				A7207980257301C300E38DB8 /* GraphingVC.swift */,
 			);
 			path = "Burlington Water Quality Dashboard";
 			sourceTree = "<group>";
@@ -183,6 +189,7 @@
 			files = (
 				63B979802548B07E00336E24 /* LaunchScreen.storyboard in Resources */,
 				63B9797D2548B07E00336E24 /* Assets.xcassets in Resources */,
+				A760A31F2573023E00A28333 /* Graphing.storyboard in Resources */,
 				E3A78D7625576E0000BB8611 /* GoogleService-Info.plist in Resources */,
 				63B9797B2548B07B00336E24 /* Main.storyboard in Resources */,
 				6326BCE0254D015400D4C56F /* AreasWeHaveDataOn.geojson in Resources */,
@@ -246,6 +253,7 @@
 				63B979742548B07B00336E24 /* AppDelegate.swift in Sources */,
 				4DE35E412571F1B200B36420 /* CyanobacteriaStore.swift in Sources */,
 				63101B1A2550D4CF002CCEE0 /* AreaOutlineCoordinates.swift in Sources */,
+				A7207981257301C300E38DB8 /* GraphingVC.swift in Sources */,
 				E387C46B2558B7F2009374B0 /* SewageStore.swift in Sources */,
 				63B979762548B07B00336E24 /* SceneDelegate.swift in Sources */,
 				6326BCEF254D157200D4C56F /* LocationViews.swift in Sources */,
