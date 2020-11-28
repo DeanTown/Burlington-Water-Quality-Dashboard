@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4DE35E412571F1B200B36420 /* CyanobacteriaStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE35E402571F1B200B36420 /* CyanobacteriaStore.swift */; };
+		4DE35E442571F1DE00B36420 /* Cyanobacteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE35E432571F1DE00B36420 /* Cyanobacteria.swift */; };
 		63101B1A2550D4CF002CCEE0 /* AreaOutlineCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63101B192550D4CF002CCEE0 /* AreaOutlineCoordinates.swift */; };
 		6326BCE0254D015400D4C56F /* AreasWeHaveDataOn.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 6326BCDF254D015400D4C56F /* AreasWeHaveDataOn.geojson */; };
 		6326BCEC254D094700D4C56F /* PointsOfInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6326BCEB254D094700D4C56F /* PointsOfInterest.swift */; };
@@ -27,6 +29,8 @@
 /* Begin PBXFileReference section */
 		452D25C44036A568F6D5D34F /* Pods-Burlington Water Quality Dashboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Burlington Water Quality Dashboard.release.xcconfig"; path = "Target Support Files/Pods-Burlington Water Quality Dashboard/Pods-Burlington Water Quality Dashboard.release.xcconfig"; sourceTree = "<group>"; };
 		4ACF906B72E301E806406419 /* Pods_Burlington_Water_Quality_Dashboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Burlington_Water_Quality_Dashboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DE35E402571F1B200B36420 /* CyanobacteriaStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyanobacteriaStore.swift; sourceTree = "<group>"; };
+		4DE35E432571F1DE00B36420 /* Cyanobacteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cyanobacteria.swift; sourceTree = "<group>"; };
 		63101B192550D4CF002CCEE0 /* AreaOutlineCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaOutlineCoordinates.swift; sourceTree = "<group>"; };
 		6326BCDF254D015400D4C56F /* AreasWeHaveDataOn.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = AreasWeHaveDataOn.geojson; sourceTree = "<group>"; };
 		6326BCEB254D094700D4C56F /* PointsOfInterest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsOfInterest.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				E3A78D7525576E0000BB8611 /* GoogleService-Info.plist */,
 				63B979732548B07B00336E24 /* AppDelegate.swift */,
 				63B979752548B07B00336E24 /* SceneDelegate.swift */,
+				4DE35E402571F1B200B36420 /* CyanobacteriaStore.swift */,
+				4DE35E432571F1DE00B36420 /* Cyanobacteria.swift */,
 				63B979772548B07B00336E24 /* ViewController.swift */,
 				63B979792548B07B00336E24 /* Main.storyboard */,
 				63B9797C2548B07E00336E24 /* Assets.xcassets */,
@@ -233,10 +239,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E387C46A2558B7F2009374B0 /* Sewage.swift in Sources */,
+				4DE35E442571F1DE00B36420 /* Cyanobacteria.swift in Sources */,
 				63B979782548B07B00336E24 /* ViewController.swift in Sources */,
 				E387C46E2558CE63009374B0 /* Firebase_DAO.swift in Sources */,
 				6326BCEC254D094700D4C56F /* PointsOfInterest.swift in Sources */,
 				63B979742548B07B00336E24 /* AppDelegate.swift in Sources */,
+				4DE35E412571F1B200B36420 /* CyanobacteriaStore.swift in Sources */,
 				63101B1A2550D4CF002CCEE0 /* AreaOutlineCoordinates.swift in Sources */,
 				E387C46B2558B7F2009374B0 /* SewageStore.swift in Sources */,
 				63B979762548B07B00336E24 /* SceneDelegate.swift in Sources */,

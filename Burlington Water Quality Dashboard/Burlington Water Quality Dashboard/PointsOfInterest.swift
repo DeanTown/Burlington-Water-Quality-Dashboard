@@ -46,7 +46,7 @@ class PointsOfInterest: NSObject, MKAnnotation {
     }
     
     var subtitle: String? {
-        return title
+        return "Tap to see data"
     }
     
     
@@ -64,7 +64,11 @@ class PointsOfInterest: NSObject, MKAnnotation {
     }
     
     var image: UIImage {
-        return #imageLiteral(resourceName: "placeHolderBeachIcon")
+        if (descriptionOfPlace == "tap here for more sewage info") {
+            return #imageLiteral(resourceName: "sewageRunoff")
+        }
+        return #imageLiteral(resourceName: "beachesSelected")
     }
+
     
 }

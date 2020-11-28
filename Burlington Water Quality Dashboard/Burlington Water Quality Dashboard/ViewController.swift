@@ -14,15 +14,36 @@ import Firestore
 class ViewController: UIViewController {
     
     @IBOutlet private var mapView: MKMapView!
+    @IBOutlet weak var mapFilter: UIView!
+    @IBOutlet weak var annotationFilter: UIButton!
+    @IBOutlet weak var areasFilter: UIButton!
+    //manually adding one sewage runoff location point till we get a list of lats and longs
+    let sewageRunoff = PointsOfInterest(title: "Runoff from ___", descriptionOfPlace: "tap here for more sewage info", coordinate: CLLocationCoordinate2D(latitude: 44.5317895, longitude: -73.2772155))
     
     private var poi: [PointsOfInterest] = []
     
+    private var sewageRunoffs: [PointsOfInterest] = []
+    
     var sewageDataStore = SewageDataStore()
     let sewageAPI = SewageDataAPI()
+    var cyanobacteriaDataStore = CyanobacteriaDataStore()
+    let cyanobacteriaAPI = CyanobacteriaDataAPI()
     let dispatchGroup = DispatchGroup()
     
 
     override func viewDidLoad() {
+        view.bringSubviewToFront(mapFilter)
+        self.mapView.delegate = self
+        
+        // Adding a bit of styling to the map filter
+        self.mapFilter.layer.cornerRadius = 25
+        self.mapFilter.layer.masksToBounds = true
+        
+        
+        mapView.register(
+          LocationViews.self,
+          forAnnotationViewWithReuseIdentifier:
+            MKMapViewDefaultAnnotationViewReuseIdentifier)
         
         // FRONT END HANDLING
         map_handler()
@@ -30,7 +51,8 @@ class ViewController: UIViewController {
 
             
         // BACK END DATA HANDLING
-        back_end_handler()
+        //back_end_handler()
+        cyano_back_end_handler()
         // Notes:
         // Sewage data on the 16 unique locations in the sewage db is stored in the
         // sewageDataStore ViewController class-level variable.
@@ -47,6 +69,15 @@ class ViewController: UIViewController {
 
     } // end viewDidLoad function
     
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        //TODO: Oliver when your code is all set, use this to navigate to your screen, and use this to also
+        //tell your screen what to do
+//      let anotherViewController = self.storyboard?.instantiateViewController(withIdentifier: "anotherViewController") as! AnotherViewController
+//      anotherViewController.dataToLoad = thisButtonsData
+//      self.navigationController?.pushViewController(anotherViewController, animated: true)
+        print("annotation has been clicked on!")
+
+    }
     
     func map_handler(){
         
@@ -68,23 +99,22 @@ class ViewController: UIViewController {
 //        let northBeach = PointsOfInterest(title: "North Beach", descriptionOfPlace: "A public beach in burlington VT", coordinate: CLLocationCoordinate2D(latitude: 44.492238, longitude: -73.2431204))
 //        mapView.addAnnotation(northBeach)
         
+        
+        //creating an annotation for sewage run off, we can add more once we get the lats and longs for it:
+
+        mapView.addAnnotation(sewageRunoff)
+        
         // displaying the array of points of interest to the map
         mapView.register(
           LocationViews.self,
           forAnnotationViewWithReuseIdentifier:
             MKMapViewDefaultAnnotationViewReuseIdentifier)
         loadPOIData()
+        annotationFilter.isSelected = true
+        areasFilter.isSelected = true
         mapView.addAnnotations(poi)
-        
-
-//        mapView.addOverlay(MKPolygon(
-//          coordinates:  Constants.testArea,
-//          count:  Constants.testArea.count))
-        
-        mapView.addOverlay(MKPolygon(
-          coordinates:  Constants.burlingtonArea,
-          count:  Constants.burlingtonArea.count))
-        
+        let burlingtonVerlay = (MKPolygon(coordinates:Constants.burlingtonArea,count:Constants.burlingtonArea.count))
+        mapView.addOverlay(burlingtonVerlay)
     } // end map_handler
 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
@@ -156,6 +186,44 @@ class ViewController: UIViewController {
         print("\(uniqueLocations.count)\n\n") // DEBUG -- REMOVE
         
     } // end back_end_handler function
+    
+    func cyano_back_end_handler(){
+        self.dispatchGroup.enter() // Starting thread
+        // Getting all the unique locations from our cyanobacteria data
+        self.cyanobacteriaAPI.getDataFromLocationByYear(cyanobacteriaDataStore: cyanobacteriaDataStore, location: 22, year: "2017"){ result in
+            self.cyanobacteriaDataStore = result
+            self.dispatchGroup.leave() // Leaving thread
+        }
+        self.dispatchGroup.notify(queue:.main) {
+            self.cyanobacteriaDataStore.printStore()
+        }
+    }
+    
+    // Whatever 'filters' we want to add, we can create individual checkboxes for them
+    // and for each filter, create an overlay and add and remove it
+    //this one is for overlays
+    @IBAction func checkBoxTapped(_ sender: UIButton) {
+        let burlingtonVerlay = (MKPolygon(coordinates:Constants.burlingtonArea,count:Constants.burlingtonArea.count))
+        if sender.isSelected {
+            sender.isSelected = false
+            mapView.removeOverlays(mapView.overlays)
+        } else {
+            sender.isSelected = true
+            mapView.addOverlay(burlingtonVerlay)
+        }
+    }
+    // this one is for annotations (pins for Points of interest)
+    // for this one, in view did load we set it to selected right away
+    @IBAction func checkBoxTapped2(_ sender: UIButton) {
+        if (sender.isSelected) {
+            sender.isSelected = false
+            mapView.removeAnnotations(mapView.annotations)
+        } else {
+            sender.isSelected = true
+            mapView.addAnnotation(sewageRunoff)
+            mapView.addAnnotations(poi)
+        }
+    }
 
 } // end ViewController class
 
@@ -195,3 +263,12 @@ extension ViewController: MKMapViewDelegate {
 //    }
     
 } // end extension
+
+
+// citing icons below
+// icon for beaches (not filter ones) is from:https://www.flaticon.com/free-icon/beach_119596
+// icon for sewage runoff (not filter ones): https://www.flaticon.com/free-icon/sewage_2154837
+// these below are filter icons:
+// icon for areas is from: https://img.icons8.com/cotton/2x/worldwide-location--v2.png
+// icon for beaches is from: https://img.icons8.com/cotton/2x/ffffff/safety-float-1.png
+// I (Prasidha) made the icon for sewage

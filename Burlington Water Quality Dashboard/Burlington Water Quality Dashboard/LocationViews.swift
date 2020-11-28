@@ -6,21 +6,31 @@
 //  Copyright © 2020 IOTConduit. All rights reserved.
 //
 
-import Foundation
 import MapKit
 
-class LocationViews: MKMarkerAnnotationView {
+class LocationMarkerView: MKMarkerAnnotationView {
   override var annotation: MKAnnotation? {
     willSet {
-      guard let poi = newValue as? PointsOfInterest else {
+      guard let pointsOfInterest = newValue as? PointsOfInterest else {
         return
       }
       canShowCallout = true
       calloutOffset = CGPoint(x: -5, y: 5)
       rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-        image = poi.image
     }
   }
 }
 
-
+class LocationViews: MKAnnotationView {
+  override var annotation: MKAnnotation? {
+    willSet {
+      guard let pointsOfInterest = newValue as? PointsOfInterest else {
+        return
+      }
+      canShowCallout = true
+      calloutOffset = CGPoint(x: -5, y: 5)
+      rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+      image = pointsOfInterest.image
+    }
+  }
+}
