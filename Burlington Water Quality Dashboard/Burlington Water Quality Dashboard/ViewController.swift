@@ -52,7 +52,7 @@ class ViewController: UIViewController {
             
         // BACK END DATA HANDLING
         //back_end_handler()
-        cyano_back_end_handler()
+        cyano_back_end_handler(location: 54, year: 2016)
         // Notes:
         // Sewage data on the 16 unique locations in the sewage db is stored in the
         // sewageDataStore ViewController class-level variable.
@@ -187,10 +187,10 @@ class ViewController: UIViewController {
         
     } // end back_end_handler function
     
-    func cyano_back_end_handler(){
+    func cyano_back_end_handler(location: Int, year: Int){
         self.dispatchGroup.enter() // Starting thread
         // Getting all the unique locations from our cyanobacteria data
-        self.cyanobacteriaAPI.getDataFromLocationByYear(cyanobacteriaDataStore: cyanobacteriaDataStore, location: 22, year: "2017"){ result in
+        self.cyanobacteriaAPI.getDataFromLocationByYear(cyanobacteriaDataStore: cyanobacteriaDataStore, location: location, year: year){ result in
             self.cyanobacteriaDataStore = result
             self.dispatchGroup.leave() // Leaving thread
         }
