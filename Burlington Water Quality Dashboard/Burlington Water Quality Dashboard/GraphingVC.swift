@@ -13,6 +13,16 @@ import SimpleCheckbox
 
 class GraphingVC: UIViewController, ChartViewDelegate {
     
+    var yValues: [ChartDataEntry] = []// = [
+    //        ChartDataEntry(x: 1500, y: 10),
+    //        ChartDataEntry(x: 1600, y: 13),
+    //        ChartDataEntry(x: 1700, y: 14),
+    //        ChartDataEntry(x: 1800, y: 16),
+    //        ChartDataEntry(x: 1900, y: 18),
+    //        ChartDataEntry(x: 2000, y: 17),
+    //        ChartDataEntry(x: 2100, y: 21)
+    //    ]
+    
     public var id = 22
     var cyanobacteriaDataStore = CyanobacteriaDataStore()
     let cyanobacteriaAPI = CyanobacteriaDataAPI()
@@ -35,18 +45,30 @@ class GraphingVC: UIViewController, ChartViewDelegate {
         
         self.dispatchGroup.enter() // Starting thread
         // Getting all the unique locations from our cyanobacteria data
-        self.cyanobacteriaAPI.getDataFromLocationByYear(cyanobacteriaDataStore: cyanobacteriaDataStore, location: 22, year: "2018"){ result in
+        self.cyanobacteriaAPI.getDataFromLocationByYear(cyanobacteriaDataStore: cyanobacteriaDataStore, location: 22, year: 2018){ result in
             self.cyanobacteriaDataStore = result
             self.dispatchGroup.leave() // Leaving thread
         }
         self.dispatchGroup.notify(queue:.main) {
 //            self.cyanobacteriaDataStore.printStore()
-//            print(self.cyanobacteriaDataStore.CyanobacteriaDataItems[0][0].date)
+//            print(self.cyanobacteriaDataStore.CyanobacteriaDataItems)
+            if (self.cyanobacteriaDataStore.CyanobacteriaDataItems.isEmpty) {
+                print("Empty Cyanobacteria Store!")
+            } else {
+                var i = 0
+                for item in self.cyanobacteriaDataStore.CyanobacteriaDataItems {
+                    print(item.cyanobacteriaDensity)
+                    self.yValues.append(ChartDataEntry(x: Double(i), y: Double(item.cyanobacteriaDensity)))
+                    i += 1
+                }
+                self.setData()
+            }
+            
         }
         
-        setData()
+
         
-        print(id)
+    
         
     }
 
@@ -61,14 +83,6 @@ class GraphingVC: UIViewController, ChartViewDelegate {
         lineChartView1.data = data
     }
     
-    let yValues: [ChartDataEntry] = []// = [
-//        ChartDataEntry(x: 1500, y: 10),
-//        ChartDataEntry(x: 1600, y: 13),
-//        ChartDataEntry(x: 1700, y: 14),
-//        ChartDataEntry(x: 1800, y: 16),
-//        ChartDataEntry(x: 1900, y: 18),
-//        ChartDataEntry(x: 2000, y: 17),
-//        ChartDataEntry(x: 2100, y: 21)
-//    ]
+
 }
 
