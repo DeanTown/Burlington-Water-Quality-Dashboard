@@ -12,13 +12,13 @@ class SewageDataStore {
     var SewageDataItems = [SewageDataItem]()
 
     // @discardableResult means the caller can ignore the return object
-    @discardableResult func createSewageDataItem(date: String, type: String, minGal: Int, maxGal: Int, location: String, receivingWater: String) -> SewageDataItem {
+    @discardableResult func createSewageDataItem(date: String, type: String, minGal: Int, maxGal: Int, location: String, receivingWater: String, latitude: String, longitude: String) -> SewageDataItem {
         
         //print("\ncreateSewageDataItem creating sweage item!")
                 
-        let newSewageDataItem = SewageDataItem(date: date, type: type, minGal: minGal, maxGal: maxGal, location: location, receivingWater: receivingWater)
+        let newSewageDataItem = SewageDataItem(date: date, type: type, minGal: minGal, maxGal: maxGal, location: location, receivingWater: receivingWater, latitude: latitude, longitude: longitude)
         
-        SewageDataItems.append(newSewageDataItem)
+        self.SewageDataItems.append(newSewageDataItem)
         
         return newSewageDataItem
     }
@@ -37,4 +37,19 @@ class SewageDataStore {
         }
     }
     
+    func clearStore() {
+        self.SewageDataItems = []
+    }
+    
+    func return_only_items_from_specified_receiving_water_loction(receivingWater: String) -> [SewageDataItem] {
+        var tmp: [SewageDataItem] = []
+        var count = 0
+        while count < self.SewageDataItems.count {
+            if self.SewageDataItems[count].getReceivingWater() == receivingWater {
+                tmp.append(self.SewageDataItems[count])
+            }
+            count = count + 1
+        }
+        return tmp
+    }
 }

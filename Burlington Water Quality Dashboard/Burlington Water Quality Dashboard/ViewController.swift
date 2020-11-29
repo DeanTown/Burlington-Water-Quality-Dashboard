@@ -12,26 +12,49 @@ import Firebase
 import Firestore
 
 class ViewController: UIViewController {
-    
+        
     @IBOutlet private var mapView: MKMapView!
     @IBOutlet weak var mapFilter: UIView!
     @IBOutlet weak var annotationFilter: UIButton!
     @IBOutlet weak var areasFilter: UIButton!
-    //manually adding one sewage runoff location point till we get a list of lats and longs
-    let sewageRunoff = PointsOfInterest(title: "Runoff from ___", descriptionOfPlace: "tap here for more sewage info", coordinate: CLLocationCoordinate2D(latitude: 44.5317895, longitude: -73.2772155))
     
     private var poi: [PointsOfInterest] = []
+    let sewageRunoff = PointsOfInterest(title: "Runoff Into Winooski", descriptionOfPlace: "tap here for more sewage info", coordinate: CLLocationCoordinate2D(latitude: 44.530598, longitude: -73.274215))
+
     
-    private var sewageRunoffs: [PointsOfInterest] = []
+//    Sewage locations we can hard code:
+//    ##         Location:                    Lat:         Long:
+//    ##         Winooski                --> 44.530598    -73.274215
+//    ##         Pine St Barge Canal     --> 44.469254    -73.219233
+//    ##         Shelburne Bay           --> 44.422171    -73.231547
+//
+//    // Winooski
+//    let sewageRunoffWinooski = PointsOfInterest(title: "Runoff Into Winooski", descriptionOfPlace: "tap here for more sewage info", coordinate: CLLocationCoordinate2D(latitude: 44.530598, longitude: -73.274215))
+//    // Pine St Barge Canal
+//    let sewageRunoffPineStBargeCanal = PointsOfInterest(title: "Runoff Into Pine St Barge Canal", descriptionOfPlace: "tap here for more sewage info", coordinate: CLLocationCoordinate2D(latitude: 44.469254, longitude: -73.219233))
+//    // Shelburne Bay
+//    let sewageRunoffShelburneBay = PointsOfInterest(title: "Runoff Into Shelburne Bay", descriptionOfPlace: "tap here for more sewage info", coordinate: CLLocationCoordinate2D(latitude: 44.422171, longitude: -73.231547))
     
-    var sewageDataStore = SewageDataStore()
+    // Sewage Run Offs Array:: Winooski, Pine St Barge Canal, Shelburne Bay
+    private var sewageRunoffs: [PointsOfInterest] = [PointsOfInterest(title: "Runoff Into Winooski", descriptionOfPlace: "tap here for more sewage info", coordinate: CLLocationCoordinate2D(latitude: 44.530598, longitude: -73.274215)), PointsOfInterest(title: "Runoff Into Pine St Barge Canal", descriptionOfPlace: "tap here for more sewage info", coordinate: CLLocationCoordinate2D(latitude: 44.469254, longitude: -73.219233)), PointsOfInterest(title: "Runoff Into Shelburne Bay", descriptionOfPlace: "tap here for more sewage info", coordinate: CLLocationCoordinate2D(latitude: 44.422171, longitude: -73.231547)) ]
+    
+    
+    // Variable to handle all calls to the sewage data DB
     let sewageAPI = SewageDataAPI()
+    // Array of sewage data items that will be actively used
+    var sewageDataStore = SewageDataStore()
+    
     var cyanobacteriaDataStore = CyanobacteriaDataStore()
     let cyanobacteriaAPI = CyanobacteriaDataAPI()
+    
+    // Used for asyncronous firebase API threads
     let dispatchGroup = DispatchGroup()
     
 
     override func viewDidLoad() {
+        
+        print("\n\nviewDidLoad called\n\n")
+        
         view.bringSubviewToFront(mapFilter)
         self.mapView.delegate = self
         
@@ -48,11 +71,9 @@ class ViewController: UIViewController {
         // FRONT END HANDLING
         map_handler()
         // Notes:
-
             
         // BACK END DATA HANDLING
-        //back_end_handler()
-        cyano_back_end_handler()
+        sewage_back_end_handler(date: 2019)
         // Notes:
         // Sewage data on the 16 unique locations in the sewage db is stored in the
         // sewageDataStore ViewController class-level variable.
@@ -62,6 +83,9 @@ class ViewController: UIViewController {
         //    @TODO: nhella
         //      At some point, in my code down below I need to hook the debug date variable
         //      to retreive its value from some widget on the front end
+        
+        //cyano_back_end_handler()
+
         
         
         // CALLING THE REAL viewDidLoad FUNCTION
@@ -102,7 +126,10 @@ class ViewController: UIViewController {
         
         //creating an annotation for sewage run off, we can add more once we get the lats and longs for it:
 
-        mapView.addAnnotation(sewageRunoff)
+        //mapView.addAnnotation(sewageRunoff)
+        for el in sewageRunoffs {
+            mapView.addAnnotation(el)
+        }
         
         // displaying the array of points of interest to the map
         mapView.register(
@@ -144,47 +171,46 @@ class ViewController: UIViewController {
         
     } // end loadPOIData function
     
-    func back_end_handler(){
+    func sewage_back_end_handler(date: Int) {
+        
+        // DEBUG -- Get count of documents in sewage2 collection
+//        var db_count = 0
+//        self.dispatchGroup.enter() // Starting thread
+//        self.sewageAPI.get_collection_document_count(sewageDataStore:self.sewageDataStore) { result in
+//            db_count = result
+//            self.dispatchGroup.leave() // Leaving thread
+//        }
+//        self.dispatchGroup.notify(queue:.main) {
+//            print("\n\nNumber of documents in sewage2 collection: \(db_count)\n\n")
+//        }
+        
         
         // Querying the Sewage data for the unique locations in the data set
-        var uniqueLocations: [String] = [] // intializing unique locations array
-        self.dispatchGroup.enter() // Starting thread
-        // Getting all the unique locations from our sewage data
-        self.sewageAPI.returnUniqueLocation(uniqueLocations:uniqueLocations) { result in
-            uniqueLocations = result
-            self.dispatchGroup.leave() // Leaving thread when result comes back
+        var key_receiving_water_values: [String] = ["Winooski", "Pine St Barge Canal", "Shelburne Bay"]
+        
+        // Building the sewageDataStore with a SewageDataItem element for each location
+        self.sewageDataStore.clearStore() // Clearing whatever was previously in the sewage data store
+        for location in key_receiving_water_values {
+            self.dispatchGroup.enter() // Starting thread
+            self.sewageAPI.getAllDataBy_receivingWater_and_year(sewageDataStore:self.sewageDataStore, receivingWater: location, date: date) { result in
+                self.sewageDataStore =  result
+                self.dispatchGroup.leave() // Leaving thread
+            }
         }
         
-        // When thread is finished, the uniqueLocations array should be populated
+        // When all threads are finished, the sewageDataStore array should be fully populated
         self.dispatchGroup.notify(queue:.main) {
             
-            print("\n\nBEFORE:: Unique locations: \(uniqueLocations)") // DEBUG -- REMOVE
-            print("\(uniqueLocations.count)\n\n") // DEBUG -- REMOVE
+            // Getting only the items from the Sewage Data Store that have "Pine St Barge Canal" as the receivingWater attribute value
+            self.sewageDataStore.SewageDataItems = self.sewageDataStore.return_only_items_from_specified_receiving_water_loction(receivingWater: "Pine St Barge Canal")
             
-            // Building the sewageDataStore with a SewageDataItem element for each location
-            let date: Int = 2019 // DEBUG VALUE -- REMOVE
-            for location in uniqueLocations {
-                self.dispatchGroup.enter() // Starting thread
-                self.sewageAPI.getLatestDataFromLocations_and_loadSewageStore(sewageDataStore:self.sewageDataStore, location: location, date: date) { result in
-                    self.sewageDataStore = result
-                    self.dispatchGroup.leave() // Leaving thread
-                }
-            }
+            // Testing that all the above works
+            self.sewageDataStore.toString() // DEBUG -- REMOVE
+            print(self.sewageDataStore.SewageDataItems.count) // DEBUG -- REMOVE
             
-            // When all threads are finished, the sewageDataStore array should be fully populated
-            self.dispatchGroup.notify(queue:.main) {
-                self.sewageDataStore.toString() // DEBUG -- REMOVE
-                print(self.sewageDataStore.SewageDataItems.count) // DEBUG -- REMOVE
-                
-                // Do more stuff below...
-                
-            } // end when sewageDataStore is populated with most recent data for each location
+            // Do more stuff below...
             
-        } // end when unique locations from sewage data came back
-        
-        print("\n\nAFTER:: \(uniqueLocations)\n\n") // DEBUG -- REMOVE
-        print("\(uniqueLocations.count)\n\n") // DEBUG -- REMOVE
-        
+        } // end when sewageDataStore is populated with most recent data for each location
     } // end back_end_handler function
     
     func cyano_back_end_handler(){

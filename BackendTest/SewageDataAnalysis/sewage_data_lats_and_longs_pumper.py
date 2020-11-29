@@ -1,5 +1,6 @@
 import pandas as pd
 from re import search
+import re
 
 ## Author: Nick Hella
 ## Purpose: Adding lat & long values to specific receivingWater locations
@@ -42,11 +43,19 @@ while count < len(df):
 	if "Pine" in receiving_water_value and "Barge Canal" in receiving_water_value:
 		df['Latitude'].iloc[count] = "44.469254"
 		df['Longitude'].iloc[count] = "-73.219233"
+		df['Receiving Water'].iloc[count] = "Pine St Barge Canal"
 
 	# if receiving_water_value.find("Shelburne Bay"):
 	if "Shelburne Bay" in receiving_water_value:
 		df['Latitude'].iloc[count] = "44.422171"
 		df['Longitude'].iloc[count] = "-73.231547"
+
+
+	minGalValue = re.sub("[^0-9]", "", str(df['Min gal'].iloc[count]))
+	maxGalValue = re.sub("[^0-9]", "", str(df['Max gal.'].iloc[count]))
+
+	df['Min gal'].iloc[count] = int(minGalValue)
+	df['Max gal.'].iloc[count] = int(maxGalValue)
 
 	count += 1
 

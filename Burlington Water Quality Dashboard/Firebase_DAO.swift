@@ -12,50 +12,41 @@ import UIKit
 
 
 class SewageDataAPI {
-            
-    func returnUniqueLocation(uniqueLocations: [String], completion:@escaping(([String]) -> ())) -> [String] {
-        
-        var UniqueLocations = uniqueLocations
-        
-        // Query the sewage data collection for a list of the unique locations in our db
-        let dispatchGroup = DispatchGroup()
+    
+    func get_collection_document_count(sewageDataStore: SewageDataStore, completion:@escaping((Int) -> ())) -> Int {
+        // Clearing out what's in the store
+        sewageDataStore.clearStore()
         
         // Load the Firestore db
         let db = Firestore.firestore()
+        let dispatchGroup = DispatchGroup()
+        
+        // Count of items/documents in sewage collection
+        var counter = 0
+        
+        // For each of the locations, get its' most recent data
         dispatchGroup.enter()
-        db.collection("sewage").order(by: "date").getDocuments() { (querySnapshot, err) in
-            
+        db.collection("sewage3").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
                 dispatchGroup.leave()
             } else {
-                
-                // Iterate through the documents
                 for document in querySnapshot!.documents {
-                    
-                    // Get the whole document as dictionary
-                    let testVar = document.data()
-                                        
-                    // Getting the location attributes into their own variables
-                    let location = testVar["location"] as! String
-                    let receivingWater = testVar["receivingWater"]! as! String
-                    
-                    if !UniqueLocations.contains(location) {
-                        UniqueLocations.append(location)
-                        //print(location)
-                    }
+                     counter = counter + 1
                 } // end for
                 dispatchGroup.leave()
             } // end else
-        } // end db query
+        } // end db collection
         dispatchGroup.notify(queue:.main) {
-            //print("UNIQUE LOCATIONS ARRAY: \(UniqueLocations)")
-            completion(UniqueLocations)
+            completion(counter)
         }
-        return UniqueLocations
-    } // end func
-    
-    func getLatestDataFromLocations_and_loadSewageStore(sewageDataStore: SewageDataStore, location: String, date: Int, completion:@escaping((SewageDataStore) -> ())) -> SewageDataStore {
+        return counter
+    }// end func
+
+    func getLatestDataBy_receivingWater_and_year(sewageDataStore: SewageDataStore, receivingWater: String, date: Int, completion:@escaping((SewageDataStore) -> ())) -> SewageDataStore {
+        
+        // Clearing out what's in the store
+        sewageDataStore.clearStore()
         
         // Query the sewage data collection for a list of the unique locations in our db
         let dispatchGroup = DispatchGroup()
@@ -68,7 +59,7 @@ class SewageDataAPI {
         
         // For each of the locations, get its' most recent data
         dispatchGroup.enter()
-        db.collection("sewage").whereField("location", isEqualTo: location).whereField("date", isGreaterThanOrEqualTo: date_lower).whereField("date", isLessThan: date_upper).order(by: "date",descending: true).getDocuments() { (querySnapshot, err) in
+        db.collection("sewage3").whereField("Receiving Water", isEqualTo: receivingWater).whereField("date", isGreaterThanOrEqualTo: date_lower).whereField("date", isLessThan: date_upper).order(by: "date",descending: true).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
                 dispatchGroup.leave()
@@ -84,11 +75,67 @@ class SewageDataAPI {
                     let maxGal = testVar["maxGal"]! as! Int
                     let location = testVar["location"] as! String
                     let receivingWater = testVar["receivingWater"]! as! String
+                    let longitude = testVar["Longitude"]! as! String
+                    let latitude = testVar["Latitude"]! as! String
 
                     // Add the sewageDataItem object to the sewage store cart
-                    sewageDataStore.createSewageDataItem(date: date, type: type, minGal: minGal, maxGal: maxGal, location: location, receivingWater: receivingWater)
+                    sewageDataStore.createSewageDataItem(date: date, type: type, minGal: minGal, maxGal: maxGal, location: location, receivingWater: receivingWater, latitude: latitude, longitude: longitude)
                     
-                    break
+                    break // breaking only to grab the most recent data for a particular receiving water value
+                } // end for
+                dispatchGroup.leave()
+            } // end else
+        } // end db collection
+        dispatchGroup.notify(queue:.main) {
+            completion(sewageDataStore)
+        }
+        return sewageDataStore
+    }// end func
+    
+    func getAllDataBy_receivingWater_and_year(sewageDataStore: SewageDataStore, receivingWater: String, date: Int, completion:@escaping((SewageDataStore) -> ())) -> SewageDataStore {
+                
+        // Query the sewage data collection for a list of the unique locations in our db
+        let dispatchGroup = DispatchGroup()
+        
+        // Load the Firestore db
+        let db = Firestore.firestore()
+        
+        let date_lower = String(date)
+        let date_upper = String(date+1)
+        
+//        print("\n\nInside Firebase_DAO.SewageDataAPI.getAllDataBy_receivingWater_and_year..")
+//        print("\t\t receivingWater is: \(receivingWater)")
+//        print("\t\t date_lower is: \(date_lower)")
+//        print("\t\t date_upper is: \(date_upper)")
+        
+        
+        // For each of the locations, get its' most recent data
+        dispatchGroup.enter()
+        db.collection("sewage3").whereField("receivingWater", isEqualTo: receivingWater).whereField("date", isGreaterThanOrEqualTo: date_lower).whereField("date", isLessThan: date_upper).order(by: "date",descending: true).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("\t\t\t Error getting documents: \(err)")
+                dispatchGroup.leave()
+            } else {
+                //print("\t\t\t Number of documents: \(querySnapshot!.documents.count)")
+                for document in querySnapshot!.documents {
+                    
+                    // Get the whole document as dictionary
+                    let testVar = document.data()
+                    //print("\t\t\t \(testVar)")
+                                        
+                    // Getting the specific attribute values into their own variables
+                    let date = testVar["date"]! as! String
+                    let type = testVar["type"]! as! String
+                    let minGal = Int(testVar["minGal"]! as! String)!
+                    let maxGal = Int(testVar["maxGal"]! as! String)!
+                    let location = testVar["location"] as! String
+                    let receivingWater = testVar["receivingWater"]! as! String
+                    let longitude = testVar["longitude"]! as! String
+                    let latitude = testVar["latitude"]! as! String
+
+                    // Add the sewageDataItem object to the sewage store cart
+                    sewageDataStore.createSewageDataItem(date: date, type: type, minGal: minGal, maxGal: maxGal, location: location, receivingWater: receivingWater, latitude: latitude, longitude: longitude)
+                    
                 } // end for
                 dispatchGroup.leave()
             } // end else
