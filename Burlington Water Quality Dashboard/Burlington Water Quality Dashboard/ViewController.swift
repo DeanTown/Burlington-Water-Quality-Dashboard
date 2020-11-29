@@ -72,10 +72,15 @@ class ViewController: UIViewController {
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         //TODO: Oliver when your code is all set, use this to navigate to your screen, and use this to also
         //tell your screen what to do
-      let anotherViewController = self.storyboard?.instantiateViewController(withIdentifier: "graphingVC") as! GraphingVC
+//      let anotherViewController = self.storyboard?.instantiateViewController(withIdentifier: "Graphing") as! GraphingVC
 //      anotherViewController.dataToLoad = thisButtonsData
-      self.navigationController?.pushViewController(anotherViewController, animated: true)
+//      self.navigationController?.pushViewController(anotherViewController, animated: true)
         print("annotation has been clicked on!")
+        
+        let graphingStoryboard = UIStoryboard(name: "Graphing", bundle:nil)
+        let graphingVC = graphingStoryboard.instantiateViewController(withIdentifier: "graphingVC")
+//        graphingVC.id = 5
+        show(graphingVC, sender: self)
 
     }
     
