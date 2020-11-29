@@ -145,7 +145,7 @@ class CyanobacteriaDataAPI {
     } // end func
     
     
-    func getDataFromLocationByYear(cyanobacteriaDataStore: CyanobacteriaDataStore, location: Int, year: String, completion:@escaping((CyanobacteriaDataStore) -> ())) -> CyanobacteriaDataStore {
+    func getDataFromLocationByYear(cyanobacteriaDataStore: CyanobacteriaDataStore, location: Int, year: Int, completion:@escaping((CyanobacteriaDataStore) -> ())) -> CyanobacteriaDataStore {
         
         // Query the cyanobacteria data collection for a list of the unique locations in our db
         let dispatchGroup = DispatchGroup()
