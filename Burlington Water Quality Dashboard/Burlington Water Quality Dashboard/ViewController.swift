@@ -73,7 +73,6 @@ class ViewController: UIViewController {
         // Notes:
             
         // BACK END DATA HANDLING
-        sewage_back_end_handler(date: 2019)
         // Notes:
         // Sewage data on the 16 unique locations in the sewage db is stored in the
         // sewageDataStore ViewController class-level variable.
@@ -84,7 +83,7 @@ class ViewController: UIViewController {
         //      At some point, in my code down below I need to hook the debug date variable
         //      to retreive its value from some widget on the front end
         
-        //cyano_back_end_handler()
+        //cyano_back_end_handler(location: 54, year: 2017)
 
         
         
@@ -96,10 +95,15 @@ class ViewController: UIViewController {
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         //TODO: Oliver when your code is all set, use this to navigate to your screen, and use this to also
         //tell your screen what to do
-//      let anotherViewController = self.storyboard?.instantiateViewController(withIdentifier: "anotherViewController") as! AnotherViewController
+//      let anotherViewController = self.storyboard?.instantiateViewController(withIdentifier: "Graphing") as! GraphingVC
 //      anotherViewController.dataToLoad = thisButtonsData
 //      self.navigationController?.pushViewController(anotherViewController, animated: true)
         print("annotation has been clicked on!")
+        
+        let graphingStoryboard = UIStoryboard(name: "Graphing", bundle:nil)
+        let graphingVC = graphingStoryboard.instantiateViewController(withIdentifier: "graphingVC")
+//        graphingVC.id = 5
+        show(graphingVC, sender: self)
 
     }
     
@@ -213,10 +217,10 @@ class ViewController: UIViewController {
         } // end when sewageDataStore is populated with most recent data for each location
     } // end back_end_handler function
     
-    func cyano_back_end_handler(){
+    func cyano_back_end_handler(location: Int, year: Int){
         self.dispatchGroup.enter() // Starting thread
         // Getting all the unique locations from our cyanobacteria data
-        self.cyanobacteriaAPI.getDataFromLocationByYear(cyanobacteriaDataStore: cyanobacteriaDataStore, location: 22, year: "2017"){ result in
+        self.cyanobacteriaAPI.getDataFromLocationByYear(cyanobacteriaDataStore: cyanobacteriaDataStore, location: location, year: year){ result in
             self.cyanobacteriaDataStore = result
             self.dispatchGroup.leave() // Leaving thread
         }
