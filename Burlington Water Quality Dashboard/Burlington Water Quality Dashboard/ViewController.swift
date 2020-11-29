@@ -73,6 +73,7 @@ class ViewController: UIViewController {
         // Notes:
             
         // BACK END DATA HANDLING
+        sewage_back_end_handler(date: 2019)
         // Notes:
         // Sewage data on the 16 unique locations in the sewage db is stored in the
         // sewageDataStore ViewController class-level variable.
@@ -83,7 +84,7 @@ class ViewController: UIViewController {
         //      At some point, in my code down below I need to hook the debug date variable
         //      to retreive its value from some widget on the front end
         
-        //cyano_back_end_handler(location: 54, year: 2017)
+        cyano_back_end_handler(location: 54, year: 2017)
 
         
         
