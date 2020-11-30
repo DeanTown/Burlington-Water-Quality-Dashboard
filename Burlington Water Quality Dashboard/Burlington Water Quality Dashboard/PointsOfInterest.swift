@@ -46,7 +46,7 @@ class PointsOfInterest: NSObject, MKAnnotation {
     }
     
     var subtitle: String? {
-        return "Tap to see data"
+        return self.descriptionOfPlace
     }
     
     
@@ -64,10 +64,24 @@ class PointsOfInterest: NSObject, MKAnnotation {
     }
     
     var image: UIImage {
-        if (descriptionOfPlace == "tap here for more sewage info") {
+        if Int(self.descriptionOfPlace ?? "") != nil {
+            return #imageLiteral(resourceName: "beachesSelected")
+        }
+        else {
             return #imageLiteral(resourceName: "sewageRunoff")
         }
-        return #imageLiteral(resourceName: "beachesSelected")
+    }
+    
+    
+    
+    func sanatizeInt(input: Any?) -> Int {
+        var out: Int
+        if (input as? Int != nil){
+            out = input as? Int ?? 0
+        } else{
+            out = 0
+        }
+        return out
     }
 
     
