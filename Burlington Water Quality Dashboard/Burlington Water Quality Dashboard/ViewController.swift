@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var areasFilter: UIButton!
     
     private var poi: [PointsOfInterest] = []
-    let sewageRunoff = PointsOfInterest(title: "Runoff Into Winooski", descriptionOfPlace: "tap here for more sewage info", coordinate: CLLocationCoordinate2D(latitude: 44.530598, longitude: -73.274215))
+//    let sewageRunoff = PointsOfInterest(title: "Runoff Into Winooski", descriptionOfPlace: "tap here for more sewage info", coordinate: CLLocationCoordinate2D(latitude: 44.530598, longitude: -73.274215))
 
     
 //    Sewage locations we can hard code:
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
 //    let sewageRunoffShelburneBay = PointsOfInterest(title: "Runoff Into Shelburne Bay", descriptionOfPlace: "tap here for more sewage info", coordinate: CLLocationCoordinate2D(latitude: 44.422171, longitude: -73.231547))
     
     // Sewage Run Offs Array:: Winooski, Pine St Barge Canal, Shelburne Bay
-    private var sewageRunoffs: [PointsOfInterest] = [PointsOfInterest(title: "Runoff Into Winooski", descriptionOfPlace: "tap here for more sewage info", coordinate: CLLocationCoordinate2D(latitude: 44.530598, longitude: -73.274215)), PointsOfInterest(title: "Runoff Into Pine St Barge Canal", descriptionOfPlace: "tap here for more sewage info", coordinate: CLLocationCoordinate2D(latitude: 44.469254, longitude: -73.219233)), PointsOfInterest(title: "Runoff Into Shelburne Bay", descriptionOfPlace: "tap here for more sewage info", coordinate: CLLocationCoordinate2D(latitude: 44.422171, longitude: -73.231547)) ]
+    private var sewageRunoffs: [PointsOfInterest] = [PointsOfInterest(title: "Runoff Into Winooski", descriptionOfPlace: "Winooski", coordinate: CLLocationCoordinate2D(latitude: 44.530598, longitude: -73.274215)), PointsOfInterest(title: "Runoff Into Pine St Barge Canal", descriptionOfPlace: "Pine St Barge Canal", coordinate: CLLocationCoordinate2D(latitude: 44.469254, longitude: -73.219233)), PointsOfInterest(title: "Runoff Into Shelburne Bay", descriptionOfPlace: "Shelburne Bay", coordinate: CLLocationCoordinate2D(latitude: 44.422171, longitude: -73.231547)) ]
     
     
     // Variable to handle all calls to the sewage data DB
@@ -101,6 +101,14 @@ class ViewController: UIViewController {
         print(control)
         print(view)
         
+        if let subtitle = view.annotation?.subtitle, let id = subtitle {
+            let siteIdentifier = String(id) // default value is string
+            if cyanobacteriaAPI.sanatizeInt(input: siteIdentifier) != 0 {
+                // returned back as an Int
+                let siteIdentifier = cyanobacteriaAPI.sanatizeInt(input: siteIdentifier)
+            }
+            print("Site identifier is: \(siteIdentifier)")
+        }
                 
         performSegue(withIdentifier: "detailView", sender: self) // this is going to call the function "prepare" below
 
@@ -113,6 +121,7 @@ class ViewController: UIViewController {
         dest.dataSource = "Cyanobacteria" // testing passing data to the view controller
 
     }
+    
     
     func map_handler(){
         
@@ -246,7 +255,7 @@ class ViewController: UIViewController {
             mapView.removeAnnotations(mapView.annotations)
         } else {
             sender.isSelected = true
-            mapView.addAnnotation(sewageRunoff)
+            mapView.addAnnotations(sewageRunoffs)
             mapView.addAnnotations(poi)
         }
     }
