@@ -61,13 +61,13 @@ class SewageDataItem: NSObject, NSCoding {
     
     @discardableResult func toString() -> String {
         var tmp: String = "\tLocation: \(self.location ?? "")"
-        tmp += "\t\tDate: \(self.date)"
-        tmp += "\t\tType: \(self.type ?? "")"
-        tmp += "\t\tMinGal: \(self.minGal ?? 0)"
-        tmp += "\t\tMaxGal: \(self.maxGal ?? 0)"
-        tmp += "\t\tReceivingWater: \(self.receivingWater ?? "")"
-        tmp += "\t\tLatitude: \(self.latitude ?? "")"
-        tmp += "\t\tLongitude: \(self.longitude ?? "")"
+        tmp += "\n\t\tDate: \(self.date)"
+        tmp += "\n\t\tType: \(self.type ?? "")"
+        tmp += "\n\t\tMinGal: \(self.minGal ?? 0)"
+        tmp += "\n\t\tMaxGal: \(self.maxGal ?? 0)"
+        tmp += "\n\t\tReceivingWater: \(self.receivingWater ?? "")"
+        tmp += "\n\t\tLatitude: \(self.latitude ?? "")"
+        tmp += "\n\t\tLongitude: \(self.longitude ?? "")"
         print(tmp)
         return tmp
     }
