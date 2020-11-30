@@ -59,15 +59,17 @@ class SewageDataItem: NSObject, NSCoding {
         super.init()
     }
     
-    func toString(){
-        print("\tLocation: \(self.location ?? "")")
-        print("\t\tDate: \(self.date)")
-        print("\t\tType: \(self.type ?? "")")
-        print("\t\tMinGal: \(self.minGal ?? 0)")
-        print("\t\tMaxGal: \(self.maxGal ?? 0)")
-        print("\t\tReceivingWater: \(self.receivingWater ?? "")")
-        print("\t\tLatitude: \(self.latitude ?? "")")
-        print("\t\tLongitude: \(self.longitude ?? "")")
+    @discardableResult func toString() -> String {
+        var tmp: String = "\tLocation: \(self.location ?? "")"
+        tmp += "\t\tDate: \(self.date)"
+        tmp += "\t\tType: \(self.type ?? "")"
+        tmp += "\t\tMinGal: \(self.minGal ?? 0)"
+        tmp += "\t\tMaxGal: \(self.maxGal ?? 0)"
+        tmp += "\t\tReceivingWater: \(self.receivingWater ?? "")"
+        tmp += "\t\tLatitude: \(self.latitude ?? "")"
+        tmp += "\t\tLongitude: \(self.longitude ?? "")"
+        print(tmp)
+        return tmp
     }
     
     func getLocation() -> String {

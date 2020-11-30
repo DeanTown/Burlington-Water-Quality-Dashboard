@@ -1,7 +1,4 @@
 //
-//  ItemStore.swift
-//  Homepwner
-//
 //  Created by Nick Hella on 10/24/20.
 //
 
@@ -13,9 +10,7 @@ class SewageDataStore {
 
     // @discardableResult means the caller can ignore the return object
     @discardableResult func createSewageDataItem(date: String, type: String, minGal: Int, maxGal: Int, location: String, receivingWater: String, latitude: String, longitude: String) -> SewageDataItem {
-        
-        //print("\ncreateSewageDataItem creating sweage item!")
-                
+                        
         let newSewageDataItem = SewageDataItem(date: date, type: type, minGal: minGal, maxGal: maxGal, location: location, receivingWater: receivingWater, latitude: latitude, longitude: longitude)
         
         self.SewageDataItems.append(newSewageDataItem)
@@ -33,8 +28,7 @@ class SewageDataStore {
         if self.SewageDataItems.count > 0 {
             print("\n SewageDataItems Items Are: ")
             for item in self.SewageDataItems {
-                item.toString()
-                //tmp = tmp + item.toString()
+                tmp = tmp + item.toString()
             }
         }
         return tmp

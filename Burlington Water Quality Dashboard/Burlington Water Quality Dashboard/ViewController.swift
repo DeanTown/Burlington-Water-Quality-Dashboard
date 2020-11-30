@@ -95,7 +95,7 @@ class ViewController: UIViewController {
         //tell your screen what to do
 //      let anotherViewController = self.storyboard?.instantiateViewController(withIdentifier: "Graphing") as! GraphingVC
 //      anotherViewController.dataToLoad = thisButtonsData
-//      self.navigationController?.pushViewController(anotherViewController, animated: true)
+//      self.navsigationController?.pushViewController(anotherViewController, animated: true)
         
         print("annotation has been clicked on!")
         print(control)
