@@ -62,7 +62,6 @@ class ViewController: UIViewController {
         self.mapFilter.layer.cornerRadius = 25
         self.mapFilter.layer.masksToBounds = true
         
-        
         mapView.register(
           LocationViews.self,
           forAnnotationViewWithReuseIdentifier:
@@ -85,8 +84,6 @@ class ViewController: UIViewController {
         //      to retreive its value from some widget on the front end
         
         cyano_back_end_handler(location: 54, year: 2017)
-
-        
         
         // CALLING THE REAL viewDidLoad FUNCTION
         super.viewDidLoad()
@@ -99,12 +96,21 @@ class ViewController: UIViewController {
 //      let anotherViewController = self.storyboard?.instantiateViewController(withIdentifier: "Graphing") as! GraphingVC
 //      anotherViewController.dataToLoad = thisButtonsData
 //      self.navigationController?.pushViewController(anotherViewController, animated: true)
-        print("annotation has been clicked on!")
         
-        let graphingStoryboard = UIStoryboard(name: "Graphing", bundle:nil)
-        let graphingVC = graphingStoryboard.instantiateViewController(withIdentifier: "graphingVC")
-//        graphingVC.id = 5
-        show(graphingVC, sender: self)
+        print("annotation has been clicked on!")
+        print(control)
+        print(view)
+        
+                
+        performSegue(withIdentifier: "detailView", sender: self) // this is going to call the function "prepare" below
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let dest = segue.destination as! GraphingVC // setting the segue destination as the Graphing view controller
+        
+        dest.dataSource = "Cyanobacteria" // testing passing data to the view controller
 
     }
     
@@ -178,19 +184,8 @@ class ViewController: UIViewController {
     
     func sewage_back_end_handler(date: Int) {
         
-        // DEBUG -- Get count of documents in sewage2 collection
-//        var db_count = 0
-//        self.dispatchGroup.enter() // Starting thread
-//        self.sewageAPI.get_collection_document_count(sewageDataStore:self.sewageDataStore) { result in
-//            db_count = result
-//            self.dispatchGroup.leave() // Leaving thread
-//        }
-//        self.dispatchGroup.notify(queue:.main) {
-//            print("\n\nNumber of documents in sewage2 collection: \(db_count)\n\n")
-//        }
-        
-        
         // Querying the Sewage data for the unique locations in the data set
+        // HARD-CODED key points of interest for sewage data
         var key_receiving_water_values: [String] = ["Winooski", "Pine St Barge Canal", "Shelburne Bay"]
         
         // Building the sewageDataStore with a SewageDataItem element for each location

@@ -174,7 +174,7 @@ class CyanobacteriaDataAPI {
                     let testVar = document.data()
                                         
                     // Getting the location attributes into their own variables
-                    let site = sanatizeInt(input: testVar["site"])
+                    let site = self.sanatizeInt(input: testVar["site"])
                     
                     if !UniqueLocations.contains(site) {
                         UniqueLocations.append(site)
@@ -213,19 +213,19 @@ class CyanobacteriaDataAPI {
                     // Get the whole document as dictionary
                     let testVar = document.data()
                     
-                    let date = sanatizeString(input: testVar["date"])
-                    let latitude = sanatizeDouble(input: testVar["latitude"])
-                    let longitude = sanatizeDouble(input: testVar["longitude"])
-                    let bloomIntensity = sanatizeString(input: testVar["bloomIntensity"])
-                    let cyanoTaxaPresent = sanatizeString(input: testVar["cyanoTaxaPresent"])
-                    let cyanobacteriaDensity = sanatizeInt(input: testVar["cyanobacteriaDensity"])
-                    let region = sanatizeString(input: testVar["region"])
-                    let site = sanatizeInt(input: testVar["site"])
-                    let station = sanatizeString(input: testVar["station"])
-                    let status = sanatizeString(input: testVar["status"])
-                    let temperature = sanatizeInt(input: testVar["temperature"])
-                    let waterSurface = sanatizeString(input: testVar["waterSurface"])
-                    let waterbody = sanatizeString(input: testVar["waterbody"])
+                    let date = self.sanatizeString(input: testVar["date"])
+                    let latitude = self.sanatizeDouble(input: testVar["latitude"])
+                    let longitude = self.sanatizeDouble(input: testVar["longitude"])
+                    let bloomIntensity = self.sanatizeString(input: testVar["bloomIntensity"])
+                    let cyanoTaxaPresent = self.sanatizeString(input: testVar["cyanoTaxaPresent"])
+                    let cyanobacteriaDensity = self.sanatizeInt(input: testVar["cyanobacteriaDensity"])
+                    let region = self.sanatizeString(input: testVar["region"])
+                    let site = self.sanatizeInt(input: testVar["site"])
+                    let station = self.sanatizeString(input: testVar["station"])
+                    let status = self.sanatizeString(input: testVar["status"])
+                    let temperature = self.sanatizeInt(input: testVar["temperature"])
+                    let waterSurface = self.sanatizeString(input: testVar["waterSurface"])
+                    let waterbody = self.sanatizeString(input: testVar["waterbody"])
                     
                     // Add the cyanobacteriaDataItem object to the cyanobacteria store cart
                     cyanobacteriaDataStore.createCyanobacteriaDataItem(date: date, latitude: latitude, longitude: longitude,  bloomIntensity: bloomIntensity, cyanoTaxaPresent: cyanoTaxaPresent, cyanobacteriaDensity: cyanobacteriaDensity, region: region, site: site, station: station, status: status, temperature: temperature, waterSurface: waterSurface, waterbody: waterbody)
@@ -257,19 +257,19 @@ class CyanobacteriaDataAPI {
                     // Get the whole document as dictionary
                     let testVar = document.data()
                     
-                    let date = sanatizeString(input: testVar["date"])
-                    let latitude = sanatizeDouble(input: testVar["latitude"])
-                    let longitude = sanatizeDouble(input: testVar["longitude"])
-                    let bloomIntensity = sanatizeString(input: testVar["bloomIntensity"])
-                    let cyanoTaxaPresent = sanatizeString(input: testVar["cyanoTaxaPresent"])
-                    let cyanobacteriaDensity = sanatizeInt(input: testVar["cyanobacteriaDensity"])
-                    let region = sanatizeString(input: testVar["region"])
-                    let site = sanatizeInt(input: testVar["site"])
-                    let station = sanatizeString(input: testVar["station"])
-                    let status = sanatizeString(input: testVar["status"])
-                    let temperature = sanatizeInt(input: testVar["temperature"])
-                    let waterSurface = sanatizeString(input: testVar["waterSurface"])
-                    let waterbody = sanatizeString(input: testVar["waterbody"])
+                    let date = self.sanatizeString(input: testVar["date"])
+                    let latitude = self.sanatizeDouble(input: testVar["latitude"])
+                    let longitude = self.sanatizeDouble(input: testVar["longitude"])
+                    let bloomIntensity = self.sanatizeString(input: testVar["bloomIntensity"])
+                    let cyanoTaxaPresent = self.sanatizeString(input: testVar["cyanoTaxaPresent"])
+                    let cyanobacteriaDensity = self.sanatizeInt(input: testVar["cyanobacteriaDensity"])
+                    let region = self.sanatizeString(input: testVar["region"])
+                    let site = self.sanatizeInt(input: testVar["site"])
+                    let station = self.sanatizeString(input: testVar["station"])
+                    let status = self.sanatizeString(input: testVar["status"])
+                    let temperature = self.sanatizeInt(input: testVar["temperature"])
+                    let waterSurface = self.sanatizeString(input: testVar["waterSurface"])
+                    let waterbody = self.sanatizeString(input: testVar["waterbody"])
                     
                     // Add the cyanobacteriaDataItem object to the cyanobacteria store cart
                     cyanobacteriaDataStore.createCyanobacteriaDataItem(date: date, latitude: latitude, longitude: longitude,  bloomIntensity: bloomIntensity, cyanoTaxaPresent: cyanoTaxaPresent, cyanobacteriaDensity: cyanobacteriaDensity, region: region, site: site, station: station, status: status, temperature: temperature, waterSurface: waterSurface, waterbody: waterbody)
@@ -284,38 +284,37 @@ class CyanobacteriaDataAPI {
         }
         return cyanobacteriaDataStore
     }// end func
+
+    // Data sanitization helper functions
+    func sanatizeString(input: Any?) -> String{
+        var out: String
+        if (input as? String != nil){
+            out = input as? String ?? ""
+        } else{
+            out = ""
+        }
+        return out
+    }
+
+    func sanatizeInt(input: Any?) -> Int{
+        var out: Int
+        if (input as? Int != nil){
+            out = input as? Int ?? 0
+        } else{
+            out = 0
+        }
+        return out
+    }
+
+    func sanatizeDouble(input: Any?) -> Double{
+        var out: Double
+        if (input as? Double != nil){
+            out = input as? Double ?? 0
+        } else{
+            out = 0
+        }
+        return out
+    }
+
 } // end class
-
-
-// Data sanitization helper functions
-func sanatizeString(input: Any?) -> String{
-    var out: String
-    if (input as? String != nil){
-        out = input as? String ?? ""
-    } else{
-        out = ""
-    }
-    return out
-}
-
-func sanatizeInt(input: Any?) -> Int{
-    var out: Int
-    if (input as? Int != nil){
-        out = input as? Int ?? 0
-    } else{
-        out = 0
-    }
-    return out
-}
-
-func sanatizeDouble(input: Any?) -> Double{
-    var out: Double
-    if (input as? Double != nil){
-        out = input as? Double ?? 0
-    } else{
-        out = 0
-    }
-    return out
-}
-
 
