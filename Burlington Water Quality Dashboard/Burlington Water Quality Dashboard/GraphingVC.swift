@@ -27,14 +27,19 @@ class GraphingVC: UIViewController, ChartViewDelegate {
     //        ChartDataEntry(x: 2100, y: 21)
     //    ]
     
-    
     var cyanobacteriaDataStore = CyanobacteriaDataStore()
     let cyanobacteriaAPI = CyanobacteriaDataAPI()
     
+    // Notes:
+    // Sewage data on the 16 unique locations in the sewage db is stored in the
+    // sewageDataStore ViewController class-level variable.
+    // It represents a SewageDataStore object.
+    // The SewageDataStore object has an attribute variable,
+    // "SewageDataItems" , which is an array that holds SewageDataItems objects. It is within these SewageDataItems objects which we hold our sewage data.
     var sewageDataStore = SewageDataStore()
     let sewageAPI = SewageDataAPI()
 
-    let dispatchGroup = DispatchGroup()
+    let dispatchGroup = DispatchGroup() // Used for Firebase asyncronous threads
     
     lazy var lineChartView1: LineChartView = {
         let chartView = LineChartView()
@@ -45,15 +50,21 @@ class GraphingVC: UIViewController, ChartViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        print("\n\n \(self.dataSource) \n\n")
-        
+                
+        // Determining the data source (Sewage vs. Cyanobacteria)
+        // If the selected location is a String --> Sewage
+        // Else, --> Cyanobacteria
+        self.dataSource = "Sewage"
+        if cyanobacteriaAPI.sanatizeInt(input: self.location) != 0 {
+            // returned back as an Int
+            self.dataSource = "Cyanobacteria"
+        }
+        // What to do based on the data source
         if self.dataSource == "Cyanobacteria" {
             self.cyanobacteriaHandler(location: cyanobacteriaAPI.sanatizeInt(input: self.location), year: self.year ?? 2018 )
         } // end if cyanobacteria
-        if self.dataSource == "Sewage" {
-            sewageHandler(date: self.year ?? 2018, location: self.location as! String)
-            // Do stuff
+        else if self.dataSource == "Sewage" {
+            sewageHandler()
         }
     } // end viewDidLoad
 
@@ -75,7 +86,6 @@ class GraphingVC: UIViewController, ChartViewDelegate {
         }
         self.dispatchGroup.notify(queue:.main) {
 //            self.cyanobacteriaDataStore.printStore()
-//            print(self.cyanobacteriaDataStore.CyanobacteriaDataItems)
             if (self.cyanobacteriaDataStore.CyanobacteriaDataItems.isEmpty) {
                 print("Empty Cyanobacteria Store!")
             } else {
@@ -92,48 +102,33 @@ class GraphingVC: UIViewController, ChartViewDelegate {
        
     } // end cyanobacteriaHandler
     
-    func sewageHandler(date: Int, location: String) {
-        
-        print("\n\nMade it to sewageHandler in Graphing view controller")
-        
-        self.yValues = [] // clearing out whatever we had in y values from before, if they existed
-        
-        view.subviews[1].addSubview(lineChartView1)
-        lineChartView1.centerInSuperview()
-        lineChartView1.width(to: view)
-        lineChartView1.heightToSuperview()
+    func sewageHandler() {
         
         // Building the sewageDataStore with a SewageDataItem element for each location
         self.sewageDataStore.clearStore() // Clearing whatever was previously in the sewage data store
         self.dispatchGroup.enter() // Starting thread
-        self.sewageAPI.getAllDataBy_receivingWater_and_year(sewageDataStore:self.sewageDataStore, receivingWater: location, date: date) { result in
+        self.sewageAPI.getAllDataBy_receivingWater_and_year(sewageDataStore:self.sewageDataStore, receivingWater: self.location! as! String, date: self.year!) { result in
             self.sewageDataStore =  result
             self.dispatchGroup.leave() // Leaving thread
         }
         
         // When all threads are finished, the sewageDataStore array should be fully populated
         self.dispatchGroup.notify(queue:.main) {
-            
-            // Testing that all the above works
-            print("\n\nWithin the graphing view controller:")
-            self.sewageDataStore.toString() // DEBUG -- REMOVE
-            print(self.sewageDataStore.SewageDataItems.count) // DEBUG -- REMOVE
-            
-            // Do more stuff below...
-            if (self.sewageDataStore.SewageDataItems.isEmpty) {
-                print("Empty Sewage Data Store!")
-            } else {
-                var i = 0
-                for item in self.sewageDataStore.SewageDataItems {
-                    print(item.maxGal)
-                    self.yValues.append(ChartDataEntry(x: Double(i), y: Double(item.maxGal)))
-                    i += 1
-                }
-                self.setData()
-            } // end else
-            
-        } // end when sewageDataStore is populated with most recent data for each location
-    } // end back_end_handler function
+            self.sewageDataStore.SewageDataItems = self.sewageDataStore.sortStore()
+            self.yValues = [] // clearing out whatever we had in y values from before, if they existed
+            self.view.subviews[1].addSubview(self.lineChartView1)
+            self.lineChartView1.centerInSuperview()
+            self.lineChartView1.width(to: self.view)
+            self.lineChartView1.heightToSuperview()
+            var i = 0
+            for item in self.sewageDataStore.SewageDataItems {
+                self.yValues.append(ChartDataEntry(x: Double(i), y: Double(item.maxGal)))
+                i += 1
+            }
+            self.sewageDataStore.toString()
+            self.setData()
+        }
+    } // end sewageHandler function
 
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         print(entry)

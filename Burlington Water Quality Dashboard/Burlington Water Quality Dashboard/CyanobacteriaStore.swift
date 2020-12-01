@@ -34,8 +34,7 @@ class CyanobacteriaDataStore {
             print("Empty")
         } else{
             for item in self.CyanobacteriaDataItems{
-                    print(item.toString())
-            
+                print(item.toString())
             }
         }
     }

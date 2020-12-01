@@ -18,15 +18,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var annotationFilter: UIButton!
     @IBOutlet weak var areasFilter: UIButton!
     @IBOutlet var yearPicker: UISegmentedControl!
+    
+    var yearSelection: Int = 2018
+    var siteSelection: Any? = nil
+    
     @IBAction func yearChangeAction(_ sender: UISegmentedControl) {
         switch yearPicker.selectedSegmentIndex {
         //case 0 is 2020, 1 is 2019....so do with that what you want, create a date var most likely...
         case 0:
-            print("2020")
+            print("Year selected is: 2020")
+            self.yearSelection = 2018
         case 1:
-            print("2019")
+            self.yearSelection = 2016
+            print("Year selected is: 2016")
         case 2:
-            print("2018")
+            print("Year selected is: 2015")
+            self.yearSelection = 2016
         default:
             break
         }
@@ -56,8 +63,6 @@ class ViewController: UIViewController {
     
     // Variable to handle all calls to the sewage data DB
     let sewageAPI = SewageDataAPI()
-    // Array of sewage data items that will be actively used
-    var sewageDataStore = SewageDataStore()
     
     var cyanobacteriaDataStore = CyanobacteriaDataStore()
     let cyanobacteriaAPI = CyanobacteriaDataAPI()
@@ -85,18 +90,7 @@ class ViewController: UIViewController {
         // FRONT END HANDLING
         map_handler()
         // Notes:
-            
-        // BACK END DATA HANDLING
-        sewage_back_end_handler(date: 2019)
-        // Notes:
-        // Sewage data on the 16 unique locations in the sewage db is stored in the
-        // sewageDataStore ViewController class-level variable.
-        // It represents a SewageDataStore object.
-        // The SewageDataStore object has an attribute variable,
-        // "SewageDataItems" , which is an array that holds SewageDataItems objects. It is within these SewageDataItems objects which we hold our sewage data.
-        //    @TODO: nhella
-        //      At some point, in my code down below I need to hook the debug date variable
-        //      to retreive its value from some widget on the front end
+
         
         cyano_back_end_handler(location: 54, year: 2017)
         
@@ -113,8 +107,6 @@ class ViewController: UIViewController {
 //      self.navsigationController?.pushViewController(anotherViewController, animated: true)
         
         print("annotation has been clicked on!")
-        print(control)
-        print(view)
         
         if let subtitle = view.annotation?.subtitle, let id = subtitle {
             let siteIdentifier = String(id) // default value is string
@@ -123,6 +115,7 @@ class ViewController: UIViewController {
                 let siteIdentifier = cyanobacteriaAPI.sanatizeInt(input: siteIdentifier)
             }
             print("Site identifier is: \(siteIdentifier)")
+            self.siteSelection = siteIdentifier
         }
                 
         performSegue(withIdentifier: "detailView", sender: self) // this is going to call the function "prepare" below
@@ -133,7 +126,9 @@ class ViewController: UIViewController {
         
         let dest = segue.destination as! GraphingVC // setting the segue destination as the Graphing view controller
         
-        dest.dataSource = "Cyanobacteria" // testing passing data to the view controller
+        // passing data to the graphing view controller
+        dest.location = self.siteSelection
+        dest.year = self.yearSelection
 
     }
     
@@ -205,37 +200,6 @@ class ViewController: UIViewController {
         }
         
     } // end loadPOIData function
-    
-    func sewage_back_end_handler(date: Int) {
-        
-        // Querying the Sewage data for the unique locations in the data set
-        // HARD-CODED key points of interest for sewage data
-        var key_receiving_water_values: [String] = ["Winooski", "Pine St Barge Canal", "Shelburne Bay"]
-        
-        // Building the sewageDataStore with a SewageDataItem element for each location
-        self.sewageDataStore.clearStore() // Clearing whatever was previously in the sewage data store
-        for location in key_receiving_water_values {
-            self.dispatchGroup.enter() // Starting thread
-            self.sewageAPI.getAllDataBy_receivingWater_and_year(sewageDataStore:self.sewageDataStore, receivingWater: location, date: date) { result in
-                self.sewageDataStore =  result
-                self.dispatchGroup.leave() // Leaving thread
-            }
-        }
-        
-        // When all threads are finished, the sewageDataStore array should be fully populated
-        self.dispatchGroup.notify(queue:.main) {
-            
-            // Getting only the items from the Sewage Data Store that have "Pine St Barge Canal" as the receivingWater attribute value
-            self.sewageDataStore.SewageDataItems = self.sewageDataStore.return_only_items_from_specified_receiving_water_loction(receivingWater: "Pine St Barge Canal")
-            
-            // Testing that all the above works
-            self.sewageDataStore.toString() // DEBUG -- REMOVE
-            print(self.sewageDataStore.SewageDataItems.count) // DEBUG -- REMOVE
-            
-            // Do more stuff below...
-            
-        } // end when sewageDataStore is populated with most recent data for each location
-    } // end back_end_handler function
     
     func cyano_back_end_handler(location: Int, year: Int){
         self.dispatchGroup.enter() // Starting thread
