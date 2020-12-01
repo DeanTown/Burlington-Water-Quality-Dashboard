@@ -29,13 +29,13 @@ class ViewController: UIViewController {
         switch yearPicker.selectedSegmentIndex {
         //case 0 is 2020, 1 is 2019....so do with that what you want, create a date var most likely...
         case 0:
-            print("Year selected is: 2020")
+            print("Year selected is: 2018")
             self.yearSelection = 2018
         case 1:
-            self.yearSelection = 2016
-            print("Year selected is: 2016")
+            self.yearSelection = 2017
+            print("Year selected is: 2017")
         case 2:
-            print("Year selected is: 2015")
+            print("Year selected is: 2016")
             self.yearSelection = 2016
         default:
             break
