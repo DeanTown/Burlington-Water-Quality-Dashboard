@@ -24,8 +24,8 @@ class SewageDataAPI {
         // Count of items/documents in sewage collection
         var counter = 0
         
-        // For each of the locations, get its' most recent data
         dispatchGroup.enter()
+        // Getting everything in the sewage db
         db.collection("sewage3").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")

@@ -36,11 +36,12 @@ class GraphingVC: UIViewController, ChartViewDelegate {
     // It represents a SewageDataStore object.
     // The SewageDataStore object has an attribute variable,
     // "SewageDataItems" , which is an array that holds SewageDataItems objects. It is within these SewageDataItems objects which we hold our sewage data.
-    var sewageDataStore = SewageDataStore()
-    let sewageAPI = SewageDataAPI()
-
-    let dispatchGroup = DispatchGroup() // Used for Firebase asyncronous threads
+    var sewageDataStore = SewageDataStore() // Initializing the sewage data store
+    let sewageAPI = SewageDataAPI() // API handler for Firebase queries on the Sewage DB
+    let dispatchGroup = DispatchGroup() // Used for handling Firebase asyncronous threads
     
+    
+    // Graph stuff
     lazy var lineChartView1: LineChartView = {
         let chartView = LineChartView()
         chartView.backgroundColor = .systemBlue
@@ -48,7 +49,7 @@ class GraphingVC: UIViewController, ChartViewDelegate {
     }()
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad() // calling the OG viewDidLoad
         // Do any additional setup after loading the view.
                 
         // Determining the data source (Sewage vs. Cyanobacteria)
@@ -58,21 +59,23 @@ class GraphingVC: UIViewController, ChartViewDelegate {
         if cyanobacteriaAPI.sanatizeInt(input: self.location) != 0 {
             // returned back as an Int
             self.dataSource = "Cyanobacteria"
-        }
+        } // end if
         // What to do based on the data source
         if self.dataSource == "Cyanobacteria" {
-            self.cyanobacteriaHandler(location: cyanobacteriaAPI.sanatizeInt(input: self.location), year: self.year ?? 2018 )
+            self.cyanobacteriaHandler() // if data source is Sewage, query using the cyanobacteriaDataStore data
         } // end if cyanobacteria
         else if self.dataSource == "Sewage" {
-            sewageHandler()
-        }
+            sewageHandler() // if data source is Sewage, query using the sewageDataStore data
+        } // end else if
     } // end viewDidLoad
 
 
-    func cyanobacteriaHandler(location: Int, year: Int){
+    func cyanobacteriaHandler(){
         
         self.yValues = [] // clearing out whatever we had in y values from before, if they existed
+        self.cyanobacteriaDataStore.CyanobacteriaDataItems = [] // Clearing out whatever's in the cyanobacteria store
 
+        // Graph stuff
         view.subviews[1].addSubview(lineChartView1)
         lineChartView1.centerInSuperview()
         lineChartView1.width(to: view)
@@ -80,26 +83,25 @@ class GraphingVC: UIViewController, ChartViewDelegate {
         
         self.dispatchGroup.enter() // Starting thread
         // Getting all the unique locations from our cyanobacteria data
-        self.cyanobacteriaAPI.getDataFromLocationByYear(cyanobacteriaDataStore: cyanobacteriaDataStore, location: location, year: year){ result in
+        self.cyanobacteriaAPI.getDataFromLocationByYear(cyanobacteriaDataStore: cyanobacteriaDataStore, location: self.location as! Int, year: self.year!){ result in
             self.cyanobacteriaDataStore = result
             self.dispatchGroup.leave() // Leaving thread
         }
         self.dispatchGroup.notify(queue:.main) {
-//            self.cyanobacteriaDataStore.printStore()
             if (self.cyanobacteriaDataStore.CyanobacteriaDataItems.isEmpty) {
                 print("Empty Cyanobacteria Store!")
             } else {
                 var i = 0
                 for item in self.cyanobacteriaDataStore.CyanobacteriaDataItems {
-                    print(item.cyanobacteriaDensity)
+                    // @TODO: - Prepare toString variable
+                    //        - Somehow change x-axis to date instead of double?
+                    // var output_report: String = self.cyanobacteriaDataStore.printStore()
                     self.yValues.append(ChartDataEntry(x: Double(i), y: Double(item.cyanobacteriaDensity)))
                     i += 1
-                }
+                } // end for
                 self.setData()
             } // end else
-            
         } // end self.dispathGroup.notify(queue:.main)
-       
     } // end cyanobacteriaHandler
     
     func sewageHandler() {
@@ -122,9 +124,10 @@ class GraphingVC: UIViewController, ChartViewDelegate {
             self.lineChartView1.heightToSuperview() // even more graph stuff
             var i = 0 // phew
             for item in self.sewageDataStore.SewageDataItems {
+                // @TODO: Figure out how to get dates on the x axis!!
                 self.yValues.append(ChartDataEntry(x: Double(i), y: Double(item.maxGal)))
                 i += 1
-            }
+            } // end for
             var ouput_report: String = self.sewageDataStore.toString() // This would be the output string for the intermittent segue
             self.setData() // .. graph stuff
         } // end dispatchGroup.notify(queue:.main)
@@ -141,6 +144,4 @@ class GraphingVC: UIViewController, ChartViewDelegate {
         lineChartView1.data = data
     }
     
-
-}
-
+} // end class

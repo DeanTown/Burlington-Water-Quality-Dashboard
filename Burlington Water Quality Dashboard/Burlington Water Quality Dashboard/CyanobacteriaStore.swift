@@ -36,8 +36,8 @@ class CyanobacteriaDataStore {
             for item in self.CyanobacteriaDataItems{
                 print(item.toString())
             }
-        }
-    }
-    
-}
+        } // end else
+    } // end function
+
+} // end class
 

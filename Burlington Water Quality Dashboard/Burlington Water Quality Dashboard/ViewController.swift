@@ -19,9 +19,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var areasFilter: UIButton!
     @IBOutlet var yearPicker: UISegmentedControl!
     
-    var yearSelection: Int = 2018
-    var siteSelection: Any? = nil
+    var cyanobacteriaAPI = CyanobacteriaDataAPI() // Using cyanobacteria API function sanitizeInt to determine the selected data source. See func mapView for more
     
+    var yearSelection: Int = 2018 // Holds what year is currently selected
+    var siteSelection: Any? = nil // Holds what site is currently selected
+    
+    // Listener on the year switch
     @IBAction func yearChangeAction(_ sender: UISegmentedControl) {
         switch yearPicker.selectedSegmentIndex {
         //case 0 is 2020, 1 is 2019....so do with that what you want, create a date var most likely...
@@ -36,13 +39,13 @@ class ViewController: UIViewController {
             self.yearSelection = 2016
         default:
             break
-        }
-    }
+        } // end switch
+    } // end yearChangeAction
     
-    
+    // Array of Cyanobacteria points of interest
     private var poi: [PointsOfInterest] = []
-//    let sewageRunoff = PointsOfInterest(title: "Runoff Into Winooski", descriptionOfPlace: "tap here for more sewage info", coordinate: CLLocationCoordinate2D(latitude: 44.530598, longitude: -73.274215))
-
+    
+    // Creating Array of Sewage Points of Interest:
     
 //    Sewage locations we can hard code:
 //    ##         Location:                    Lat:         Long:
@@ -60,21 +63,9 @@ class ViewController: UIViewController {
     // Sewage Run Offs Array:: Winooski, Pine St Barge Canal, Shelburne Bay
     private var sewageRunoffs: [PointsOfInterest] = [PointsOfInterest(title: "Runoff Into Winooski", descriptionOfPlace: "Winooski", coordinate: CLLocationCoordinate2D(latitude: 44.530598, longitude: -73.274215)), PointsOfInterest(title: "Runoff Into Pine St Barge Canal", descriptionOfPlace: "Pine St Barge Canal", coordinate: CLLocationCoordinate2D(latitude: 44.469254, longitude: -73.219233)), PointsOfInterest(title: "Runoff Into Shelburne Bay", descriptionOfPlace: "Shelburne Bay", coordinate: CLLocationCoordinate2D(latitude: 44.422171, longitude: -73.231547)) ]
     
-    
-    // Variable to handle all calls to the sewage data DB
-    let sewageAPI = SewageDataAPI()
-    
-    var cyanobacteriaDataStore = CyanobacteriaDataStore()
-    let cyanobacteriaAPI = CyanobacteriaDataAPI()
-    
-    // Used for asyncronous firebase API threads
-    let dispatchGroup = DispatchGroup()
-    
 
     override func viewDidLoad() {
-        
-        print("\n\nviewDidLoad called\n\n")
-        
+                
         view.bringSubviewToFront(mapFilter)
         self.mapView.delegate = self
         
@@ -87,13 +78,9 @@ class ViewController: UIViewController {
           forAnnotationViewWithReuseIdentifier:
             MKMapViewDefaultAnnotationViewReuseIdentifier)
         
-        // FRONT END HANDLING
+        // FRONT END MAP HANDLING
         map_handler()
-        // Notes:
 
-        
-        cyano_back_end_handler(location: 54, year: 2017)
-        
         // CALLING THE REAL viewDidLoad FUNCTION
         super.viewDidLoad()
 
@@ -110,17 +97,16 @@ class ViewController: UIViewController {
         
         if let subtitle = view.annotation?.subtitle, let id = subtitle {
             let siteIdentifier = String(id) // default value is string
-            if cyanobacteriaAPI.sanatizeInt(input: siteIdentifier) != 0 {
+            if self.cyanobacteriaAPI.sanatizeInt(input: siteIdentifier) != 0 {
                 // returned back as an Int
-                let siteIdentifier = cyanobacteriaAPI.sanatizeInt(input: siteIdentifier)
+                let siteIdentifier = self.cyanobacteriaAPI.sanatizeInt(input: siteIdentifier)
             }
             print("Site identifier is: \(siteIdentifier)")
             self.siteSelection = siteIdentifier
         }
                 
         performSegue(withIdentifier: "detailView", sender: self) // this is going to call the function "prepare" below
-
-    }
+    } // end function
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -130,7 +116,7 @@ class ViewController: UIViewController {
         dest.location = self.siteSelection
         dest.year = self.yearSelection
 
-    }
+    } // end prepare
     
     
     func map_handler(){
@@ -154,12 +140,9 @@ class ViewController: UIViewController {
 //        mapView.addAnnotation(northBeach)
         
         
-        //creating an annotation for sewage run off, we can add more once we get the lats and longs for it:
-
-        //mapView.addAnnotation(sewageRunoff)
-        for el in sewageRunoffs {
-            mapView.addAnnotation(el)
-        }
+        // Adding Sewage annotations
+        mapView.addAnnotations(sewageRunoffs)
+        
         
         // displaying the array of points of interest to the map
         mapView.register(
@@ -188,7 +171,7 @@ class ViewController: UIViewController {
             let areaData = try? Data(contentsOf: fileName)
         else {
             return
-        }
+        } // end else
         do {
             let features = try MKGeoJSONDecoder().decode(areaData).compactMap {
                 $0 as? MKGeoJSONFeature
@@ -197,21 +180,9 @@ class ViewController: UIViewController {
             poi.append(contentsOf: validWorks)
         } catch {
             print("This error came up: \(error)!")
-        }
+        } // end catch
         
     } // end loadPOIData function
-    
-    func cyano_back_end_handler(location: Int, year: Int){
-        self.dispatchGroup.enter() // Starting thread
-        // Getting all the unique locations from our cyanobacteria data
-        self.cyanobacteriaAPI.getDataFromLocationByYear(cyanobacteriaDataStore: cyanobacteriaDataStore, location: location, year: year){ result in
-            self.cyanobacteriaDataStore = result
-            self.dispatchGroup.leave() // Leaving thread
-        }
-        self.dispatchGroup.notify(queue:.main) {
-            self.cyanobacteriaDataStore.printStore()
-        }
-    }
     
     // Whatever 'filters' we want to add, we can create individual checkboxes for them
     // and for each filter, create an overlay and add and remove it
@@ -224,8 +195,9 @@ class ViewController: UIViewController {
         } else {
             sender.isSelected = true
             mapView.addOverlay(burlingtonVerlay)
-        }
-    }
+        } // end else
+    } // end function
+    
     // this one is for annotations (pins for Points of interest)
     // for this one, in view did load we set it to selected right away
     @IBAction func checkBoxTapped2(_ sender: UIButton) {
@@ -236,8 +208,8 @@ class ViewController: UIViewController {
             sender.isSelected = true
             mapView.addAnnotations(sewageRunoffs)
             mapView.addAnnotations(poi)
-        }
-    }
+        } // end else
+    } // end function
 
 } // end ViewController class
 
@@ -251,7 +223,7 @@ private extension MKMapView {
             latitudinalMeters: regionRadius,
             longitudinalMeters: regionRadius)
         setRegion(coordinateRegion, animated: true)
-    }
+    } // end function
 } // end extension
 
 
