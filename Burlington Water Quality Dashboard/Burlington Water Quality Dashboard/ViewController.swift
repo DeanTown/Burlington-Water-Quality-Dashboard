@@ -63,6 +63,8 @@ class ViewController: UIViewController {
     // Sewage Run Offs Array:: Winooski, Pine St Barge Canal, Shelburne Bay
     private var sewageRunoffs: [PointsOfInterest] = [PointsOfInterest(title: "Runoff Into Winooski", descriptionOfPlace: "Winooski", coordinate: CLLocationCoordinate2D(latitude: 44.530598, longitude: -73.274215)), PointsOfInterest(title: "Runoff Into Pine St Barge Canal", descriptionOfPlace: "Pine St Barge Canal", coordinate: CLLocationCoordinate2D(latitude: 44.469254, longitude: -73.219233)), PointsOfInterest(title: "Runoff Into Shelburne Bay", descriptionOfPlace: "Shelburne Bay", coordinate: CLLocationCoordinate2D(latitude: 44.422171, longitude: -73.231547)) ]
     
+    // Cyanobacteria points of interest are coming from AreasWeHaveDataOn.geojson
+    
 
     override func viewDidLoad() {
                 
@@ -139,10 +141,8 @@ class ViewController: UIViewController {
 //        let northBeach = PointsOfInterest(title: "North Beach", descriptionOfPlace: "A public beach in burlington VT", coordinate: CLLocationCoordinate2D(latitude: 44.492238, longitude: -73.2431204))
 //        mapView.addAnnotation(northBeach)
         
-        
         // Adding Sewage annotations
         mapView.addAnnotations(sewageRunoffs)
-        
         
         // displaying the array of points of interest to the map
         mapView.register(
