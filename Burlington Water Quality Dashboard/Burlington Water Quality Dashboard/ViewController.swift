@@ -97,14 +97,19 @@ class ViewController: UIViewController {
         
         print("annotation has been clicked on!")
         
+        // Determining what to set for the selected data source of the annitaion
+        // If the selected location is a String --> Sewage
+        // Else, --> Cyanobacteria
         if let subtitle = view.annotation?.subtitle, let id = subtitle {
-            let siteIdentifier = String(id) // default value is string
+            let siteIdentifier = String(id) // default value is of site identifier is string (Sewage data source)
+            // Testing to see if it could be an Int
             if self.cyanobacteriaAPI.sanatizeInt(input: siteIdentifier) != 0 {
-                // returned back as an Int
+                // returned back as an Int, data source identified to be from Cyanobacteria db!
                 let siteIdentifier = self.cyanobacteriaAPI.sanatizeInt(input: siteIdentifier)
             }
+            
             print("Site identifier is: \(siteIdentifier)")
-            self.siteSelection = siteIdentifier
+            self.siteSelection = siteIdentifier // Setting the ViewController class attribute, siteSelection, to hold the selected site location value
         }
                 
         performSegue(withIdentifier: "detailView", sender: self) // this is going to call the function "prepare" below
@@ -114,7 +119,7 @@ class ViewController: UIViewController {
         
         let dest = segue.destination as! GraphingVC // setting the segue destination as the Graphing view controller
         
-        // passing data to the graphing view controller
+        // passing data to the Graphing view controller
         dest.location = self.siteSelection
         dest.year = self.yearSelection
 
