@@ -108,7 +108,7 @@ class GraphingVC: UIViewController, ChartViewDelegate {
         self.sewageDataStore.clearStore() // Clearing whatever was previously in the sewage data store
         self.dispatchGroup.enter() // Starting thread
         self.sewageAPI.getAllDataBy_receivingWater_and_year(sewageDataStore:self.sewageDataStore, receivingWater: self.location! as! String, date: self.year!) { result in
-            self.sewageDataStore =  result
+            self.sewageDataStore =  result // getting the newly updated sewage store
             self.dispatchGroup.leave() // Leaving thread
         }
         
@@ -117,17 +117,17 @@ class GraphingVC: UIViewController, ChartViewDelegate {
             self.sewageDataStore.SewageDataItems = self.sewageDataStore.sortStore()
             self.yValues = [] // clearing out whatever we had in y values from before, if they existed
             self.view.subviews[1].addSubview(self.lineChartView1)
-            self.lineChartView1.centerInSuperview()
-            self.lineChartView1.width(to: self.view)
-            self.lineChartView1.heightToSuperview()
-            var i = 0
+            self.lineChartView1.centerInSuperview() // graph stuff
+            self.lineChartView1.width(to: self.view) // more graph stuff
+            self.lineChartView1.heightToSuperview() // even more graph stuff
+            var i = 0 // phew
             for item in self.sewageDataStore.SewageDataItems {
                 self.yValues.append(ChartDataEntry(x: Double(i), y: Double(item.maxGal)))
                 i += 1
             }
-            self.sewageDataStore.toString()
-            self.setData()
-        }
+            var ouput_report: String = self.sewageDataStore.toString() // This would be the output string for the intermittent segue
+            self.setData() // .. graph stuff
+        } // end dispatchGroup.notify(queue:.main)
     } // end sewageHandler function
 
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
