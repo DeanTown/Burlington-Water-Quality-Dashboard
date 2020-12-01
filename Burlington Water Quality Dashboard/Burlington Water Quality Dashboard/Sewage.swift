@@ -8,9 +8,10 @@
 import UIKit
 
 
-// Template
+// Sewage data instance template
 class SewageDataItem: NSObject, NSCoding {
     
+    // Sewage item attributes (the fields in our Firestore DB on sewage data)
     var date: String
     var type: String!
     var minGal: Int!
@@ -20,6 +21,7 @@ class SewageDataItem: NSObject, NSCoding {
     let latitude: String!
     let longitude: String!
     
+    // Encoding for future app-state saving
     func encode(with aCoder: NSCoder) {
         aCoder.encode(date, forKey: "date")
         aCoder.encode(type, forKey: "type")
@@ -31,6 +33,7 @@ class SewageDataItem: NSObject, NSCoding {
         aCoder.encode(longitude, forKey: "longitude")
     }
 
+    // Decoding for future app-state saving
     required init?(coder aDecoder: NSCoder) {
         date = aDecoder.decodeObject(forKey: "date") as! String
         type = (aDecoder.decodeObject(forKey: "type") as! String)
@@ -59,6 +62,7 @@ class SewageDataItem: NSObject, NSCoding {
         super.init()
     }
     
+    // Print the attribute values for the Sewage item
     @discardableResult func toString() -> String {
         var tmp: String = "\tReceivingWater: \(self.receivingWater ?? "")"
         tmp += "\n\t\tDate: \(self.date)"
@@ -72,6 +76,7 @@ class SewageDataItem: NSObject, NSCoding {
         return tmp
     }
     
+    // Getter functions
     func getLocation() -> String {
         return self.location
     }
@@ -97,4 +102,4 @@ class SewageDataItem: NSObject, NSCoding {
         return self.longitude
     }
     
-}
+} // end class
