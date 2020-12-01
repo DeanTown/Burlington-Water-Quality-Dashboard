@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -60,13 +60,26 @@
                                     <constraint firstItem="LeM-Cl-gnT" firstAttribute="centerY" secondItem="CTQ-wv-jta" secondAttribute="centerY" id="qhD-Qf-riR"/>
                                 </constraints>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9HR-hW-Kye">
+                                <rect key="frame" x="129.5" y="64" width="155" height="32"/>
+                                <segments>
+                                    <segment title="2020"/>
+                                    <segment title="2019"/>
+                                    <segment title="2018"/>
+                                </segments>
+                                <connections>
+                                    <action selector="yearChangeAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="lKT-wx-mga"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="9HR-hW-Kye" firstAttribute="centerX" secondItem="B8A-uO-qnz" secondAttribute="centerX" id="4ZH-Lr-6xN"/>
                             <constraint firstItem="CTQ-wv-jta" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="5HG-sU-HUZ"/>
                             <constraint firstAttribute="trailing" secondItem="B8A-uO-qnz" secondAttribute="trailing" id="90A-nM-ujG"/>
                             <constraint firstItem="B8A-uO-qnz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ajx-Q6-gd8"/>
+                            <constraint firstItem="9HR-hW-Kye" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="czh-Lo-HuB"/>
                             <constraint firstAttribute="bottom" secondItem="B8A-uO-qnz" secondAttribute="bottom" id="fgi-na-ZQz"/>
                             <constraint firstItem="CTQ-wv-jta" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ix3-jp-gyd"/>
                             <constraint firstItem="B8A-uO-qnz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xwK-gs-Ef2"/>
@@ -77,6 +90,7 @@
                         <outlet property="areasFilter" destination="Kok-0t-bet" id="Yhd-kQ-o4Y"/>
                         <outlet property="mapFilter" destination="CTQ-wv-jta" id="oJX-U9-Uty"/>
                         <outlet property="mapView" destination="B8A-uO-qnz" id="Zkz-2Z-Zh4"/>
+                        <outlet property="yearPicker" destination="9HR-hW-Kye" id="Hh3-xP-eWu"/>
                         <segue destination="vgU-XK-Tff" kind="presentation" identifier="detailView" modalPresentationStyle="fullScreen" id="9OY-j5-Web"/>
                     </connections>
                 </viewController>
@@ -283,7 +297,7 @@
         <!--Detail View Controller-->
         <scene sceneID="yxs-MR-p8b">
             <objects>
-                <viewController id="Opj-et-biv" customClass="DetailViewController" customModule="Homepwner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Opj-et-biv" customClass="DetailViewController" customModule="Burlington_Water_Quality_Dashboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X0O-Ih-0ya">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

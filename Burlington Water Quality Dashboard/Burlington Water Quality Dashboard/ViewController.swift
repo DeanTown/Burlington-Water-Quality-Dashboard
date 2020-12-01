@@ -17,6 +17,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var mapFilter: UIView!
     @IBOutlet weak var annotationFilter: UIButton!
     @IBOutlet weak var areasFilter: UIButton!
+    @IBOutlet var yearPicker: UISegmentedControl!
+    @IBAction func yearChangeAction(_ sender: UISegmentedControl) {
+        switch yearPicker.selectedSegmentIndex {
+        //case 0 is 2020, 1 is 2019....so do with that what you want, create a date var most likely...
+        case 0:
+            print("2020")
+        case 1:
+            print("2019")
+        case 2:
+            print("2018")
+        default:
+            break
+        }
+    }
+    
     
     private var poi: [PointsOfInterest] = []
 //    let sewageRunoff = PointsOfInterest(title: "Runoff Into Winooski", descriptionOfPlace: "tap here for more sewage info", coordinate: CLLocationCoordinate2D(latitude: 44.530598, longitude: -73.274215))
