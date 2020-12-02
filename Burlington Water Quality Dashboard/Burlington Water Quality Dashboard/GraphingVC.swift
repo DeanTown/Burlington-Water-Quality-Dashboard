@@ -44,13 +44,17 @@ class GraphingVC: UIViewController, ChartViewDelegate {
     // Graph stuff
     lazy var lineChartView1: LineChartView = {
         let chartView = LineChartView()
-        chartView.backgroundColor = .systemBlue
+        chartView.backgroundColor = .white
         return chartView
     }()
+    
+    // Activity spinner
+    @IBOutlet var spinner: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad() // calling the OG viewDidLoad
         // Do any additional setup after loading the view.
+        self.spinner.startAnimating()
                 
         // Determining the data source (Sewage vs. Cyanobacteria)
         // If the selected location is a String --> Sewage
@@ -98,6 +102,7 @@ class GraphingVC: UIViewController, ChartViewDelegate {
                     self.yValues.append(ChartDataEntry(x: Double(i), y: Double(item.cyanobacteriaDensity)))
                     i += 1
                 } // end for
+                self.spinner.stopAnimating()
                 self.setData()
             } // end else
         } // end self.dispathGroup.notify(queue:.main)
@@ -131,6 +136,7 @@ class GraphingVC: UIViewController, ChartViewDelegate {
                     i += 1
                 } // end for
                 var ouput_report: String = self.sewageDataStore.toString() // This would be the output string for the intermittent segue
+                self.spinner.stopAnimating()
                 self.setData() // .. graph stuff
             }
            
