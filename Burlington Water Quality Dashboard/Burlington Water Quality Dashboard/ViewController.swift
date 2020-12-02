@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     var cyanobacteriaAPI = CyanobacteriaDataAPI() // Using cyanobacteria API function sanitizeInt to determine the selected data source. See func mapView for more
     
     var yearSelection: Int = 2018 // Holds what year is currently selected
-    var siteSelection: Any? = nil // Holds what site is currently selected
+    var siteSelection: String = "" // Holds what site is currently selected
     
     // Listener on the year switch
     @IBAction func yearChangeAction(_ sender: UISegmentedControl) {
@@ -102,11 +102,6 @@ class ViewController: UIViewController {
         // Else, --> Cyanobacteria
         if let subtitle = view.annotation?.subtitle, let id = subtitle {
             let siteIdentifier = String(id) // default value is of site identifier is string (Sewage data source)
-            // Testing to see if it could be an Int
-            if self.cyanobacteriaAPI.sanatizeInt(input: siteIdentifier) != 0 {
-                // returned back as an Int, data source identified to be from Cyanobacteria db!
-                let siteIdentifier = self.cyanobacteriaAPI.sanatizeInt(input: siteIdentifier)
-            }
             
             print("Site identifier is: \(siteIdentifier)")
             self.siteSelection = siteIdentifier // Setting the ViewController class attribute, siteSelection, to hold the selected site location value

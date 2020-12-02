@@ -108,40 +108,9 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bsf-lS-4Tl">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTd-DS-saa">
-                                        <rect key="frame" x="171.5" y="75" width="71" height="30"/>
-                                        <state key="normal" title="Monthly">
-                                            <color key="titleColor" systemColor="systemGrayColor"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91x-3J-6es">
-                                        <rect key="frame" x="292.5" y="75" width="71.5" height="30"/>
-                                        <state key="normal" title="Yearly">
-                                            <color key="titleColor" systemColor="systemGrayColor"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="puH-aT-0LI">
-                                        <rect key="frame" x="50" y="75" width="71.5" height="30"/>
-                                        <state key="normal" title="Weekly">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="91x-3J-6es" secondAttribute="trailing" constant="50" id="8Wl-UM-OTD"/>
-                                    <constraint firstItem="91x-3J-6es" firstAttribute="centerY" secondItem="HTd-DS-saa" secondAttribute="centerY" id="Frv-3H-qt8"/>
-                                    <constraint firstAttribute="bottom" secondItem="HTd-DS-saa" secondAttribute="bottom" constant="20" id="GSa-t1-vBd"/>
-                                    <constraint firstItem="HTd-DS-saa" firstAttribute="leading" secondItem="puH-aT-0LI" secondAttribute="trailing" constant="50" id="HI8-ET-3h1"/>
                                     <constraint firstAttribute="height" constant="125" id="KDe-38-xt4"/>
-                                    <constraint firstItem="HTd-DS-saa" firstAttribute="height" secondItem="puH-aT-0LI" secondAttribute="height" id="OH9-oU-K7U"/>
-                                    <constraint firstItem="91x-3J-6es" firstAttribute="width" secondItem="puH-aT-0LI" secondAttribute="width" id="WAV-qO-M6l"/>
-                                    <constraint firstItem="HTd-DS-saa" firstAttribute="width" secondItem="puH-aT-0LI" secondAttribute="width" id="Wqu-Vk-zp3"/>
-                                    <constraint firstItem="puH-aT-0LI" firstAttribute="centerY" secondItem="HTd-DS-saa" secondAttribute="centerY" id="fh4-PD-8Ye"/>
-                                    <constraint firstItem="91x-3J-6es" firstAttribute="leading" secondItem="HTd-DS-saa" secondAttribute="trailing" constant="50" id="sDR-qb-zG0"/>
-                                    <constraint firstItem="91x-3J-6es" firstAttribute="height" secondItem="puH-aT-0LI" secondAttribute="height" id="yju-09-P6N"/>
-                                    <constraint firstItem="puH-aT-0LI" firstAttribute="leading" secondItem="Bsf-lS-4Tl" secondAttribute="leading" constant="50" id="zn1-tL-gVC"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1GT-HV-Tla" customClass="LineChartView" customModule="Charts">
@@ -292,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EdQ-gg-ZxQ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1262" y="84"/>
+            <point key="canvasLocation" x="1260.8695652173915" y="83.705357142857139"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="yxs-MR-p8b">
@@ -507,9 +476,6 @@
         <image name="sewageUnselected" width="48" height="44"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
