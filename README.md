@@ -1,7 +1,3 @@
-# IOTConduit
-iOS application to visualize pollution in Lake Champlain in and around the Burlington Waterfront. IOTConduit is a project for CS 275 at the University of Vermont.
-
-
 # Burlington Water Quality Dashboard
 
 This is an application that we made (Prasidha Timsina, Owen Anderson, Nicholas Hella, Oliver Reckord Groten) for our CS 275 Mobile App Development class in collaboration with IOTConduit.
