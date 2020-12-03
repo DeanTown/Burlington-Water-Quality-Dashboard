@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,7 +27,7 @@
                                         <rect key="frame" x="-36" y="-38.5" width="132" height="307"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pop-Cj-PnJ">
-                                                <rect key="frame" x="42" y="0.0" width="48" height="105.5"/>
+                                                <rect key="frame" x="42" y="0.0" width="48" height="101"/>
                                                 <state key="normal" image="beachesUnselected"/>
                                                 <state key="selected" image="beachesSelected"/>
                                                 <connections>
@@ -33,7 +35,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kok-0t-bet">
-                                                <rect key="frame" x="42" y="105.5" width="48" height="105"/>
+                                                <rect key="frame" x="42" y="101" width="48" height="101"/>
                                                 <state key="normal" image="placesUnselected"/>
                                                 <state key="selected" image="placesSelected"/>
                                                 <connections>
@@ -41,9 +43,12 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOM-4n-jSF">
-                                                <rect key="frame" x="42" y="210.5" width="48" height="96.5"/>
-                                                <state key="normal" image="sewageUnselected"/>
+                                                <rect key="frame" x="41" y="202" width="50" height="105"/>
+                                                <state key="normal" image="sewageRunoff"/>
                                                 <state key="selected" image="sewageSelected"/>
+                                                <connections>
+                                                    <action selector="checkbox3:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UMg-ae-8Af"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -70,7 +75,8 @@
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9HR-hW-Kye" firstAttribute="centerX" secondItem="B8A-uO-qnz" secondAttribute="centerX" id="4ZH-Lr-6xN"/>
                             <constraint firstItem="CTQ-wv-jta" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="5HG-sU-HUZ"/>
@@ -81,13 +87,13 @@
                             <constraint firstItem="CTQ-wv-jta" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ix3-jp-gyd"/>
                             <constraint firstItem="B8A-uO-qnz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xwK-gs-Ef2"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="annotationFilter" destination="pop-Cj-PnJ" id="P0y-Bc-Myk"/>
                         <outlet property="areasFilter" destination="Kok-0t-bet" id="Yhd-kQ-o4Y"/>
                         <outlet property="mapFilter" destination="CTQ-wv-jta" id="oJX-U9-Uty"/>
                         <outlet property="mapView" destination="B8A-uO-qnz" id="Zkz-2Z-Zh4"/>
+                        <outlet property="sewageAnnotationFilter" destination="YOM-4n-jSF" id="HFY-VQ-Yhj"/>
                         <outlet property="yearPicker" destination="9HR-hW-Kye" id="Hh3-xP-eWu"/>
                         <segue destination="vgU-XK-Tff" kind="presentation" identifier="detailView" modalPresentationStyle="automatic" id="9OY-j5-Web"/>
                     </connections>
@@ -106,7 +112,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bsf-lS-4Tl">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="126"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1GT-HV-Tla" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="136" width="375" height="511"/>
@@ -117,21 +123,21 @@
                                             <constraint firstAttribute="width" constant="100" id="D4J-V4-kay"/>
                                             <constraint firstAttribute="height" constant="100" id="pJM-ao-ldo"/>
                                         </constraints>
-                                        <color key="color" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="color" systemColor="labelColor"/>
                                     </activityIndicatorView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="gOE-ng-1ZC" firstAttribute="centerX" secondItem="1GT-HV-Tla" secondAttribute="centerX" id="7T2-at-1rH"/>
                                     <constraint firstItem="gOE-ng-1ZC" firstAttribute="centerY" secondItem="1GT-HV-Tla" secondAttribute="centerY" id="LGn-Qg-vXW"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="wam-tp-WXm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="1GT-HV-Tla" firstAttribute="top" secondItem="kiV-5A-VLo" secondAttribute="top" constant="136" id="jXF-ju-jrN"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="wam-tp-WXm"/>
                     </stackView>
                     <connections>
                         <outlet property="spinner" destination="gOE-ng-1ZC" id="KQJ-4l-uAw"/>
@@ -147,7 +153,13 @@
         <image name="beachesUnselected" width="48" height="48"/>
         <image name="placesSelected" width="48" height="48"/>
         <image name="placesUnselected" width="48" height="48"/>
+        <image name="sewageRunoff" width="50" height="50"/>
         <image name="sewageSelected" width="48" height="44"/>
-        <image name="sewageUnselected" width="48" height="44"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

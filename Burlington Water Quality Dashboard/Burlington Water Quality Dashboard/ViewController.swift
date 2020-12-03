@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var mapFilter: UIView!
     @IBOutlet weak var annotationFilter: UIButton!
     @IBOutlet weak var areasFilter: UIButton!
+    @IBOutlet weak var sewageAnnotationFilter: UIButton!
     @IBOutlet var yearPicker: UISegmentedControl!
     
     var cyanobacteriaAPI = CyanobacteriaDataAPI() // Using cyanobacteria API function sanitizeInt to determine the selected data source. See func mapView for more
@@ -151,6 +152,7 @@ class ViewController: UIViewController {
             MKMapViewDefaultAnnotationViewReuseIdentifier)
         loadPOIData()
         annotationFilter.isSelected = true
+        sewageAnnotationFilter.isSelected = true
         areasFilter.isSelected = true
         mapView.addAnnotations(poi)
         let burlingtonVerlay = (MKPolygon(coordinates:Constants.burlingtonArea,count:Constants.burlingtonArea.count))
@@ -203,14 +205,23 @@ class ViewController: UIViewController {
     @IBAction func checkBoxTapped2(_ sender: UIButton) {
         if (sender.isSelected) {
             sender.isSelected = false
-            mapView.removeAnnotations(mapView.annotations)
+            mapView.removeAnnotations(poi)
         } else {
             sender.isSelected = true
-            mapView.addAnnotations(sewageRunoffs)
             mapView.addAnnotations(poi)
         } // end else
     } // end function
-
+    
+    @IBAction func checkbox3(_ sender: UIButton, forEvent event: UIEvent) {
+        if (sender.isSelected) {
+            sender.isSelected = false
+            mapView.removeAnnotations(sewageRunoffs)
+        } else {
+            sender.isSelected = true
+            mapView.addAnnotations(sewageRunoffs)
+        } // end else
+    } // end function
+    
 } // end ViewController class
 
 // making sure that we get the correct level of zoom
