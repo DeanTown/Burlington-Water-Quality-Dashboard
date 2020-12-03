@@ -12,8 +12,11 @@ This is an application that we made (Prasidha Timsina, Owen Anderson, Nicholas H
 There may be errors when first trying to comple the project due to cocoapods. Try these two steps:
 
 1) With terminal, CD into the project directory and run these terminal commands:
+
 rm -rf "${HOME}/Library/Caches/CocoaPods"
+
 rm -rf "`pwd`/Pods/"
+
 pod update
 
 1)  With the project still open, go into the project directory and delete hte 'Pods' folder and the 'Podfile.lock' file. Then quit xcode and open terminal into the project directory then 
